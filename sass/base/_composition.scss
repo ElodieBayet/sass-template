@@ -1,0 +1,286 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+@use '../utils/index' as kit;
+
+/*
+	Composition Management
+*/
+
+/* UX Limits Memo : think about it for a future dynamic implementation... */
+// (min-width:1210px) and (any-hover:hover)
+// (any-hover:none), (max-width:1209px)
+
+/* Grid Limits Memo */
+// (min-width:520px)
+// (min-width:720px)
+// (min-width:960px)
+
+/* Local for '#uihead' */ 
+@mixin sticky {
+	position: sticky;
+	top: 0px;
+	z-index: 100;
+}
+%layout {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1036px;
+	padding-top: 36px;
+	> * {
+		padding: 0 3.75%;
+		position: relative;
+		~ * {
+			margin-top: 36px;
+		}
+	}
+}
+
+/* Generalities */
+.headline, .navigation, main header {
+	text-align: center;
+}
+
+/* Applogo System */
+.applogo {
+	position: relative;
+	display: inline-block;
+	> span {
+		white-space: nowrap;
+		display: inline-block;
+	}
+	.icon {
+		margin-left: -18px;
+		width: 36px;
+		left: 50%;
+		position: absolute;
+	}
+	.title {
+		font-size: 2.7rem;
+		line-height: 5.8rem;
+		text-transform: lowercase;
+	}
+	+ p {
+		font-size: 1.2rem;
+		letter-spacing: .1rem;
+	}
+	// -
+	#uihead & {
+		padding: 12px 0 18px; // [!] - If cutomized, keep 18px on bottom in case of no <p> after .applogo
+		+ p {
+			padding: 0 0 18px 0; 
+			margin-top: -18px;
+		}
+	}
+	// -
+	#uifoot & {
+		padding: 0 0 4px 0;
+		+ p {
+			margin-top: -4px;
+		}
+	}
+}
+
+/* Menu System */
+nav {
+	li {
+		font-size : 1.5rem;
+		line-height: 1.5;
+		letter-spacing: .15rem;
+		text-transform: uppercase;
+		display: inline-block;
+		a {
+			padding-top: 8px;
+			padding-bottom: 8px;
+			display: block;
+		}
+	}
+	&:not(.socialmenu) li {
+		margin: 12px 24px;
+	}
+	&.socialmenu {
+		li {
+			margin: 12px 15px;
+			a {
+				padding-right: 8px;
+				padding-left: 8px;
+			}
+		}
+		.symbol {
+			width: 28px;
+			height: 28px;
+		}
+	}
+}
+
+/* Navigation System : expand ? */
+@if kit.$navigation-expand {
+	.navigation.expand {
+		@include kit.navigation-expand;
+	}
+}
+
+/* Main U-Interface Header System */
+#uihead {
+	width: 100%;
+	padding-bottom: 18px;
+	position: relative;
+	html:not(.nojs) & {
+		@include sticky;
+	}
+    .inner {
+        padding: 0 3.75%;
+    }
+	// [!] - This template allows 'edge' design effects on header. This must be set in *yournametheme*.scss. Example in '_default.scss'
+    .edge {
+       display: none;
+    }
+    button {
+		width: 44px;
+		height: 44px;
+		display: block;
+		position: absolute;
+		top: 10px;
+		right: 12px;
+		z-index: 110;
+    }
+	// Special #uihead adaptation of common elements
+	.navigation {
+		overflow: hidden;
+		nav {
+			padding: 1px 0;
+		}
+	}
+	html:not(.nojs) &.closed .navigation {
+		@media (max-width:1209px){
+			height: 1px;
+		}
+	}
+	@media (min-width:1210px) and (any-hover:hover) {
+		html.nojs & {
+			@include sticky;
+		}
+		.navigation {
+			margin-top: -12px;
+			display: flex;
+			justify-content: space-around;
+			overflow: initial;
+			nav {
+				padding: 0;
+			}
+		}
+		.socialmenu {
+			margin-top: -4px; // corr. visual aligment w/ .mainmenu
+		}
+		button {
+			display: none
+		}
+	}
+}
+
+/* Main U-Interface Footer System */
+#uifoot {
+	@extend %layout;
+	// Special #uifoot adaptation of common elements
+	margin-top: 36px;
+	padding-bottom: 36px;
+	@media (min-width:720px) {
+		.headline {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.socialmenu { 
+			margin-top: -2px; // corr. visual alignment w/ .applogo
+			& ul {
+				margin: 0 -16px;
+			}
+		}
+	}
+}
+
+/* Main System */
+main {
+	@extend %layout;
+	.nomodule {
+		display: inline-block;
+	}
+}
+
+/* Grid System */
+.grid {
+	@media (min-width:520px){
+		margin: 0 -1.875%;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		display: flex;
+		[class*="col-"] {
+			padding-left: 1.875%;
+			padding-right: 1.875%;
+			width: 100%;
+		}
+		&.sm [class*="col-"] {
+			width: 50%;
+		}
+	}
+	@media (min-width:720px){
+		&.sm .col-25 {
+			width: 25%;
+		}
+		&.sm .col-33 {
+			width: 33.33%;
+		}
+		&.sm .col-75 {
+			width: 75%;
+		}
+		&.md [class*="col-"] {
+			width: 50%;
+		}
+	}
+	@media (min-width:960px){
+		&.lg .col-50 {
+			width: 50%;
+		}
+		&.md .col-25, &.lg .col-25 {
+			width: 25%;
+		}
+		&.md .col-33, &.lg .col-33 {
+			width: 33%;
+		}
+		&.md .col-75, &.lg .col-75 {
+			width: 75%;
+		}
+	}
+}
+
+/* Columns System */
+.columns {
+	@media (min-width:720px){
+		margin-top: 24px;
+		column-count: 2;
+		column-gap: 3.75%; 
+		h3 {
+			break-after: avoid;
+		}
+		*:first-child {
+			margin-top: 0; // Hack margin problem related to columns display
+		}
+	}
+}
+
+/* Noscript System */
+html {
+	&:not(.nojs) noscript {
+		display: none;
+	}
+	&.nojs noscript {
+		display: block;
+		text-align: center;
+		padding: 12px;
+		margin: 24px 0;
+	}
+}

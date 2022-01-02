@@ -1,0 +1,167 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+@use '../utils/index' as kit;
+
+/*
+	Classical Design
+	i.e. : ".list", p, picture
+*/
+
+/* Hidden texts */
+.blind { 
+	// Readable
+	font-size: 0.1rem !important; 
+	line-height: 0.1rem !important;
+	padding: 0 !important; 
+	margin: 0 !important; 
+	top: 0 !important; 
+	left: -99999px !important;
+	position: absolute !important; 
+	display: inline !important;
+	overflow: hidden !important;
+	z-index: 1 !important;
+	white-space: nowrap !important;
+}
+.hide {
+	// Not Readable
+	display: none !important;
+}
+
+/* Integrated Floating Image */
+p.lining { 
+    img {
+        display: block;
+        margin-bottom: .9%;
+        @media (min-width:720px) {
+            width: 48%;
+            float: left;
+            margin-right: 3.75%;
+        }
+    }
+    &::after {
+		content: " ";
+		white-space: nowrap;
+        display: table;
+        clear: both;
+    }
+}
+
+/* Lists */
+.list {
+    li::before {
+        content: "••";
+        padding-right: 8px;
+    }
+}
+
+/* Special Lists */
+.listitem {
+	display: flex;
+	flex-wrap: wrap;
+    align-content: flex-start;
+    &.center {
+        justify-content: center;
+    }
+    &.apart li {
+        padding-right: 8px;
+        ~ li::before {
+            content: "••";
+            padding-right: 8px;
+        }
+    }
+}
+
+.listline {
+    margin-top: 12px;
+    li {
+        margin-top: 0;
+        display: inline;
+        white-space: pre-wrap;
+    }
+    &.center {
+        text-align: center;
+    }
+    &.apart li {
+        padding-right: 5px;
+        ~ li::before {
+            content: "—";
+            padding-right: 8px;
+        }
+    }
+}
+
+/* Table */
+table {
+    width: 100%;
+    &, th, td {
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 0 9px 9px;
+    }
+    .col-2 {
+        th, td {
+            width: 50%;
+        }
+    }
+    .col-3 {
+        th, td {
+            width: 33%;
+        }
+    }
+    .col-4 {
+        th, td {
+            width: 25%;
+        }
+    }
+    .col-5 {
+        th, td {
+            width: 20%;
+        }
+    }
+}
+
+/* Badge */
+.badge {
+	text-align: center;
+    margin-top: 24px;
+    .icon {
+        padding-bottom: 14px;
+    }
+    img {
+        height: 48px;
+    }
+    p small {
+        display: block;
+    }
+}
+
+/* Filters box */
+.filters {
+	h4 {
+        @extend %resagnicto-italic;
+    }
+}
+
+/* Divided box */
+.divided {
+    ~ .divided {
+        padding-top: 18px;
+        margin-top: 18px;
+    }
+}
+
+/* No DB result text information */
+.nothing {
+	&::before {
+		content: "[!] -";
+        font-weight: 700;
+        letter-spacing: .15rem;
+		padding-right: 6px;
+	}
+}

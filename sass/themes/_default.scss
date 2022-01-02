@@ -1,0 +1,667 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+@use 'sass:math';
+@use '../utils/index' as kit;
+
+/*
+    Default Theme
+    Dark-Mode backgrounds w/ Water-Blue colors
+*/
+
+// Only for template
+.colordepth {
+    li:nth-of-type(1) {
+        color: kit.$lighten;
+    }
+    li:nth-of-type(2) {
+        color: kit.$origin;
+    }
+    li:nth-of-type(3) {
+        color: kit.$darken;
+    }
+    li:nth-of-type(4) {
+        color: kit.$blacken;
+    }
+}
+.greydepth {
+    li:nth-of-type(1){
+        color: kit.$xdark;
+    }
+    li:nth-of-type(2){
+        color: kit.$dark;
+    }
+    li:nth-of-type(3){
+        color: kit.$mdark;
+    }
+    li:nth-of-type(4){
+        color: kit.$medium;
+    }
+    li:nth-of-type(5){
+        color: kit.$mlight;
+    }
+    li:nth-of-type(6){
+        color: kit.$light;
+    }
+    li:nth-of-type(7){
+        color: kit.$xlight;
+    }
+}
+
+/* UI Icons Management */
+$ui-iconcode: (
+    bars: 0,
+    cross: 1,
+    prev: 2,
+    next: 3,
+    begin: 4,
+    end: 5,
+    active: 6,
+    grab: 7,
+    more: 8,
+    social: 9
+);
+$ui-iconsize: (
+    width: 9px,
+    height: 220px
+);
+$brand-iconset: (
+    pdf: url('https://www.elodiebayet.com/store/icons/icon_reader.svg'),
+    github: url('https://www.elodiebayet.com/store/icons/icon_github.svg'),
+    bitbucket: url('https://www.elodiebayet.com/store/icons/icon_bitbucket.svg'),
+    linkedin: url('https://www.elodiebayet.com/store/icons/icon_linkedin.svg')
+);
+
+/* Local for elements w/ icons or effects */
+@mixin brand-icon {
+    width: 18px;
+    height: 20px;
+    background-repeat: no-repeat;
+    @each $brand, $url in $brand-iconset {
+        &.#{$brand} {
+            background-image: $url;
+            @if $brand == 'github' {
+                filter: invert(100%)
+            }
+        }
+    }
+}
+@mixin ui-icon($size: 2) {
+    $w: $size * map-get($ui-iconsize, width);
+    $h: $size * map-get($ui-iconsize, height);
+    // -
+    background-image: url('https://www.elodiebayet.com/store/ui/navigation_icons_bl.svg'); // 176px / 1760px
+    background-repeat: no-repeat;
+    background-size: $w $h;
+}
+@mixin ui-icon-pos($picto: bars, $wdt: 44px, $size: 2) {
+    $w: $wdt - ( $size * map-get($ui-iconsize, width) ); // ex. 44px - (2 * 9px);
+    $h: $size * map-get($ui-iconsize, height);
+    @if $size == 1 { $w: 0; }
+    // -
+    background-position-x: math.div($w, 2);
+    background-position-y: math.div($h, -10) * map-get($ui-iconcode, $picto);
+}
+@mixin shadowed-edge($deg: 90deg) {
+    background-image: linear-gradient($deg, kit.$bgcolor, kit.$bgcolor, adjust-color(kit.$bgcolor, $alpha: -0.4), adjust-color(kit.$bgcolor, $alpha: -0.7), adjust-color(kit.$bgcolor, $alpha: -1));
+}
+
+/* Animations */
+@keyframes SlideUp {
+	0% { bottom: 0%; opacity: 0.0; }
+	33% { bottom: 33%; opacity: 0.0; }
+	100% { bottom: 100%; opacity: 1.0; }
+}
+@keyframes SlideDown {
+	0%{ top: 0%; opacity: 0.0; }
+	33%{ top: 33%; opacity: 0.0; }
+	100%{ top: 100%; opacity: 1.0; }
+}
+@keyframes Spin {
+	0% { transform: rotate(0deg); filter: brightness(115%); }
+	50% { transform: rotate(180deg); filter: brightness(85%); }
+	100% { transform: rotate(360deg); filter: brightness(115%); }
+}
+@keyframes FadeOn {
+	0% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+/* Local for interactive elements */
+%transition, a, a:link, a:visited, button, .navigation li {
+    transition: .25s ease-in-out;
+}
+
+
+/*
+    Base
+*/
+
+/* General */
+body {
+	background-color: kit.$bgcolor;
+	color: kit.$fontcolor;
+}
+
+/* Typography */
+main {
+    h1 {
+        color: kit.$light;
+    }
+    h2 {
+        color: kit.$origin;
+    }
+    h3 {
+        color: kit.$bright;
+    }
+    h4 {
+        color: kit.$mlight;
+    }
+    pre {
+        border: 1px solid kit.$alert;
+        padding: 18px;
+    }
+    a:not([class]) {
+        color: kit.$bright;
+        border-bottom: 1px solid kit.$origin;
+        &:hover, &:focus {
+            color: kit.$lighten;
+            border-bottom: 1px solid kit.$darken;
+        }
+    }
+    .light {
+        color: kit.$mlight;
+    }
+    .edvidence {
+        color: kit.$origin;
+    }
+}
+
+/* Logo */
+.applogo {
+    > span {
+        @extend %transition;
+    }
+    .icon {
+        opacity: 1;
+    }
+    .title {
+        color: kit.$dark;
+    }
+    &:hover {
+        .icon {
+            opacity: .1;
+        }
+        .title {
+            color: kit.$origin;
+        }
+    }
+    + p {
+        color: kit.$xlight;
+    }
+}
+
+/* Menu */
+nav {
+    li a {
+        color: kit.$bright;
+	    background-color: transparent;
+        &:hover, &:focus, &.selected {
+            color: kit.$lighten;
+        }
+    }
+    &.socialmenu li a{
+        filter: brightness(150%) grayscale(99%);
+        opacity: .9;
+        &:hover, &:focus {
+            filter: brightness(100%) grayscale(0%);
+            opacity: 1;
+        }
+    }
+}
+
+/* Navigations : expand ? */
+@if kit.$navigation-expand {
+    .navigation.expand {
+        .sub li a {
+            color: kit.$fontcolor;
+            background-color: transparent;
+            &:hover, &:focus, &.selected {
+                color: kit.$origin;
+            }
+        }
+    }
+}
+
+/* Main U-Interface Header */
+#uihead {
+    .inner {
+        color: inherit;
+        background-color: kit.$xdark;
+        box-shadow: 0 4px 12px 2px kit.$obscur;
+        position: relative;
+        z-index: 101;
+    }
+    @if kit.$edge {
+        .edge {
+            color: inherit;
+            background-color: transparent;
+            position: absolute;
+            width: 15%;
+            max-width: 320px;
+            height: 100%;
+            top: 0;
+            display: block;
+        }
+        .inner + .edge {
+            // 90deg
+            @include shadowed-edge;
+            left: 0;
+			z-index: 102;
+        }
+        .edge + .edge {
+            @include shadowed-edge(-90deg);
+            right: 0;
+			z-index: 103;
+        }
+    }
+    button {
+        color: inherit;
+        background-color: transparent;
+        @include ui-icon;
+        @include ui-icon-pos(cross);
+        filter: grayscale(100%) brightness(150%);
+        &:hover{
+            filter: grayscale(0%) brightness(100%);
+        }
+    }
+    &.closed button {
+        @include ui-icon-pos(bars);
+    }
+    .navigation {
+		width: 75%; // Keep navigation items away from screen borders
+		margin-right: auto;
+		margin-left: auto;
+        @extend %transition;
+        nav + nav {
+            @media (max-width:1209px), (any-hover:none){
+                background-image: linear-gradient( 90deg, kit.$dark, kit.$dark );
+                background-position: 50% 0%;
+                background-size: 48px 1px;
+                background-repeat: no-repeat;
+                padding-top: 8px;
+            }
+        }
+        @if kit.$navigation-expand {
+            @media (min-width:1210px) and (any-hover:hover) {
+                .sub::before {
+                    content: " ";
+                    position: absolute;
+                    border-width: 4px;
+                    border-style: solid;
+                    border-color: kit.$medium transparent transparent transparent;
+                    top: 98%;
+                    left: 50%;
+                    margin-left: -2px;
+                }
+                .sub:hover::before {
+                    border-color: kit.$darken transparent transparent transparent;
+                }
+                .sub ul {
+                    background-color: kit.$xdark;
+                    background-clip: content-box;
+                    opacity: .9;
+                }
+            }
+        }
+    }
+}
+
+/* Main U-Interface Footer */
+#uifoot {
+    border-top: 1px dotted kit.$mdark;
+    h3 {
+        color: kit.$xlight;
+        background-color: transparent;
+    }
+}
+
+/* Main Content */
+main {
+    // No JS block
+    noscript {
+        opacity: .75;
+        border: 1px solid kit.$alert;
+    }
+    // Anything disabled
+    *.disabled {
+        opacity: .5;
+        filter: grayscale(100%);
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+    // Module error block
+    .nomodule {
+        color: kit.$mlight;
+        samp {
+            border: 1px solid kit.$dkalert;
+            padding: 9px;
+        }
+    }
+}
+
+
+/*
+    Components
+*/
+
+/* Classical Content Elements */
+.list {
+    li::before {
+        color: kit.$darken;
+    }
+}
+.listitem {
+    &.apart li {
+        ~ li::before {
+            color: kit.$mdark;
+        }
+    }
+}
+.listline {
+    &.apart li {
+        ~ li::before {
+            color: kit.$blacken;
+        }
+    }
+}
+table {
+    thead tr:last-of-type {
+        border-bottom: 2px solid kit.$origin;
+    }
+    tr ~ tr {
+        border-top : 1px solid kit.$darken;
+    }
+}
+.badge {
+    .title{
+        border-top: 1px solid kit.$dark;
+    }
+    p small{
+        color: kit.$mlight;
+        background-color: transparent;
+    }
+}
+.divided {
+    ~ .divided {
+        border-top: 1px dashed kit.$blacken;
+    }
+}
+.nothing {
+	&::before {
+		color: kit.$alert;
+	}
+}
+.filters {
+    &.error {
+        border: 1px solid kit.$alert;
+        padding: 9px 24px 12px;
+    }
+    h4 {
+        color: kit.$darken;
+    }
+    ul {
+        border: 1px solid kit.$dark;
+        padding: 6px 6px 12px;
+        position: relative;
+        &::after {
+            border-color: kit.$dark transparent transparent transparent;
+            top: 100%; 
+            content: " ";
+            position: absolute;
+            border-width: 9px;
+            border-style: solid;
+        }
+    }
+}
+
+/* Interactive Elements */
+a.button, a.link {
+    $size: 1;
+    &.url span {
+        @include brand-icon; // 18px 20px @each .pdf, .bitbucket...
+    }
+    &:not(.url) {
+        > span {
+            width: 9px;
+            line-height: 23px;
+            @include ui-icon($size);
+        }
+        &.selected {
+            color: kit.$lighten;
+            > span {
+                @include ui-icon-pos(cross, 9px, $size);
+                filter: brightness(500%) grayscale(99%);
+            }
+        }
+    }
+    &.toggle > span { 
+        @include ui-icon-pos(active, 9px, $size);
+    }
+    &.anchor > span {
+        @include ui-icon-pos(end, 9px, $size);
+    }
+} 
+a.button {
+    color: kit.$bright;
+    background-color: lighten(kit.$bgcolor, 15%);
+    &:not(.disabled):hover { // [!] - :disabled pseudo-class doesn't allowed on <button> or <a>
+        background-color: lighten(kit.$bgcolor, 25%);
+    }
+}
+a.link {
+    color: kit.$bright;
+    background-color: transparent;
+    &:not(.disabled):hover { // [!] - :disabled pseudo-class doesn't allowed on <button> or <a>
+        color: kit.$origin;
+    }
+}
+button.button, button.tab {
+    color: kit.$fontcolor;
+	background-color: kit.$bgcolor;
+	border-width: 1px;
+	border-style: solid;
+	border-color: kit.$origin;
+	border-radius: 2px;
+    &:not(.disabled):hover,
+    &.selected {
+        color: kit.$fontcolor;
+        background-color: kit.$xdark;
+        border-color: kit.$lighten;
+    }
+}
+
+/* Advanced Elements */
+.share { 
+    a {
+        .symbol {
+            @extend %transition;
+            filter: brightness(150%) grayscale(99%);
+        }
+        &:hover, &:focus {
+            .symbol {
+                filter: brightness(100%) grayscale(0%);
+            }
+        }
+    }
+}
+@media (min-width:960px) and (any-hover:hover){
+    .tooltip {
+        &:hover { 
+            .top {
+                animation: SlideUp .33s ease-in-out;
+            }
+            .bottom {
+                animation: SlideDown .33s ease-in-out;
+            }
+        }
+        .tip { 
+            color: kit.$obscur;
+            background-image: linear-gradient(15deg, kit.$xlight, kit.$bright);
+            box-shadow: 2px 4px 8px 2px rgba(0,0,0,.5);
+            &::after {
+                content: " ";
+                position: absolute;
+                border-width: 5px;
+                border-style: solid;
+                left: 10px;
+            } 
+            &.top::after {
+                border-color: kit.$xlight transparent transparent transparent;
+                top: 100%;
+            }
+            &.bottom::after {
+                border-color: transparent transparent kit.$xlight transparent;
+                bottom: 100%; 
+            }
+        }
+    }
+}
+.project {
+    .cover div {
+	    box-shadow: 3px 6px 8px 2px change-color(kit.$obscur, $alpha: .6);
+    }
+    a {
+        + .cover div img {
+            @extend %transition;
+            transform-origin: 50% 50%;
+            transform: scale(1,1);
+        }
+        &:hover + .cover div img {
+            transform: scale(1.05,1.05);
+        }
+    }
+    .summary {
+        color: kit.$fontcolor;
+        background-color: kit.$bgcolor;
+        .date, .title {
+            text-shadow: -4px 4px 4px kit.$obscur;
+        }
+        .date {
+            color: kit.$lighten;
+            background-color: transparent;
+            background-image: linear-gradient(90deg, kit.$mlight, kit.$mlight);
+            background-position: 0 14px;
+            background-size: 122px 1px;
+            background-repeat: no-repeat;
+        }
+    }
+    .edge {
+        color: inherit;
+        background-color: kit.$bgcolor;
+        &:nth-of-type(1) {
+            opacity: 1;
+            transition-delay: .05s;
+        }
+        &:nth-of-type(2) {
+            opacity: .75;
+            transition-delay: .1s;
+        }
+        &:nth-of-type(3) {
+            opacity: .5;
+            transition-delay: .15s;
+        }
+        &:nth-of-type(4) {
+            opacity: .25;
+            transition-delay: .2s;
+        }
+    }
+    &:hover .edge {
+        opacity: 0;
+        &:nth-of-type(1) {
+            transition-delay: .2s;
+        }
+        &:nth-of-type(2) {
+            transition-delay: .15s;
+        }
+        &:nth-of-type(3) {
+            transition-delay: .1s;
+        }
+        &:nth-of-type(4) {
+            transition-delay: .05s;
+        }
+    }
+}
+.onload {
+	position: relative;
+	> *:not(.spin) {
+		opacity: .5;
+		filter: blur(2px);
+	}
+    .spin {
+        width: 72px;
+        height: 72px;
+        top: 50%;
+        left: 50%;
+        margin-top: -36px;
+        margin-left: -36px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-image: radial-gradient( kit.$lighten, change-color(kit.$origin, $alpha: .75), transparent, transparent, change-color(kit.$lighten, $alpha: .75), change-color(kit.$lighten, $alpha: .9) );
+        border-top: 12px double rgba(244,240,240, .9);
+        border-bottom: 12px double rgba(244,240,240, .9);
+        border-right: 12px double rgba(191,186,186, .9);
+        border-left: 12px double rgba(191,186,186, .9);
+        border-radius: 50%;
+        animation: Spin 2s linear infinite;
+    }
+}
+
+.bypass {
+	.cursor {
+		height: 44px;
+		width: 44px;
+		filter: grayscale(100%);
+		@extend %transition;
+        @include ui-icon();
+	}
+	.label {
+		color: kit.$bright;
+		background-color: change-color(kit.$bgcolor, $alpha: .66);
+	}
+	&:hover {
+        .cursor {
+		    filter: grayscale(0);
+        }
+    }
+	&#previous {
+        .cursor {
+            @include ui-icon-pos(prev, 44px, 2);
+        }
+        .label {
+            margin-left: -6px;
+            border-left: 1px solid kit.$medium;
+        }
+    }
+	&#next {
+        .cursor {
+            @include ui-icon-pos(next, 44px, 2);
+        }
+        .label {
+            margin-right: -6px;
+            border-right: 1px solid kit.$medium
+        }
+    }
+}
+@media (min-width:1036px) {
+    .bypass {
+        &:hover .label {
+            animation: FadeOn .33s ease-in-out;
+        }
+    }
+}

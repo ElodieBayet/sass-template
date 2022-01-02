@@ -1,0 +1,49 @@
+/*
+    Global Mixins
+*/
+
+/* Local for navigation-expand mixin */
+@mixin list-item {
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 18px;
+	display: list-item;	
+}
+
+/* Global for '.navigation.expand' (if so) */
+@mixin navigation-expand {
+	.sub li {
+		text-transform: capitalize;
+		margin: 12px 24px 0;
+	}
+	@media (any-hover:none), (max-width:1209px) {
+		#uihead & .mainmenu > ul > li {
+			@include list-item;
+		}
+	}
+	// -
+	@media (min-width:1210px) and (any-hover:hover){
+		#uihead & {
+			nav:not(.langmenu):not(.socialmenu) > ul > li {
+				position: relative;
+			}
+			.sub {
+				ul {
+					padding-top: 24px;
+					display: none;
+					position: absolute;
+					top: 100%;
+					left: -56px; // [!] - depends on size of li's label
+					width: 200px;
+				}
+				&:hover ul {
+					display: block;
+				}
+				li {
+					display: list-item;
+					margin: 24px 12px;
+				}
+			}
+		}
+	}
+} 

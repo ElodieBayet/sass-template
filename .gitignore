@@ -1,0 +1,12 @@
+# Folders
+node_modules/
+public/css/
+.vscode/
+_notes/
+_dist/
+_dist_menu_compact/
+_dist_menu_expanded/
+
+# Files
+*.log
+Thumbs.db

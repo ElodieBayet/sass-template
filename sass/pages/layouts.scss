@@ -1,0 +1,42 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+@use '../utils/index' as kit;
+
+/*
+    For page called 'layouts'
+*/
+
+@keyframes Layouts {
+	0% { margin-top: 18px; opacity: .75; }
+	33% { margin-top: 0px; opacity: 1.0; }
+	100% { margin-top: 17px; opacity: .75; }
+}
+
+.layouts {
+	background-image: radial-gradient(circle at center, kit.$xdark 0, transparent 120px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 280px;
+	position: relative;
+	margin-top: 36px;
+	.sample {
+		width: 120px;
+		height: 170px;
+		animation: Layouts 2s ease-in infinite;
+	}
+	&::before {
+		content: "Simple exemple pour Layouts";
+		font-size: 1.2rem;
+		font-style: italic;
+		color: kit.$mlight;
+		bottom: 100%;
+		left: 0;
+		position: absolute;
+	}
+}

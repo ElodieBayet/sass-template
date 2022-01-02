@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr" class="nojs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Components | SASS Template</title>
+    <!-- Styles -->
+        <link href="./public/css/base.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./public/css/components.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./public/css/theme.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Identity and parameters -->
+        <meta name="description" content="Exemples de rendus plus avancés des composants HTML spéciaux">
+        <meta name="author" content="Elodie Bayet, www.elodiebayet.com">
+        <meta name="copyright" content="Elodie Bayet © 2020">
+        <meta name="theme-color" content="#242428">
+        <link href="./_manifest.json" rel="manifest" type="application/manifest+json">
+        <link href="./assets/trademark/sasstemplate_favicon.png" rel="icon" type="image/png">
+        <!--[if IE]><link href="./assets/trademark/sasstemplate_favicon.ico" rel="shortcut icon" type="image/x-icon" /><![endif]-->
+    <!-- Scripts -->
+        <script type="module" src="./public/js/main.js"></script>
+    </head>
+    <body>
+
+        <!-- Page header -->
+        <header id="uihead" class="closed">
+			<div class="inner">
+
+                <!-- Container for principal elements in header -->
+				<div class="headline">
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="./assets/trademark/sasstemplate_icon_wt.svg" alt="Icon Sass Template"></span>
+                        <span class="title">SassTemplate</span>
+                    </a>
+					<p>Example de template avec Sass</p>
+				</div>
+
+                <!-- Container for top navigation -->
+                <div class="navigation expand">
+
+                    <!-- Principal menu -->
+					<nav class="mainmenu">
+						<ul>
+							<li>
+                                <a href="./" title="Aller sur la page">Home</a>
+                            </li>
+                            <li>
+                                <a href="./layouts.html" title="Aller sur la page">Layouts</a>
+                            </li>
+                            <li>
+                                <a href="./components.html" title="Aller sur la page" class="selected">Components</a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Social references -->
+                    <nav class="socialmenu">
+                        <h3 class="blind">Menu social</h3>
+                        <ul>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
+                                    <span class="tip top">Profil Linked In</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
+                                    <span class="tip top">Profil Bitbucket</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
+                                    <span class="tip top">Profil GitHub</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_behance_bl.svg" alt="Logo Behance" width="28" height="28"></span>
+                                    <span class="tip top">Profil Behance</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+			</div>
+            
+            <!-- Design border effects (optional) - (!) Remove them if not used -->
+			<div class="edge">&nbsp;</div>
+			<div class="edge">&nbsp;</div>
+
+            <!-- Button for opening/closing top navigation container -->
+            <button type="button"><span class="blind">Ouvrir le menu</span></button>
+		</header>
+
+        <main>
+
+            <!-- Content header -->
+            <header>
+                <h1>Components</h1>
+                <div class="share">
+                    <ul>
+                        <li>
+                            <a href="#" title="Partager sur Facebook" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_facebook_bl.svg" alt="Icon Facebook" width="32" height="32"></span>
+                                <span class="tip top">Partager sur Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Partager sur Linked In" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_linkedin_bl.svg" alt="Icon Linked in" width="32" height="32"></span>
+                                <span class="tip top">Partager sur Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Partager sur Twitter" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_twitter_bl.svg" alt="Icon Twitter" width="32" height="32"></span>
+                                <span class="tip top">Partager sur Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Envoyer par E-mail" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_email_bl.svg" alt="Icon Email" width="32" height="32"></span>
+                                <span class="tip top">Envoyer par Email</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- Block for module error -->
+            <div class="nomodule"><samp>Info : Si module <strong>Bidule</strong> a rencontré un problème.</samp></div>
+            <div class="nomodule"><samp>Info : Si module <strong>Truc</strong> a rencontré un problème.</samp></div>
+
+            <!-- If no JavaScript -->
+            <noscript><strong>Le JavaScript n'est pas activé&nbsp;::</strong> Certaines fonctionnalités pourraient être inaccessibles.</noscript>
+
+            <!-- Root container - section -->
+            <section>
+                <h2>Boites de type “projet”</h2>
+                <div class="grid lg">
+
+                    <!-- Project blocks -->
+                    <div class="col-50 project">
+                        <a href="#" title="Voir le projet" class="route">
+                            <span class="blind">Project Title</span>
+                        </a>
+                        <div class="cover">
+                            <div><img src="./assets/fig/default_figure_640x640.jpg" alt="Default Image Square" width="640" height="640"></div>
+                        </div>
+                        <div class="summary">
+                            <time datetime="2021-10-15" class="date">15.10.2021</time>
+                            <h3 class="title">Project title</h3>
+                            <ul class="technics">
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_html.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_css.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_sass.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_js.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_nodejs.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_mongodb.svg" alt="Technology icon"></li>
+                            </ul>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                        </div>
+                    </div>
+
+                    <div class="col-50 project">
+                        <a href="#" title="Voir le projet" class="route">
+                            <span class="blind">Project longtitle</span>
+                        </a>
+                        <div class="cover">
+                            <div><img src="./assets/fig/default_figure_640x640.jpg" alt="Default Image Square" width="640" height="640"></div>
+                        </div>
+                        <div class="summary">
+                            <time datetime="2021-10-15" class="date">15.10.2021</time>
+                            <h3 class="title">Project Longtitle</h3>
+                            <ul class="technics">
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_html.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_css.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_js.svg" alt="Technology icon"></li>
+                            </ul>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                        </div>
+                    </div>
+
+                    <div class="col-50 project">
+                        <a href="#" title="Voir le projet" class="route">
+                            <span class="blind">Project Title on 2 Lines</span>
+                        </a>
+                        <div class="cover">
+                            <div><img src="./assets/fig/default_figure_640x640.jpg" alt="Default Image Square" width="640" height="640"></div>
+                        </div>
+                        <div class="summary">
+                            <time datetime="2021-10-15" class="date">15.10.2021</time>
+                            <h3 class="title">Project Title on 2 Lines</h3>
+                            <ul class="technics">
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_html.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_css.svg" alt="Technology icon"></li>
+                                <li><img src="https://www.elodiebayet.com/store/icons/icon_js.svg" alt="Technology icon"></li>
+                            </ul>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Elements interactifs <span class="light">&mdash; dans des listes</span></h2>
+
+                <!-- Anchors list (link style) -->
+                <h3>Liens “Ancre”</h3>
+                <ul class="listitem center">
+                    <li><a href="#testscroller" title="Aller à la section" class="link anchor"><span>&nbsp;</span>Un lien ancre - Test module scroller</a></li>
+                    <li><a href="#" title="Aller à la section" class="link anchor"><span>&nbsp;</span>Autre lien ancre</a></li>
+                    <li><a href="#" title="Aller à la section" class="link anchor disabled"><span>&nbsp;</span>Lien ancre désactivé</a></li>
+                </ul>
+
+                <!-- Links list (button style) -->
+                <h3>Liens “Bouton”</h3>
+                <ul class="listitem center">
+                    <li>
+                        <a href="#" alt="Télécharger le document" target="_blank" rel="noreferrer" class="button url"><span class="pdf">&nbsp;</span>lien_vers_document.pdf</a>
+                    </li>
+                    <li>
+                        <a href="#" alt="Voir le profil" target="_blank" rel="noreferrer" class="button url disabled"><span class="bitbucket">&nbsp;</span>Lien bouton Bitbucket</a>
+                    </li>
+                    <li>
+                        <a href="#" alt="Voir le profil" target="_blank" rel="noreferrer" class="button url"><span class="bitbucket">&nbsp;</span>Lien bouton Bitbucket</a>
+                    </li>
+                    <li>
+                        <a href="#" alt="Voir le profil" target="_blank" rel="noreferrer" class="button url"><span class="github">&nbsp;</span>Lien bouton GitHub</a>
+                    </li>
+                    <li>
+                        <a href="#" alt="Voir le profil" target="_blank" rel="noreferrer" class="button url"><span class="linkedin">&nbsp;</span>Lien bouton LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="#" alt="Voir le profil" target="_blank" rel="noreferrer" class="button">Lien bouton neutre</a>
+                    </li>
+                </ul>
+
+                <!-- Togglers list (link style) -->
+                <h3>Liens “Toggle” <span class="light">&mdash; Boite de filtres</span></h3>
+                <div class="filters">
+                    <h4>Filtrer&nbsp;:</h4>
+                    <p class="nothing">Si module <strong>Filter</strong> a rencontré un problème.</p>
+                    <ul class="listitem center">
+                        <li><a href="#" title="Afficher" class="link toggle selected"><span>&nbsp;</span>Base de données</a></li>
+                        <li><a href="#" title="Afficher" class="link toggle selected"><span>&nbsp;</span>Développement Back-End</a></li>
+                        <li><a href="#" title="Afficher" class="link toggle disabled"><span>&nbsp;</span>Développement Front-End</a></li>
+                        <li><a href="#" title="Afficher" class="link toggle selected"><span>&nbsp;</span>Graphisme &amp; UI/UX Design</a></li>
+                        <li><a href="#" title="Afficher" class="link toggle"><span>&nbsp;</span>Modélisation &amp; Architecture</a></li>
+                        <li><a href="#" title="Afficher" class="link toggle"><span>&nbsp;</span>Outils &amp; Gestionnaires</a></li>
+                        <li><a href="#" title="Afficher" class="link toggle"><span>&nbsp;</span>Web Master &amp; TIC</a></li>
+                    </ul>
+                </div>
+
+                <!-- Basic buttons -->
+                <h3>Boutons basiques</h3>
+                <div>
+                    <button class="button" type="button">Bouton actif</button>
+                    <button class="button disabled" type="button">Bouton désactivé</button>
+                    <button class="button" type="button">Bouton actif sélectionné</button>
+                </div>
+                <!-- Tab buttons -->
+                <div>
+                    <button class="tab" type="button">Bouton actif</button>
+                    <button class="tab disabled" type="button">Bouton désactivé</button>
+                    <button class="tab selected" type="button">Bouton actif sélectionné</button>
+                </div>
+            
+            </section>
+
+            <section>
+                <h2>Boites divisées <span class="light">&mdash; Bordure séparante</span></h2>
+
+                <!-- Blocks for divided content -->
+                <div class="divided">
+                    <h3>
+                        <a href="#">Prénom et NOMTRÈSLONG</a>
+                        <small class="light">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li>Nom de période</li>
+                        <li>Autrepériode</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <h3>
+                        <a href="#">Prénom et NOMLONG</a>
+                        <small class="light">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li>Nom de période</li>
+                        <li>Autrepériode</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <h3>
+                        <a href="#">Prénom NOMLONG</a>
+                        <small class="light">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li>Nom de période</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <h3>
+                        <a href="#">Prénom-Ralongé FAMILLE ETUNEAUTRE</a>
+                        <small class="light">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li class="nothing">Aucune période trouvée</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <p class="nothing">Aucun élément trouvé</p>
+                </div>
+            </section>
+            
+            <section>
+                <h2>Tableaux</h2>
+
+                <!-- Tables -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h4>Table Topic</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="col-2">
+                        <tr>
+                            <td>
+                                <h5>Label Alpha</h5>
+                            </td>
+                            <td>
+                                <p>Data Alpha</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Label Beta</h5>
+                            </td>
+                            <td>
+                                <p>Data Beta</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Label Gamma</h5>
+                            </td>
+                            <td>
+                                <p>Data Gamma</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section>
+                <h2>Widgets divers</h2>
+                
+                <h3 id="testscroller">Test pour le scroller</h3>
+                <p>Paragraphe avec du texte. Test pour l'ajustement du scroller.</p>
+
+                <div class="grid md">
+                    <!-- Box with content loaded -->
+                    <div class="col-50">
+                        <h3>Boite de contenu normal</h3>
+                        <p>Cras ut felis luctus, finibus justo ut, suscipit massa. Mauris sollicitudin eu purus et tempus. Morbi euismod rutrum finibus. Praesent lacinia lacinia faucibus. Fusce dictum, enim nec malesuada viverra, magna magna <a href="#" title="Aller sur le site" target="_blank" rel="noreferer">accumsan tortor</a>, id pretium mauris nunc vitae erat.</p>
+                    </div>
+                    <!-- Box with content in loading -->
+                    <div class="col-50 onload">
+                        <h3>Boite de contenu en chargement</h3>
+                        <p>Cras ut felis luctus, finibus justo ut, suscipit massa. Mauris sollicitudin eu purus et tempus. Morbi euismod rutrum finibus. Praesent lacinia lacinia faucibus. Fusce dictum, enim nec malesuada viverra, magna magna <a href="#" title="Aller sur le site" target="_blank" rel="noreferer">accumsan tortor</a>, id pretium mauris nunc vitae erat.</p>
+                        <div class="spin">&nbsp;</div>
+                    </div>
+                </div>
+
+                <!-- Boxes as 'Badge' -->
+                <h3>Boites “badges”</h3>
+                <div class="grid sm">
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/store/icons/icon_html.svg" alt="HTML 5 Logo"></div>
+                        <div class="title"><p>HTML 5</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/store/icons/icon_css.svg" alt="CSS 3 Logo"></div>
+                        <div class="title"><p>CSS 3</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/store/icons/icon_sass.svg" alt="Sass Logo"></div>
+                        <div class="title"><p>SASS</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/store/icons/icon_js.svg" alt="JavaScript Logo"></div>
+                        <div class="title"><p>JavaScript</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/store/icons/icon_mongodb.svg" alt="MongoDB Logo"></div>
+                        <div class="title"><p>MongoDB</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/store/icons/icon_npm.svg" alt="MongoDB Logo"></div>
+                        <div class="title"><p>NPM</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="./assets/icons/icon_default.svg" alt="Default Logo"></div>
+                        <div class="title"><p>Default</p></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Blocks for shortcuts to next or previous content -->
+            <div id="previous" class="bypass">
+                <a href="#" title="Aller à la page" class="holder">
+                    <span class="cursor">&nbsp;</span>
+                    <span class="label">Page précédente</span>
+                </a>
+            </div>
+            <div id="next" class="bypass">
+                <a href="#" title="Aller à la page" class="holder">
+                    <span class="cursor">&nbsp;</span>
+                    <span class="label">Page suivante</span>
+                </a>
+            </div>
+
+        </main>
+
+        <!-- Page footer -->
+        <footer id="uifoot">
+
+            <!-- Container for principal elements in footer -->
+            <div class="headline">
+                <div>
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="./assets/trademark/sasstemplate_icon_wt.svg" alt="Icon Sass Template"></span>
+                        <span class="title">SassTemplate</span>
+                    </a>
+                    <p>Example de template avec Sass</p>
+                </div>
+
+                <!-- Social reference links -->
+                <nav class="socialmenu">
+                    <h3 class="blind">Menu social</h3>
+                    <ul>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
+                                <span class="tip top">Profil Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
+                                <span class="tip top">Profil Bitbucket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
+                                <span class="tip top">Profil GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_behance_bl.svg" alt="Logo Behance" width="28" height="28"></span>
+                                <span class="tip top">Profil Behance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Container for bottom navigation : Currently doesn't allow 'expanded navigation' -->
+            <div class="navigation">
+
+                <!-- Secondary menu -->
+                <nav class="secondmenu">
+                    <h3>Menu secondaire</h3>
+                    <ul>
+                        <li>
+                            <a href="./unavailable.html" title="Aller sur la page">Unavailable</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Aller sur la page">Nowhere D</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Aller sur la page">Nowhere E</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Author signature -->
+            <div id="author">
+                <p>Développé par <strong>Elodie Bayet © 2020 - 2021</strong> - Tous droits réservés</p>
+            </div>
+        </footer>
+    </body>
+</html>

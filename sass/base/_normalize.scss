@@ -1,0 +1,65 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+/*
+	Normalize Elements
+*/
+
+body { 
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: 100%;
+	min-height: 100vh;
+    &, & *, & *::before, & *::after {
+        margin: 0;
+	    padding: 0;
+	    box-sizing: border-box;
+    }
+}
+
+li { 
+	list-style: none;
+}
+
+abbr, button, select,
+a, a:link, a:visited, a:hover, a:focus, a:active { 
+	text-decoration: none;
+}
+
+button, img, hr, iframe,
+fieldset, input, input:invalid, textarea, textarea:invalid, select, 
+a img, a:link img, a:visited img, a:hover img, a:focus img, a:active img { 
+	border: none;
+}
+
+input:invalid, textarea:invalid{
+	box-shadow: none;
+}
+
+abbr, button, img, hr, iframe,
+fieldset, input, input:invalid, textarea, textarea:invalid, select,
+a, a:link, a:visited, a:hover, a:focus, a:active,
+a img, a:link img, a:visited img, a:hover img, a:focus img, a:active img {
+	outline: 0;
+}
+
+button:not(.disabled):hover,
+input[type="submit"]:not(:disabled):hover {
+	cursor: pointer;
+}
+
+button, select {
+	text-transform: none;
+}
+
+img { 
+	width: 100%;
+	height: auto;
+}
+
+hr {
+	margin: 24px 0 36px;
+}

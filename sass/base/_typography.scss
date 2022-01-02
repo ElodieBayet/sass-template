@@ -1,0 +1,108 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+@use '../utils/index' as kit; 
+
+/*
+	Typography & text marges
+*/
+
+/* Font-face and familly Specific Assignations */
+html {
+	font-family: Verdana, sans-serif;
+	font-size: .625em;
+}
+
+.headline {
+	p {
+		@extend %resagnicto-italic;
+	}
+	.title {
+		@extend %resagnicto-bold;
+	}
+}
+
+.navigation, .tooltip .tip, .bypass .label {
+	@extend %resagnicto-bold;
+}
+
+#uifoot h3 {
+	@extend %resagnicto;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+
+#author {
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+	text-align: center;
+}
+
+/* Main Text/Elements Flow Assignations */
+main {
+	h1, h2, h3, h4, h5 {
+		@extend %resagnicto-bold;
+		letter-spacing: .1rem;
+	}
+	h6 {
+		@extend %resagnicto;
+		letter-spacing: .15rem;
+	}
+	h1 {
+		font-size : 3.6rem;
+		line-height: 1;
+	}
+	h2 {
+		font-size: 2.7rem;
+		line-height: 1.5;
+		margin-top: 24px;
+	}
+	h3 {
+		font-size: 2.1rem;
+		line-height: 1.5;
+		margin-top: 18px;
+	}
+	h4, noscript {
+		font-size: 1.8rem;
+		line-height: 1.5;
+		margin-top: 12px;
+	}
+	h5, h6,
+	p, li, time, button,
+	label, input, select, textarea {
+		font-size: 1.4rem;
+		line-height: 1.75;
+		margin-top: 9px;
+	}
+	figure {
+		margin-top: 18px;
+	}
+	figcaption {
+		font-size: 1.2rem;
+		line-height: 1.75;
+		font-style: italic;
+		margin-top: 6px;
+	}
+	pre {
+		font-size: 1.4rem;
+		line-height: 1;
+		margin-top: 9px;
+	}
+	small {
+		font-size: 86%; /* ± 12.04px */
+	}
+	sup {
+		font-size: 72%; /* ± 10.08px */
+		vertical-align: super;
+		text-transform: lowercase !important; /* force to lower */
+	}
+	samp {
+		font-size: 1.2rem;
+		line-height: 1;
+		display: block;
+	}
+}

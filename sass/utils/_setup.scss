@@ -1,0 +1,20 @@
+/*
+    Global Configuration
+    (!) avoid exessive and useless declarations, and limit CSS size files by the way
+    (!) configure urls for external resources
+*/
+
+/*
+    Constants
+*/
+
+/* Does complete URL required for 'assets' ? */
+$dev: true;
+$assets: '';
+@if $dev { $assets: '../../assets'; }
+
+/* Does any navigation has submenu list ? */
+$navigation-expand: true;
+
+/* Does Graphic Design display Shadowed-Edge on Main U-Interface Header ? */
+$edge: true;

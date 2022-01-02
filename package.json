@@ -1,0 +1,30 @@
+{
+  "name": "sass-template",
+  "version": "1.0.1",
+  "description": "Example of Sass development",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npm-run-all --parallel watch:*",
+    "watch:base": "sass --watch ./sass/base.scss:./public/css/base.css -w --style expanded",
+    "watch:components": "sass --watch ./sass/components.scss:./public/css/components.css -w --style expanded",
+    "watch:theme": "sass --watch ./sass/theme.scss:./public/css/theme.css -w --style expanded",
+    "watch:pages": "sass --watch ./sass/pages:./public/css/ -w --style expanded",
+    "dist": "npm-run-all --sequential compile:*",
+    "compile:base": "sass --no-source-map ./sass/base.scss:./_dist/base-min.css --style compressed",
+    "compile:components": "sass --no-source-map ./sass/components.scss:./_dist/components-min.css --style compressed",
+    "compile:theme": "sass --no-source-map ./sass/theme.scss:./_dist/theme-min.css --style compressed",
+    "compile:pages": "sass --no-source-map ./sass/pages:./_dist --style compressed"
+  },
+  "keywords": [
+    "Sass",
+    "CSS",
+    "HTML",
+    "JavaScript"
+  ],
+  "author": "Elodie Bayet",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
