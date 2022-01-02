@@ -12,22 +12,22 @@ Le but n'est pas de fournir publiquement un _modèle_ ou un _template_ intégrab
 ---
 
 ## Sommaire 
-0. [0 - Présentation](#0---presentation)
-    * [0.0 - Objectifs](#0.0---objectifs)
-    * [0.1 - Contenu](#0.1---contenu)
-    * [0.2 - Évolution](#0.2---evolution)
-    * [0.3 - Utilisation](#0.3---utilisation)
-1. [1 - Démarrage](#1---demarrage)
-    * [1.0 - Prérequis](#1.0---prerequis)
-    * [1.1 - Installation](#1.1---installation)
-    * [1.2 - Lancement](#1.2---lancement)
-2. [2 - Structure](#2---description-structurelle)
-    * [2.0 - Dossiers et fichiers](#2.0---dossiers-et-fichiers)
-    * [2.1 - Document HTML](#2.1---document-html)
-3. [3 - Méthodologie](#3---methodologie)
-    * [3.0 - Développement](#3.0---developpement)
-    * [3.1 - Complilation](#3.1---compilation)
-4. [4 - Remarques complémentaires](#4---remarques-complementaires)
+0. [Présentation](#0---présentation)
+    * [0.0 - Objectifs](#00---objectifs)
+    * [0.1 - Contenu](#01---contenu)
+    * [0.2 - Évolution](#02---évolution)
+    * [0.3 - Utilisation](#03---utilisation)
+1. [Démarrage](#1---démarrage)
+    * [1.0 - Prérequis](#10---prérequis)
+    * [1.1 - Installation](#11---installation)
+    * [1.2 - Lancement](#12---lancement)
+2. [Structure](#2---structure)
+    * [2.0 - Dossiers et fichiers](#20---dossiers-et-fichiers)
+    * [2.1 - Document HTML](#21---document-html)
+3. [Méthodologie](#3---méthodologie)
+    * [3.0 - Développement](#30---développement)
+    * [3.1 - Complilation](#31---compilation)
+4. [Remarques](#4---remarques)
 
 ---
 
