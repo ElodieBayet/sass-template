@@ -94,7 +94,7 @@ $brand-iconset: (
     $w: $size * map-get($ui-iconsize, width);
     $h: $size * map-get($ui-iconsize, height);
     // -
-    background-image: url('https://www.elodiebayet.com/store/ui/navigation_icons_bl.svg'); // 176px / 1760px
+    background-image: url('https://www.elodiebayet.com/store/interface/navigation_icons_bl.svg'); // 176px / 1760px
     background-repeat: no-repeat;
     background-size: $w $h;
 }
