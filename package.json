@@ -10,10 +10,10 @@
     "watch:theme": "sass --watch ./sass/theme.scss:./public/css/theme.css -w --style expanded",
     "watch:pages": "sass --watch ./sass/pages:./public/css/ -w --style expanded",
     "dist": "npm-run-all --sequential compile:*",
-    "compile:base": "sass --no-source-map ./sass/base.scss:./_dist/base-min.css --style compressed",
-    "compile:components": "sass --no-source-map ./sass/components.scss:./_dist/components-min.css --style compressed",
-    "compile:theme": "sass --no-source-map ./sass/theme.scss:./_dist/theme-min.css --style compressed",
-    "compile:pages": "sass --no-source-map ./sass/pages:./_dist --style compressed"
+    "compile:base": "sass --no-source-map ./sass/base.scss:./dist/base.min.css --style compressed",
+    "compile:components": "sass --no-source-map ./sass/components.scss:./dist/components.min.css --style compressed",
+    "compile:theme": "sass --no-source-map ./sass/theme.scss:./dist/theme.min.css --style compressed",
+    "compile:pages": "sass --no-source-map ./sass/pages:./dist --style compressed"
   },
   "keywords": [
     "Sass",

@@ -6,9 +6,6 @@ _notes/
 dist/
 dist_expand/
 dist_simple/
-_dist/
-_dist_menu_compact/
-_dist_menu_expanded/
 
 # Files
 *.log

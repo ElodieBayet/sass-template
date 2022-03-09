@@ -14,7 +14,7 @@ $assets: '';
 @if $dev { $assets: '../../assets'; }
 
 /* Does any navigation has submenu list ? */
-$navigation-expand: true;
+$navigation-expand: false;
 
 /* Does Graphic Design display Shadowed-Edge on Main U-Interface Header ? */
 $edge: true;

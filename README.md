@@ -212,7 +212,7 @@ La compilation – via `dev` ou `dist` – génère au minimum 3 fichiers _.css_
 1. `npm run dev` : lance la compilation observée en temps réelle et en parallèle des fichiers ciblés par la directive `watch:*`. Ceux-ci demeurent _étendus_ et _mappés_ pour faciliter la lecture du résultat si besoin. S'utilise pendant qu'on travaille sur le projet.
 2. `npm run dist` : lance la compilation séquentielle des fichiers ciblés par la directive `compile:*`. Ceux-ci sont _minimifiés_ et _non-mappé_. S'utilise à la fin, lorsqu'on veut exploiter les résultats CSS dans une intégration Fron-End.
 
-La sortie de compilation pour le mode `dev` se fait dans le dossier _/public/css_. Et la sortie de compilation du mode `dist` se fait dans le dossier *_dist/*.
+La sortie de compilation pour le mode `dev` se fait dans le dossier _/public/css_. Et la sortie de compilation du mode `dist` se fait dans le dossier *dist/*.
 
 ---
 
