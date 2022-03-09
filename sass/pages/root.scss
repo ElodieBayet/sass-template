@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2022.03
+	Origin :: Belgium, EU
+*/
+
+/*
+    Copied from SASS Template for independant page : App' Root
+*/
+
+/* Fonts */
+@font-face {
+	font-family: "Resagnicto Italic";
+	font-style: italic;
+	font-weight: 400;
+	src: url('https://www.elodiebayet.com/store/fonts/resagnicto-italic.eot'); /* IE9 Compat Modes */
+	src: local('Resagnicto Italic'), local('Resagnicto-Italic'),
+		url('https://www.elodiebayet.com/store/fonts/resagnicto-italic.woff2') format('woff2'), /* Super Modern Browsers */
+		url('https://www.elodiebayet.com/store/fonts/resagnicto-italic.woff') format('woff'); /* Modern Browsers */
+	font-display: fallback;
+}
+@font-face {
+	font-family: "Resagnicto Bold";
+	font-style: normal;
+	font-weight: 600;
+	src: url('https://www.elodiebayet.com/store/fonts/resagnicto-bold.eot'); /* IE9 Compat Modes */
+	src: local('Resagnicto Bold'), local('Resagnicto-Bold'),
+		url('https://www.elodiebayet.com/store/fonts/resagnicto-bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('https://www.elodiebayet.com/store/fonts/resagnicto-bold.woff') format('woff'); /* Modern Browsers */
+	font-display: fallback;
+}
+
+/* Normalize */
+html {
+	font-family: Verdana, sans-serif;
+	font-size: .625em;
+}
+
+body, body *, body *::before, body *::after { 
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body { 
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: 100%;
+	min-height: 100vh;
+	color: rgb(255,255,255);
+    background-color: rgb(36,36,40);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li { 
+	list-style: none;
+}
+
+a, a:link, a:visited, a:hover, a:focus, a:active{ 
+	text-decoration: none;
+}
+
+img, button, a img, a:link img, a:visited img, a:hover img, a:focus img, a:active img { 
+	border: 0 none;
+}
+
+button, img, a, a:link, a:visited, a:hover, a:focus, a:active,
+a img, a:link img, a:visited img, a:hover img, a:focus img, a:active img {
+	outline: 0;
+}
+
+img { 
+	width: 100%;
+	height: auto;
+}
+
+.blind{
+    font-size: 0.1rem !important; 
+	line-height: 0.1rem !important;
+	padding: 0 !important; 
+	margin: 0 !important; 
+	top: 0 !important; 
+	left: -99999px !important;
+	position: absolute !important; 
+	display: inline !important;
+	overflow: hidden !important;
+	z-index: 1 !important;
+	white-space: nowrap !important;
+}
+
+
+/* Typography */
+h2, .applogo .title, nav li {
+    font-family: "Resagnicto Bold", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: .1rem;
+}
+.applogo + p {
+    font-family: "Resagnicto Italic", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+h2 {
+	font-size: 1.6rem;
+	line-height: 1.75;
+	letter-spacing: .15rem;
+	text-transform: uppercase;
+}
+
+nav li {
+    font-size: 1.4rem;
+    line-height: 1.75;
+    margin: 24px 24px 0;
+}
+
+/* User Interface */
+main {
+	text-align: center;
+    width: 100vw;
+    max-width: 520px;
+    padding: 0 24px;
+	h2 {
+		color: rgb(186,186,191);
+		background-color: transparent;
+	}
+}
+
+/* Elements */
+.applogo {
+    position: relative;
+	display: inline-block;
+	> span {
+        -webkit-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+		white-space: nowrap;
+		display: inline-block;
+	}
+	.icon {
+		margin-left: -6vw;
+        width: 12vw;
+		left: 50%;
+		position: absolute;
+	}
+    .title {
+        font-size: 10vw;
+        line-height: 20vw;
+        color: rgb(83,83,89);
+        text-transform: lowercase;
+    }
+    &:hover {
+        .icon {
+            opacity: .1;
+        }
+        .title {
+            color: rgb(18,190,213);
+        }
+    }
+    + p {
+		font-size: 3.4vw;
+		letter-spacing: .1rem;
+        color: rgb(212,212,216);
+        padding: 0 0 18px 0; 
+		line-height: 1.75;
+    }
+    @media (min-width: 520px) {
+        .icon {
+            margin-left: -30px;
+		    width: 60px;
+        }
+        .title {
+            font-size: 4.2rem;
+            line-height: 9.4rem;
+        }
+        + p {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+nav {
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+    li a {
+        color: rgb(11,11,12);
+        background-color: rgb(240,240,242);
+        -webkit-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+        padding: 4px 12px 3px;
+        display: inline-block;
+        &:hover {
+            color: rgb(0,0,0);
+            background-color: #12bed5;
+        }
+        
+    }
+}
+
+/* Author */
+#author {
+	text-align: center;
+	margin-top: 24px;
+}
+#author p {
+    color: rgb(186,186,191);
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+}

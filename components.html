@@ -41,47 +41,38 @@
 					<nav class="mainmenu">
 						<ul>
 							<li>
-                                <a href="./" title="Aller sur la page">Home</a>
-                            </li>
-                            <li>
-                                <a href="./layouts.html" title="Aller sur la page">Layouts</a>
+                                <a href="./base.html" title="Aller sur la page">Base</a>
                             </li>
                             <li>
                                 <a href="./components.html" title="Aller sur la page" class="selected">Components</a>
                             </li>
+                            <li class="sub">
+                                <a href="./layouts.html" title="Aller sur la page ou déployer le sous-menu">Layouts</a>
+                                <ul>
+                                    <li><a href="#" title="Aller sur la page">Nowhere A</a></li>
+                                    <li><a href="#" title="Aller sur la page">Nowhere B</a></li>
+                                    <li><a href="#" title="Aller sur la page">Nowhere C</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
 
-                    <!-- Social references -->
-                    <nav class="socialmenu">
-                        <h3 class="blind">Menu social</h3>
+                    <!-- Languages menu -->
+                    <nav class="langmenu">
                         <ul>
                             <li>
-                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
-                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
-                                    <span class="tip top">Profil Linked In</span>
+                                <a href="#" title="Change the language" class="selected">
+                                    <abbr title="Français">Fra</abbr>
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
-                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
-                                    <span class="tip top">Profil Bitbucket</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
-                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
-                                    <span class="tip top">Profil GitHub</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
-                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_behance_bl.svg" alt="Logo Behance" width="28" height="28"></span>
-                                    <span class="tip top">Profil Behance</span>
+                                <a href="#" title="Change the language">
+                                    <abbr title="English">Eng</abbr>
                                 </a>
                             </li>
                         </ul>
                     </nav>
+
                 </div>
 			</div>
             
@@ -484,6 +475,22 @@
             <!-- Container for bottom navigation : Currently doesn't allow 'expanded navigation' -->
             <div class="navigation">
 
+                <!-- Principal menu -->
+                <nav class="mainmenu">
+                    <h3>Menu Principal</h3>
+                    <ul>
+                        <li>
+                            <a href="./base.html" title="Aller sur la page" class="selected">Base</a>
+                        </li>
+                        <li>
+                            <a href="./components.html" title="Aller sur la page">Components</a>
+                        </li>
+                        <li>
+                            <a href="./layouts.html" title="Aller sur la page">Layouts</a>
+                        </li>
+                    </ul>
+                </nav>
+
                 <!-- Secondary menu -->
                 <nav class="secondmenu">
                     <h3>Menu secondaire</h3>
@@ -496,6 +503,23 @@
                         </li>
                         <li>
                             <a href="#" title="Aller sur la page">Nowhere E</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Languages menu -->
+                <nav class="langmenu">
+                    <h3>Menu linguistique</h3>
+                    <ul>
+                        <li>
+                            <a href="#" title="Change the language" class="selected">
+                                <abbr title="Français">Fra</abbr>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Change the language">
+                                <abbr title="English">Eng</abbr>
+                            </a>
                         </li>
                     </ul>
                 </nav>
