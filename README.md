@@ -1,25 +1,24 @@
-# SASS Template :: Exemple de développement avec SASS
+# SASS Template
 
 Date | Reviewed | Purpose | Discipline | Example
 ---- | -------- | ------- | ---------- | -------
 2020.04 | 2021.09 | Pedagogy | HTML/CSS | [Sass-Template](https://demo.elodiebayet.com/sass-template)
 
 
-## **Avant-propos important**
+## **Avant-propos**
 
-Le but n'est pas de fournir publiquement un _modèle_ ou un _template_ intégrable, mais bien de montrer **comment développer quelque chose de similaire** en se servant de ce projet comme exemple de départ. Il n'y aura pas de _versions ultérieurs_, ce projet ne va pas _évoluer_ – sauf corrections bugs, erreurs, coquilles laissés par mégarde.
+Le but est de montrer **comment développer une application web basique**. Il ne s'agit pas d'un _modèle_ ni d'un _template_ intégrable mais bien **d'un simple exemple**. Il n'y aura pas de _versions ultérieures_ – sauf corrections de bugs, d'erreurs, ou de coquilles laissés par mégarde – ce projet ne va pas _évoluer_.
 
 ---
 
 ## Sommaire 
 0. [Présentation](#0---présentation)
     * [0.0 - Objectifs](#00---objectifs)
-    * [0.1 - Contenu](#01---contenu)
-    * [0.2 - Évolution](#02---évolution)
-    * [0.3 - Utilisation](#03---utilisation)
+    * [0.1 - Évolution](#01---évolution)
+    * [0.2 - Exploitation](#02---exploitation)
 1. [Démarrage](#1---démarrage)
     * [1.0 - Prérequis](#10---prérequis)
-    * [1.1 - Installation](#11---installation)
+    * [1.1 - Installations](#11---installations)
     * [1.2 - Lancement](#12---lancement)
 2. [Structure](#2---structure)
     * [2.0 - Dossiers et fichiers](#20---dossiers-et-fichiers)
@@ -48,46 +47,45 @@ Exemple d'élaboration d'un template **Sass** basique, utilisable pour des démo
 Sauf un quelconque défaut laissé par mégarde, ce projet ne doit pas évoluer vers une modélisation plus avancée. Il constitue **une ressource pédagogique** de base destinée à l'apprentissage de concepts parfois obscurs pour des néophytes.
 
 
-### 0.2 - Utilisation
+### 0.2 - Exploitation
 
 Ce projet n'est utilisable que dans un cadre d'apprentissage individuel et privé. Il ne convient pas pour une utilisation publique ou professionnelle.
 
 #### Images
 
-Certaines images employées dans ce projet – sauf celles listées dans **"Exceptions"** – sont soumises aux droits d'auteur et protégées par la [Sofam](https://www.sofam.be/) – auteure n° 72/55. Aucune reproduction, communication publique, réutilisation partielle ou entière des images **n'est autorisée**.
-
-#### Exceptions
-
-* les logos des technologies employés sur la page _Components_.
+Les images employées dans ce projet et répertoriées dans le dossier `assets/` sont soumises aux droits d'auteur et protégées par la [Sofam](https://www.sofam.be/) – auteure n° 72/55. Aucune reproduction, communication publique, réutilisation partielle ou entière des images **n'est autorisée**.
 
 ---
 
 ## 1 - Démarrage
 
-Le projet requiert divers éléments et une certaine configuration pour fonctionner.
+Installations et configurations nécessaires au bon fonctionnement du projet.
 
 
 ### 1.0 - Prérequis
 
 * Un gestionnaire de packages et d'environnement tel que **[Node.js / NPM](https://nodejs.org/en/download/)**
-* Le **[CLI de SASS](https://sass-lang.com/documentation/cli/dart-sass)** à installer globalement via `npm install -g sass`
 * Un outil de server local léger tel que **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** (optionel)
 
 
-### 1.1 - Installation
+### 1.1 - Installations
 
-L'utilitaire **[npm-run-all](https://www.npmjs.com/package/npm-run-all)** d'exécution multiple de scripts doit être installer localement dans les dépendances de développement.
+Le **[CLI de SASS](https://sass-lang.com/documentation/cli/dart-sass)**, globalement :
 
 ```sh
-npm install npm-run-all --save-dev
+npm install -g sass
+```
 
-# Ou, si vous avez cloné ce projet
-npm install
+L'utilitaire **[npm-run-all](https://www.npmjs.com/package/npm-run-all)** d'exécution multiple de scripts, localement dans les dépendance de développement :
+
+```sh
+npm install --save-dev npm-run-all
 ```
 
 ### 1.2 - Lancement
 
-Lancer `Go Live` (optionel), et la commande qui surveille les fichiers Sass en cours de développement
+Lancement de `Go Live` (si disponible). Puis exécution de la commande qui surveille les fichiers Sass en cours de développement :
+
 ```sh
 npm run dev
 ```
@@ -96,69 +94,61 @@ npm run dev
 
 ## 2 - Structure
 
-Une structure spécifique est établie pour chaque partie, laquelle est utile à découvrir pour mieux comprendre le projet et sa résolution.
+Descriptions et schémas des différentes structures pour la résolution du projet.
 
 
 ### 2.0 - Dossiers et fichiers
 
-Il n'y a aucune _librairie tierce_ dans ce projet.
-
-* `assets/` images, icônes, logos, etc.
-    - `fig/`
-    - `icons/`
-    - `trademark/`
-* `public/` code source frontend
-    - `css/` résultats compliés en CSS _non minifiées_
+* `assets/` _ressources statiques (png, jpg, svg)_
+    - `figures/` _images ou photos générales pour intégration_
+    - `icons/` _icônes, symboles, logos, etc. indépendant de la marque_
+    - `trademark/` _logos, icônes, etc. propre à la marque_
+* `public/` _code source frontend (css, js)_
+    - `css/` _résultats compliés en CSS "non-minifiées"_
     - `js/`
-* `sass/` code source Sass
+* `sass/` _code source Sass_
     - `base/`
     - `components/`
     - `pages/`
     - `themes/`
     - `utils/`
-* `_manifest.json` en guise d'exemple (optionnel), à préfixer avec le nom de l'application
-* `components.html`
-* `index.html`
-* `layout.html`
-* `unavailable.html`
+* `_manifest.json` _manifest de l'application_
 
 
 ### 2.1 - Document HTML
 
 La structure HTML minimale liée au template. Les sections `<header id="uihead">` et `<footer id="uifoot">` sont partiellement modulables mais strictes en terme de structure.
 
-```
-<header id="uihead">
-    .inner
-        .headline
-            .applogo
-                .icon
-                .title
-            <p> (optionel, si baseline ou sloggan)
-        .navigation[.expand (optionel, si sous-menu)]
-            <nav class="mainmenu">
-            <nav class="langmenu|socialmenu"> (optionel)
-    .egde (optionel, 2x si effet design)
-    <button>
-<main>
-    <header>
-        <h1>
-        .share
-    <section> | <article> | <div> | <*>
-        <*>
-<footer id="uifoot">
-    .headline
-        <div>
-            .applogo
-                .icon
-                .title
-            <p> (optionel, si baseline ou sloggan)
-        <nav class="socialmenu"> (optionel)
-    .navigation (optionel)
-        <nav class="mainmenu">
-        <nav class="secondmenu"> (optionel)
-        <nav class="langmenu"> (optionel)
-```
+* `<header#uihead>`
+    - `.inner`
+        - `.headline`
+            - `.applogo`
+                - `.icon`
+                - `.title`
+            - `<p>` (optionel, si baseline ou sloggan)
+        - `.navigation`[`.expand` (optionel)]
+            - `<nav.mainmenu>`
+            - `<nav.langmenu>`|`<nav.socialmenu>` (optionel)
+    - `.egde` (optionel, 2x si effet design)
+    - `<button>`
+* `<main>`
+    - `<header>`
+        - `<h1>`
+        - `.share` (optionnel)
+    - `<section>` | `<article>` | `<div>` | {n} blocks sections par thématiques liées à la page
+        - `<div>` {n} boites comportementales ou dédiées
+* `<footer#uifoot>`
+    - `.headline`
+        - `<div>`
+            - `.applogo`
+                - `.icon`
+                - `.title`
+            - `<p>` (optionel, si baseline ou sloggan)
+        - `<nav.socialmenu>` (optionel)
+    - `.navigation` (optionel)
+        - `<nav.mainmenu>`
+        - `<nav.secondmenu>` (optionel)
+        - `<nav.langmenu>` (optionel)
 
 ---
 
@@ -210,7 +200,7 @@ Certains fichiers méritent un brève explication. Pour le reste, la décomposit
 La compilation – via `dev` ou `dist` – génère au minimum 3 fichiers _.css_ distincts. Un pour chaque préoccupation à savoir _base_, _components_ et _theme_. Lesquels représentent chacun un dossier éponyme où figure un fichier *_index.scss* qui exporte les fichiers _.scss_ concernés. Seul le dossier _pages/_ contient des feuilles compilées individuellement et sans distinction effective. Quant au dossier _utils_ sont contenu n'est pas compilé en _.css_, il est simplement importé pendant la phase de compilation pour permettre à **Sass** d'implémenter les différentes zones variables ou d'appliquer certaines directives.
 
 1. `npm run dev` : lance la compilation observée en temps réelle et en parallèle des fichiers ciblés par la directive `watch:*`. Ceux-ci demeurent _étendus_ et _mappés_ pour faciliter la lecture du résultat si besoin. S'utilise pendant qu'on travaille sur le projet.
-2. `npm run dist` : lance la compilation séquentielle des fichiers ciblés par la directive `compile:*`. Ceux-ci sont _minimifiés_ et _non-mappé_. S'utilise à la fin, lorsqu'on veut exploiter les résultats CSS dans une intégration Fron-End.
+2. `npm run dist` : lance la compilation séquentielle des fichiers ciblés par la directive `compile:*`. Ceux-ci sont _minimifiés_ et _non-mappés_. S'utilise à la fin, lorsqu'on veut exploiter les résultats CSS dans une intégration Fron-End.
 
 La sortie de compilation pour le mode `dev` se fait dans le dossier _/public/css_. Et la sortie de compilation du mode `dist` se fait dans le dossier *dist/*.
 
