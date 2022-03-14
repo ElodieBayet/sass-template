@@ -1,4 +1,3 @@
-'use strict';
 /**
  * @author :: Elodie Bayet
  *   @role :: Fullstack Web Developer
@@ -44,8 +43,8 @@ class GUIServices {
 
     /**
      * Display error message
-     * @param {String} name Name of the module that crashed
-     * @param {(Object|Null)} container HTML element where insert info. Will be `header main` if omitted
+     * @param {string} name Name of the module that crashed
+     * @param {(Object|null)} container HTML element where insert info. Will be `header main` if omitted
      */
     moduleError = (name, container = null) => {
         if (container) {

@@ -1,4 +1,3 @@
-'use strict';
 /**
  * @author :: Elodie Bayet
  *   @role :: Fullstack Web Developer
@@ -47,7 +46,7 @@ class Opener {
     
     /**
      * Compute height of receptor's children
-     * @param {Boolean} compute Order height computing or turn it to 1px
+     * @param {boolean} compute Order height computing or turn it to 1px
      */
     setHeight = compute => {
         let height = 1;

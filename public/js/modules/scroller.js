@@ -1,4 +1,3 @@
-'use strict';
 /**
  * @author :: Elodie Bayet
  *   @role :: Fullstack Web Developer
