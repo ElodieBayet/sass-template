@@ -1,7 +1,7 @@
 {
   "name": "sass-template",
-  "version": "1.0.1",
-  "description": "Example of Template developed with Sass",
+  "version": "1.0.2",
+  "description": "Example of a Front-End template with Sass",
   "main": "index.html",
   "scripts": {
     "dev": "npm-run-all --parallel watch:*",
