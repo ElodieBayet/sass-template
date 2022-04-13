@@ -271,19 +271,19 @@ button.button, button.tab {
 		filter: blur(2px);
 	}
     .spin {
-        width: 72px;
-        height: 72px;
+        width: 48px;
+        height: 48px;
         top: 50%;
         left: 50%;
-        margin-top: -36px;
-        margin-left: -36px;
+        margin-top: -24px;
+        margin-left: -24px;
         position: absolute;
         background-repeat: no-repeat;
-        background-image: radial-gradient( kit.$lighten, change-color(kit.$origin, $alpha: .75), transparent, transparent, change-color(kit.$lighten, $alpha: .75), change-color(kit.$lighten, $alpha: .9) );
-        border-top: 12px double rgba(244,240,240, .9);
-        border-bottom: 12px double rgba(244,240,240, .9);
-        border-right: 12px double rgba(191,186,186, .9);
-        border-left: 12px double rgba(191,186,186, .9);
+        background-image: radial-gradient(kit.$origin, kit.$lighten, transparent, transparent, transparent, transparent);
+        border-top: 8px double rgba(244,240,240, .9);
+        border-bottom: 8px double rgba(244,240,240, .9);
+        border-right: 8px double rgba(191,186,186, .9);
+        border-left: 8px double rgba(191,186,186, .9);
         border-radius: 50%;
         animation: Spin 2s linear infinite;
     }
