@@ -1,6 +1,6 @@
 {
   "name": "sass-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Example of a Front-End template with Sass",
   "main": "index.html",
   "scripts": {

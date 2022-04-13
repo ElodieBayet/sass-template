@@ -2,7 +2,7 @@
 
 Date | Reviewed | Purpose | Discipline | Example
 ---- | -------- | ------- | ---------- | -------
-2020.04 | 2021.09 | Pedagogy | HTML/CSS | [Sass-Template](https://demo.elodiebayet.com/sass-template)
+2020.04 | 2022.04 | Pedagogy | HTML/CSS | [Sass-Template](https://demo.elodiebayet.com/sass-template)
 
 
 ## **Avant-propos**
@@ -23,9 +23,9 @@ Le but est de montrer **comment développer une application web basique**. Il ne
 2. [Structure](#2---structure)
     * [2.0 - Dossiers et fichiers](#20---dossiers-et-fichiers)
     * [2.1 - Document HTML](#21---document-html)
-3. [Méthodologie](#3---méthodologie)
-    * [3.0 - Développement](#30---développement)
-    * [3.1 - Complilation](#31---compilation)
+3. [Développement](#3---développement)
+    * [3.0 - Décomposition](#30---décomposition)
+    * [3.1 - Compilation](#31---compilation)
 4. [Remarques](#4---remarques)
 
 ---
@@ -65,7 +65,7 @@ Installations et configurations nécessaires au bon fonctionnement du projet.
 ### 1.0 - Prérequis
 
 * Un gestionnaire de packages et d'environnement tel que **[Node.js / NPM](https://nodejs.org/en/download/)**
-* Un outil de server local léger tel que **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)** (optionel)
+* Un outil de server local léger tel que **[Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)**
 
 
 ### 1.1 - Installations
@@ -84,11 +84,15 @@ npm install --save-dev npm-run-all
 
 ### 1.2 - Lancement
 
-Lancement de `Go Live` (si disponible). Puis exécution de la commande qui surveille les fichiers Sass en cours de développement :
+Lancer la commande de compilation surveillée :
 
 ```sh
 npm run dev
 ```
+
+Ensuite, lancer `Go Live`. 
+
+Enfin, se rendre sur `127.0.0.1:5500` (peut varier selon le port).
 
 ---
 
@@ -101,12 +105,12 @@ Descriptions et schémas des différentes structures pour la résolution du proj
 
 * `assets/` _ressources statiques (png, jpg, svg)_
     - `figures/` _images ou photos générales pour intégration_
-    - `icons/` _icônes, symboles, logos, etc. indépendant de la marque_
-    - `trademark/` _logos, icônes, etc. propre à la marque_
+    - `icons/` _icônes, symboles, pictos, etc. indépendants de la marque_
+    - `trademark/` _logos, icônes, etc. propres à la marque_
 * `public/` _code source frontend (css, js)_
-    - `css/` _résultats compliés en CSS "non-minifiées"_
+    - `css/` _résultats compliés en CSS, mappés et étendus_
     - `js/`
-* `sass/` _code source Sass_
+* `sass/` _code source original en Scss_
     - `base/`
     - `components/`
     - `pages/`
@@ -152,57 +156,52 @@ La structure HTML minimale liée au template. Les sections `<header id="uihead">
 
 ---
 
-## 3 - Méthodologie
+## 3 - Développement
 
-La résolution de ce projet s'appuie sur une certaine méthodologie. Pour commencer, il n'y a aucun *vendor*, ni *librairie tierce*. De plus, les spécificités liées au *layouting* sont considérés en tant que *pages* (cf. dossier `pages/`) ; Quant au layout principal, il demeure la préoccupation des traitements communs (cf. dossier `base/`).
+Il n'y a aucun *vendor*, ni *librairie tierce* dans ce projet. Les spécificités liées au _layouting_ sont considérés comme des _pages_ (cf. dossier `pages/`), tandis que le layout principal demeure la préoccupation du traitement commun (cf. fichier `common.scss`). Les fichiers sont donc découpés et classés selon leur préoccupation respective.
 
 
-### 3.0 - Développement
+### 3.0 - Décomposition
 
-Ce template observe le principe des **CSS découpées** en séparant les préoccupations en **3 fichiers finaux**. 
-* la **base** générale et commune
-* les **composants** également communs
-* et **l'esthétique**. 
-Auxquelles peuvent s'ajouter des feuilles respectivement dédiées aux pages et donc à *utilité unique*.
-
-Cette découpe minimale **permet au navigateur de lancer en même temps plusieurs requêtes de faibles tailles** au lieu d'en avoir une seule d'un poid conséquent.
-
-Ce template permet quelques configurations de layout dans le fichier *utils/_setup.css* qui limite des déclarations excessives lorsqu'elles sont inutiles. Ce qui à pour avantage de limiter le poids des fichiers générés. 
-
-#### Décomposition
-
-Certains fichiers méritent un brève explication. Pour le reste, la décomposition respecte la *tradition*.
-
-1. `utils/` ne présente que des modèles, aucune déclaration CSS non-fonctionnelle.
-    - `_setup.scss` activer les soumenus ; activer l'effet *edge* en bordure de menu ; choisir le theme ;
-    - `_index.scss` à importer dans chaque feuille nécessitant ces modèles
-    - ...
-2. `base/`
-    - `_fonts.scss` règles @font-faces
-    - `_normalize_.scss` normalisation des balises
-    - `_typography.scss` titres, textes et paragraphes communs
-    - `_composition.scss` structure et composition communes (*layouting*)
-    - `_index.scss` importé par `base.scss` pour compilation – [!] présente un ordre précis d'import des feuilles susmentionnées.
+1. `utils/` _modèles, variables, mixins, fnctions, etc._
+    - `_utils.scss` _exporte les fichiers pour l'import local_
+    - `_setup.scss` _configuration pour l'interface_
+    - _etc._
+2. `base/` 
+    - `_base.scss` _exporte les fichiers pour la compilation – **!** ordre à respecter_
+    - `_fonts.scss` _règles @font-faces_
+    - `_normalize_.scss` _normalisation de balises_
+    - `_typography.scss` _titres, textes et paragraphes communs_
+    - `_composition.scss` _structure et layout principal_
 3. `components/`
-    - `_classical.scss` stylisation classique d'éléments contenu
-    - `_interactive.scss` stylisation classique d'éléments interactifs
-    - `_advanced.scss` stylisation spéciale d'éléments de contenu et de contenus dédiées
-    - `_index.scss` importé par `components.scss` pour compilation – [!] présente un ordre précis d'import des feuilles susmentionnées.
-4. `pages/`
-    - `(*).scss` sont exploités par leur page HTML éponyme, feuilles directement compilées
-5. `themes/`
-    - `_neptune.scss` theme original lié au template
-    - `_index.scss` importé par `theme.scss` pour compilation.
+    - `_components.scss` _exporte les fichiers pour la compilation – **!** ordre à respecter_
+    - `_classical.scss` _éléments classiques_
+    - `_interactive.scss` _éléments interactifs_
+    - `_advanced.scss` _éléments spécifiques et stylisation avancée_
+4. `pages/` _pages spécifiques ou composants individuels_
+    - `(nom-de-la-page).scss` _layout du composant_
+    - `theme_(nom-de-la-page).scss` _design du composant_
+5. `themes/` _design de base_
+    - `_theme.scss` _exporte les fichiers pour la compilation_
+    - `_original_base.scss` _design thématique pour la base_
+    - `_original_components.scss` _design thématique pour les composants_
+
+Les sous-fichiers sont répartis dans les fichiers :
+* `common.scss` _importe `base/_base.scss` et `components/_components.scss`_
+* `theme.scss` _importe `theme/_theme.scss`_
+* `name-of-module.scss` _importe `pages/_nom-de-la-page.scss` et `pages/_nom-de-la-page.scss`_
+
+Les fichiers ci-dessous constituent des feuilles de styles définitifs :
+* `root.scss`
+* `unavailable.scss`
 
 
 ### 3.1 - Compilation
 
-La compilation – via `dev` ou `dist` – génère au minimum 3 fichiers _.css_ distincts. Un pour chaque préoccupation à savoir _base_, _components_ et _theme_. Lesquels représentent chacun un dossier éponyme où figure un fichier *_index.scss* qui exporte les fichiers _.scss_ concernés. Seul le dossier _pages/_ contient des feuilles compilées individuellement et sans distinction effective. Quant au dossier _utils_ sont contenu n'est pas compilé en _.css_, il est simplement importé pendant la phase de compilation pour permettre à **Sass** d'implémenter les différentes zones variables ou d'appliquer certaines directives.
+Il y a deux modes de compilation :
 
-1. `npm run dev` : lance la compilation observée en temps réelle et en parallèle des fichiers ciblés par la directive `watch:*`. Ceux-ci demeurent _étendus_ et _mappés_ pour faciliter la lecture du résultat si besoin. S'utilise pendant qu'on travaille sur le projet.
-2. `npm run dist` : lance la compilation séquentielle des fichiers ciblés par la directive `compile:*`. Ceux-ci sont _minimifiés_ et _non-mappés_. S'utilise à la fin, lorsqu'on veut exploiter les résultats CSS dans une intégration Fron-End.
-
-La sortie de compilation pour le mode `dev` se fait dans le dossier _/public/css_. Et la sortie de compilation du mode `dist` se fait dans le dossier *dist/*.
+1. `npm run dev` : lance la compilation avec surveilance en parallèle pour le développement, avec les `mapped` et `expanded`. Les fichiers CSS de destination se trouvent dans `public/css/`
+2. `npm run dist` : lance la compilation en séquentiel pour la distribution, avec les option `no mapped source` et `compressed`. Les fichiers CSS de destination se trouvent dans `dist/`
 
 ---
 
