@@ -5,15 +5,17 @@
   "main": "index.html",
   "scripts": {
     "dev": "npm-run-all --parallel watch:*",
-    "watch:base": "sass --watch ./sass/base.scss:./public/css/base.css -w --style expanded",
-    "watch:components": "sass --watch ./sass/components.scss:./public/css/components.css -w --style expanded",
+    "watch:root": "sass --watch ./sass/root.scss:./public/css/root.css -w --style expanded",
+    "watch:unavailable": "sass --watch ./sass/unavailable.scss:./public/css/unavailable.css -w --style expanded",
+    "watch:common": "sass --watch ./sass/common.scss:./public/css/common.css -w --style expanded",
     "watch:theme": "sass --watch ./sass/theme.scss:./public/css/theme.css -w --style expanded",
-    "watch:pages": "sass --watch ./sass/pages:./public/css/ -w --style expanded",
+    "watch:chronographic": "sass --watch ./sass/chronographic.scss:./public/css/chronographic.css -w --style expanded",
     "dist": "npm-run-all --sequential compile:*",
-    "compile:base": "sass --no-source-map ./sass/base.scss:./dist/base.min.css --style compressed",
-    "compile:components": "sass --no-source-map ./sass/components.scss:./dist/components.min.css --style compressed",
+    "compile:root": "sass --no-source-map ./sass/root.scss:./dist/root.min.css --style compressed",
+    "compile:unavailable": "sass --no-source-map ./sass/unavailable.scss:./dist/unavailable.min.css --style compressed",
+    "compile:common": "sass --no-source-map ./sass/common.scss:./dist/common.min.css --style compressed",
     "compile:theme": "sass --no-source-map ./sass/theme.scss:./dist/theme.min.css --style compressed",
-    "compile:pages": "sass --no-source-map ./sass/pages:./dist --style compressed"
+    "compile:chronographic": "sass --no-source-map ./sass/chronographic.scss:./dist/chronographic.min.css --style compressed"
   },
   "keywords": [
     "Sass",

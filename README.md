@@ -164,17 +164,17 @@ Il n'y a aucun *vendor*, ni *librairie tierce* dans ce projet. Les spécificité
 ### 3.0 - Décomposition
 
 1. `utils/` _modèles, variables, mixins, fnctions, etc._
-    - `_utils.scss` _exporte les fichiers pour l'import local_
+    - `_index_.scss` _exporte les fichiers pour l'import local_
     - `_setup.scss` _configuration pour l'interface_
     - _etc._
 2. `base/` 
-    - `_base.scss` _exporte les fichiers pour la compilation – **!** ordre à respecter_
+    - `_index_.scss` _exporte les fichiers pour la compilation – **!** ordre à respecter_
     - `_fonts.scss` _règles @font-faces_
     - `_normalize_.scss` _normalisation de balises_
     - `_typography.scss` _titres, textes et paragraphes communs_
     - `_composition.scss` _structure et layout principal_
 3. `components/`
-    - `_components.scss` _exporte les fichiers pour la compilation – **!** ordre à respecter_
+    - `_index_.scss` _exporte les fichiers pour la compilation – **!** ordre à respecter_
     - `_classical.scss` _éléments classiques_
     - `_interactive.scss` _éléments interactifs_
     - `_advanced.scss` _éléments spécifiques et stylisation avancée_
@@ -182,13 +182,13 @@ Il n'y a aucun *vendor*, ni *librairie tierce* dans ce projet. Les spécificité
     - `(nom-de-la-page).scss` _layout du composant_
     - `theme_(nom-de-la-page).scss` _design du composant_
 5. `themes/` _design de base_
-    - `_theme.scss` _exporte les fichiers pour la compilation_
+    - `_index_.scss` _exporte les fichiers pour la compilation_
     - `_original_base.scss` _design thématique pour la base_
     - `_original_components.scss` _design thématique pour les composants_
 
 Les sous-fichiers sont répartis dans les fichiers :
-* `common.scss` _importe `base/_base.scss` et `components/_components.scss`_
-* `theme.scss` _importe `theme/_theme.scss`_
+* `common.scss` _importe `base/_index.scss` et `components/_index.scss`_
+* `theme.scss` _importe `theme/_index_.scss`_
 * `name-of-module.scss` _importe `pages/_nom-de-la-page.scss` et `pages/_nom-de-la-page.scss`_
 
 Les fichiers ci-dessous constituent des feuilles de styles définitifs :

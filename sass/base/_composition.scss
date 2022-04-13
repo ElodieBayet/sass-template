@@ -5,7 +5,7 @@
 	Origin :: Belgium, EU
 */
 
-@use '../utils/index' as kit;
+@use '../utils/utils' as kit;
 
 /*
 	Composition Management
@@ -118,7 +118,7 @@ nav {
 }
 
 /* Navigation System : expand ? */
-@if kit.$navigation-expand {
+@if kit.$expand {
 	.navigation.expand {
 		@include kit.navigation-expand;
 	}
