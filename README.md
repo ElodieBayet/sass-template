@@ -90,9 +90,7 @@ Lancer la commande de compilation surveillée :
 npm run dev
 ```
 
-Ensuite, lancer `Go Live`. 
-
-Enfin, se rendre sur `127.0.0.1:5500` (peut varier selon le port).
+Ensuite, lancer `Go Live`, puis se rendre à l'adresse `127.0.0.1:5500` (peut varier selon le port) avec un navigateur.
 
 ---
 
@@ -158,7 +156,7 @@ La structure HTML minimale liée au template. Les sections `<header id="uihead">
 
 ## 3 - Développement
 
-Il n'y a aucun *vendor*, ni *librairie tierce* dans ce projet. Les spécificités liées au _layouting_ sont considérés comme des _pages_ (cf. dossier `pages/`), tandis que le layout principal demeure la préoccupation du traitement commun (cf. fichier `common.scss`). Les fichiers sont donc découpés et classés selon leur préoccupation respective.
+Il n'y a aucun _vendor_, ni _librairie tierce_ dans ce projet. Les spécificités liées au _layouting_ sont considérés comme des _pages_ (cf. dossier `pages/`), tandis que le layout principal demeure la préoccupation du traitement commun (cf. fichier `common.scss`). Les fichiers sont donc découpés et classés selon leur préoccupation respective.
 
 
 ### 3.0 - Décomposition
@@ -191,9 +189,9 @@ Les sous-fichiers sont répartis dans les fichiers :
 * `theme.scss` _importe `theme/_index_.scss`_
 * `name-of-module.scss` _importe `pages/_nom-de-la-page.scss` et `pages/_nom-de-la-page.scss`_
 
-Les fichiers ci-dessous constituent des feuilles de styles définitifs :
-* `root.scss`
-* `unavailable.scss`
+Les fichiers ci-dessous constituent des feuilles de styles définitives :
+* `root.scss` _css uniques pour la page racine_
+* `unavailable.scss` _css uniques pour la page d'erreur interne_
 
 
 ### 3.1 - Compilation
