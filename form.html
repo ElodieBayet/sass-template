@@ -146,6 +146,9 @@
                     <form action="#" method="GET" name="default" class="col-50">
 
                         <h3>État normal du formulaire</h3>
+
+                        <!-- Champ caché -->
+                        <input type="hidden" value="valeur test">
                         
                         <!-- Elements side-by-side -->
                         <div class="inline left">
@@ -155,6 +158,21 @@
                         <div class="inline right">
                             <label for="iptNumber">Type <em>Number</em></label>
                             <input type="number" min="1" max="1000" step="1" name="number" id="iptNumber" placeholder="128">
+                        </div>
+                        <!-- Elements side-by-side -->
+                        <div class="inline left">
+                            <label for="iptText">Type <em>Text</em></label>
+                            <input type="text" maxlength="255" name="text" id="iptText" placeholder="Du texte">
+                        </div>
+                        <div class="inline right">
+                            <label for="iptNumber">Type <em>Number</em></label>
+                            <input type="number" min="1" max="1000" step="1" name="number" id="iptNumber" placeholder="128">
+                        </div>
+
+                        <!-- Url -->
+                        <div>
+                            <label for="iptUrl">Type <em>Text</em></label>
+                            <input type="url" maxlength="1024" name="url" id="iptUrl" placeholder="https://...">
                         </div>
                     
                         <!-- Special icon for financial field -->
@@ -264,7 +282,7 @@
                         <!-- Textarea field -->
                         <div>
                             <label for="txtField">Type <em>Textarea</em></label>
-                            <textarea name="textarea" id="txtField" rows="3"></textarea>
+                            <textarea name="textarea" id="txtField" rows="3" required></textarea>
                         </div>
                     
                         <!-- Excute -->

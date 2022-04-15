@@ -75,7 +75,7 @@ main {
 	}
 	h5, h6,
 	p, li, time, button,
-	label, input, select, textarea {
+	label, input:not([type="hidden"]), select, textarea {
 		font-size: 1.4rem;
 		line-height: 1.75;
 		letter-spacing: .1rem;

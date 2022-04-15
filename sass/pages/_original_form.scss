@@ -20,6 +20,7 @@
 	input[type="text"],
 	input[type="email"],
 	input[type="number"],
+	input[type="url"],
 	select,
 	textarea {
 		@content;

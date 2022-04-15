@@ -22,14 +22,15 @@ form {
 	}
 	
 	label,
-	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
+	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type=hidden]),
 	select,
 	textarea {
 		display: block;
 		width: 100%;
+		max-width: 100%;
 	}
 	
-	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
+	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]):not([type=hidden]),
 	textarea {
 		padding: 4px;
 	}
@@ -45,6 +46,7 @@ form {
 			display: inline-block;
 		}
 		&.box:hover,
+		&.slab:hover,
 		&.toggle:hover {
 			cursor: pointer;
 		}
@@ -138,6 +140,9 @@ form {
 			}
 			input {
 				margin-bottom: 0;
+			}
+			+ .inline + .inline {
+				margin-top: 24px;
 			}
 		}
 	}
