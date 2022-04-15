@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr" class="nojs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Page Layout | SASS Template</title>
+    <!-- Styles -->
+        <link href="./public/css/common.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./public/css/theme.css" rel="stylesheet" type="text/css" media="screen">
+        <!-- Form -->
+        <link href="./public/css/form.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Identity and parameters -->
+        <meta name="description" content="Exemple de développement Front-End avec Sass">
+        <meta name="author" content="Elodie Bayet, www.elodiebayet.com">
+        <meta name="copyright" content="Elodie Bayet © 2020">
+        <meta name="theme-color" content="#0c7f8e">
+        <link href="" rel="manifest" type="application/manifest+json">
+        <link href="./assets/trademark/sasstemplate_favicon.png" rel="icon" type="image/png">
+        <!--[if IE]><link href="./assets/trademark/sasstemplate_favicon.ico" rel="shortcut icon" type="image/x-icon" /><![endif]-->
+    <!-- Scripts -->
+        <script type="module" src="./public/js/main.js"></script>
+    </head>
+    <body>
+        
+        <!-- Page header -->
+        <header id="uihead" class="closed">
+			<div class="inner">
+                
+                <!-- Container for principal elements in header -->
+				<div class="headline">
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="./assets/trademark/sasstemplate_icon_wt.svg" alt="Icon Sass Template"></span>
+                        <span class="title">SassTemplate</span>
+                    </a>
+					<p>Example de template avec Sass</p>
+				</div>
+
+                <!-- Container for top navigation -->
+                <div class="navigation expand">
+
+                    <!-- Principal menu -->
+					<nav class="mainmenu">
+						<ul>
+							<li>
+                                <a href="./base.html" title="Aller sur la page">Base</a>
+                            </li>
+                            <li>
+                                <a href="./components.html" title="Aller sur la page">Components</a>
+                            </li>
+                            <li class="sub">
+                                <a href="./layouts.html" title="Aller sur la page ou déployer le sous-menu" class="selected">Layouts</a>
+                                <ul>
+                                    <li><a href="./form.html" title="Aller sur la page">Form</a></li>
+                                    <li><a href="#" title="Aller sur la page">Nowhere A</a></li>
+                                    <li><a href="#" title="Aller sur la page">Nowhere B</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <!-- Social references -->
+                    <nav class="socialmenu">
+                        <h3 class="blind">Menu social</h3>
+                        <ul>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
+                                    <span class="tip top">Profil Linked In</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
+                                    <span class="tip top">Profil Bitbucket</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
+                                    <span class="tip top">Profil GitHub</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                    <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_behance_bl.svg" alt="Logo Behance" width="28" height="28"></span>
+                                    <span class="tip top">Profil Behance</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+			</div>
+            
+            <!-- Design border effects (optional) - (!) Remove them if not used -->
+			<div class="edge">&nbsp;</div>
+			<div class="edge">&nbsp;</div>
+
+            <!-- Button for opening/closing top navigation container -->
+            <button type="button"><span class="blind">Ouvrir le menu</span></button>
+		</header>
+
+        <main>
+
+            <!-- Content header -->
+            <header>
+                <h1>Titre principal</h1>
+                <div class="share">
+                    <ul>
+                        <li>
+                            <a href="#" title="Partager sur Facebook" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_facebook_bl.svg" alt="Icon Facebook" width="32" height="32"></span>
+                                <span class="tip top">Partager sur Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Partager sur Linked In" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_linkedin_bl.svg" alt="Icon Linked in" width="32" height="32"></span>
+                                <span class="tip top">Partager sur Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Partager sur Twitter" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_twitter_bl.svg" alt="Icon Twitter" width="32" height="32"></span>
+                                <span class="tip top">Partager sur Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Envoyer par E-mail" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/share_email_bl.svg" alt="Icon Email" width="32" height="32"></span>
+                                <span class="tip top">Envoyer par Email</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+
+            <!-- If no JavaScript -->
+            <noscript><strong>Le JavaScript n'est pas activé&nbsp;::</strong> Certaines fonctionnalités pourraient être inaccessibles.</noscript>
+
+            <!-- Layout -->
+            <section>
+                <h2>Formulaire et éléments</h2>
+
+                <div class="grid md">
+
+                    <form action="#" method="GET" name="default" class="col-50">
+
+                        <h3>État normal du formulaire</h3>
+                        
+                        <!-- Elements side-by-side -->
+                        <div class="inline left">
+                            <label for="iptText">Type <em>Text</em></label>
+                            <input type="text" maxlength="255" name="text" id="iptText" placeholder="Du texte">
+                        </div>
+                        <div class="inline right">
+                            <label for="iptNumber">Type <em>Number</em></label>
+                            <input type="number" min="1" max="1000" step="1" name="number" id="iptNumber" placeholder="128">
+                        </div>
+                    
+                        <!-- Special icon for financial field -->
+                        <div class="currency">
+                            <label for="iptCurrency">Avec icône</label>
+                            <input type="number" min="1" max="100" step="1" name="currency" id="iptCurrency" placeholder="Pour champ financier">
+                            <span>€</span>
+                        </div>
+                    
+                        <!-- Special value range -->
+                        <div class="value">
+                            <label for="iptValue">Avec valeur</label>
+                            <input type="range" value="0" min="0" max="100" step="10" name="value" id="iptValue">
+                            <span>Résultat...</span>
+                        </div>
+                    
+                        <!-- Select -->
+                        <div>
+                            <label for="slcOption">Type <em>Select</em></label>
+                            <select id="slcOption" name="select">
+                                <option value="alpha">Option Alpha</option>
+                                <option value="beta">Option Beta</option>
+                                <option value="gamma">Option Gamma</option>
+                            </select>
+                        </div>
+                    
+                        <!-- Radios and checkboxes -->
+                        <div>
+                            <label>Types <em>Radio</em> en ligne</label>
+                            <label class="box" for="rdAlpha"><input type="radio" name="radio" id="rdAlpha" value="alpha">Alpha</label>
+                            <label class="box" for="rdBeta"><input type="radio" name="radio" id="rdBeta" value="beta">Beta</label>
+                            <label class="box" for="rdGamma"><input type="radio" name="radio" id="rdGamma" value="gamma">Gamma</label>
+                        </div>
+                    
+                        <div>
+                            <label>Types <em>Checkbox</em> en ligne</label>
+                            <label class="box" for="chkAlpha"><input type="checkbox" name="classicalpha" id="chkAlpha" value="alpha">Alpha</label>
+                            <label class="box" for="chkBeta"><input type="checkbox" name="classicbeta" id="chkBeta" value="beta">Beta</label>
+                            <label class="box" for="chkGamma"><input type="checkbox" name="classicgamma" id="chkGamma" value="gamma">Gamma</label>
+                        </div>
+                    
+                        <div>
+                            <label>Cases à cochées <em>Checkbox / Radio</em> en block</label>
+                            <label class="slab" for="bckAlpha"><input type="checkbox" name="blockalpha" id="bckAlpha" value="alpha">Alpha, aenean quam velit</label>
+                            <label class="slab" for="bckBeta"><input type="checkbox" name="blockbeta" id="bckBeta" value="beta">Beta, ornare eu ultrices vitae</label>
+                            <label class="slab" for="bckGamma"><input type="checkbox" name="blockgamma" id="bckGamma" value="gamma">Gamma, scelerisque ac velit</label>
+                        </div>
+                    
+                        <!-- Conceptual radios and checkboxes -->
+                        <div class="conceptbox">
+                            <label>Champs de type <em>Radio</em> stylisés</label>
+                            <div id="rdset">
+                                <label class="toggle" for="rdDelta">
+                                    <span>Delta</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="delta" id="rdDelta">
+                                </label>
+                                <label class="toggle on" for="rdEpsilon">
+                                    <span>Epsilon</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="epsilon" id="rdEpsilon">
+                                </label>
+                                <label class="toggle" for="rdZeta">
+                                    <span>Zeta</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="zeta" id="rdZeta">
+                                </label>
+                                <label class="toggle" for="rdEta">
+                                    <span>Eta</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="eta" id="rdEta">
+                                </label>
+                                <label class="toggle" for="rdIota">
+                                    <span>Iota</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="iota" id="rdIota">
+                                </label>
+                                <label class="toggle" for="rdKappa">
+                                    <span>Kappa</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="kappa" id="rdKappa">
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <div class="conceptbox">
+                            <label>Champs de type <em>Checkbox</em> stylisés</label>
+                            <div id="chkset">
+                                <label class="toggle on" for="chkDelta">
+                                    <span>Delta</span>
+                                    <strong>9999.99&nbsp;€</strong>
+                                    <input type="checkbox" name="styledelta" value="delta" id="chkDelta">
+                                </label>
+                                <label class="toggle" for="chkEspilon">
+                                    <span>Epsilon</span>
+                                    <strong>9999.99&nbsp;€</strong>
+                                    <input type="checkbox" name="styleepsilon" value="epsilon" id="chkEspilon">
+                                </label>
+                                <label class="toggle" for="chkZeta">
+                                    <span>Zeta</span>
+                                    <strong>9999.99&nbsp;€</strong>
+                                    <input type="checkbox" name="stylezeta" value="zeta" id="chkZeta">
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <!-- Textarea field -->
+                        <div>
+                            <label for="txtField">Type <em>Textarea</em></label>
+                            <textarea name="textarea" id="txtField" rows="3"></textarea>
+                        </div>
+                    
+                        <!-- Excute -->
+                        <div>
+                            <input type="submit" value="Submit">
+                            <input type="submit" value="Submit Disabled" disabled>
+                            <input type="reset" value="Reset">
+                            <input type="button" value="Button">
+                        </div>
+                    </form>
+
+                    <form action="#" method="GET" name="invalid" class="col-50">
+
+                        <h3>État invalide du formulaire</h3>
+                        
+                        <!-- Elements side-by-side -->
+                        <div class="inline left error">
+                            <label for="iptTextErr">Type <em>Text</em></label>
+                            <input type="text" maxlength="255" name="text" id="iptTextErr" placeholder="Du texte">
+                        </div>
+                        <div class="inline right error">
+                            <label for="iptNumberErr">Type <em>Number</em></label>
+                            <input type="number" min="1" max="1000" step="1" name="number" id="iptNumberErr" placeholder="128">
+                        </div>
+                    
+                        <!-- Special icon for financial field -->
+                        <div class="currency error">
+                            <label for="iptCurrencyErr">Avec icône</label>
+                            <input type="number" min="1" max="100" step="1" name="currency" id="iptCurrencyErr" placeholder="Pour champ financier">
+                            <span>€</span>
+                        </div>
+                    
+                        <!-- Special value range -->
+                        <!-- ? -->
+                    
+                        <!-- Select -->
+                        <!-- ? -->
+                    
+                        <!-- Radios and checkboxes -->
+                        <div class="error">
+                            <label>Types <em>Radio</em> en ligne</label>
+                            <label class="box" for="rdAlphaErr"><input type="radio" name="radio" id="rdAlphaErr" value="alpha">Alpha</label>
+                            <label class="box" for="rdBetaErr"><input type="radio" name="radio" id="rdBetaErr" value="beta">Beta</label>
+                            <label class="box" for="rdGammaErr"><input type="radio" name="radio" id="rdGammaErr" value="gamma">Gamma</label>
+                        </div>
+                    
+                        <div class="error">
+                            <label>Types <em>Checkbox</em> en ligne</label>
+                            <label class="box" for="chkAlphaErr"><input type="checkbox" name="classicalpha" id="chkAlphaErr" value="alpha">Alpha</label>
+                            <label class="box" for="chkBetaErr"><input type="checkbox" name="classicbeta" id="chkBetaErr" value="beta">Beta</label>
+                            <label class="box" for="chkGammaErr"><input type="checkbox" name="classicgamma" id="chkGammaErr" value="gamma">Gamma</label>
+                        </div>
+                    
+                        <div class="error">
+                            <label>Cases à cochées <em>Checkbox / Radio</em> en block</label>
+                            <label class="slab" for="bckAlphaErr"><input type="checkbox" name="blockalpha" id="bckAlphaErr" value="alpha">Alpha, aenean quam velit</label>
+                            <label class="slab" for="bckBetaErr"><input type="checkbox" name="blockbeta" id="bckBetaErr" value="beta">Beta, ornare eu ultrices vitae</label>
+                            <label class="slab" for="bckGammaErr"><input type="checkbox" name="blockgamma" id="bckGammaErr" value="gamma">Gamma, scelerisque ac velit</label>
+                        </div>
+
+                        <!-- Conceptual radios or checkboxes -->
+                        <!-- ? -->
+                    
+                        <!-- Textarea field -->
+                        <div class="error">
+                            <label for="txtField">Type <em>Textarea</em></label>
+                            <textarea name="textarea" id="txtField" rows="3"></textarea>
+                        </div>
+                    
+                        <!-- Excute -->
+                        <div>
+                            <input type="submit" value="Submit Disabled" disabled>
+                        </div>
+                    </form>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Page footer -->
+        <footer id="uifoot">
+
+            <!-- Container for principal elements in footer -->
+            <div class="headline">
+                <div>
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="./assets/trademark/sasstemplate_icon_wt.svg" alt="Icon Sass Template"></span>
+                        <span class="title">SassTemplate</span>
+                    </a>
+                    <p>Example de template avec Sass</p>
+                </div>
+                
+                <!-- Social reference links -->
+                <nav class="socialmenu">
+                    <h3 class="blind">Menu social</h3>
+                    <ul>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
+                                <span class="tip top">Profil Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
+                                <span class="tip top">Profil Bitbucket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
+                                <span class="tip top">Profil GitHub</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="https://www.elodiebayet.com/store/icons/profile_behance_bl.svg" alt="Logo Behance" width="28" height="28"></span>
+                                <span class="tip top">Profil Behance</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Container for bottom navigation : Currently doesn't allow 'expanded navigation' -->
+            <div class="navigation">
+
+                <!-- Secondary menu -->
+                <nav class="secondmenu">
+                    <h3>Menu secondaire</h3>
+                    <ul>
+                        <li>
+                            <a href="./unavailable.html" title="Aller sur la page">Unavailable</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Aller sur la page">Nowhere C</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Aller sur la page">Nowhere D</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <!-- Author signature -->
+            <div id="author">
+                <p>Développé par <strong>Elodie Bayet © 2020 - 2021</strong> - Tous droits réservés</p>
+            </div>
+        </footer>
+    </body>
+</html>

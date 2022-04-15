@@ -1,0 +1,144 @@
+/* 
+	Author :: Elodie BAYET
+	  Role :: Fullstack Web Developer
+	  Date :: 2020.04 + 2021.09
+	Origin :: Belgium, EU
+*/
+
+@use '../utils/utils' as kit;
+
+/*
+    For form layout
+*/
+
+form {
+	> div {
+		+ div {
+			margin-top: 24px;
+		}
+		> label:first-child {
+			font-weight: 600;
+		}
+	}
+	
+	label,
+	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
+	select,
+	textarea {
+		display: block;
+		width: 100%;
+	}
+	
+	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
+	textarea {
+		padding: 4px;
+	}
+	
+	select {
+		padding: 8px 0;
+	}
+	
+	label {
+		&.box {
+			margin: 0 36px 0 0;
+			width: auto;
+			display: inline-block;
+		}
+		&.box:hover,
+		&.toggle:hover {
+			cursor: pointer;
+		}
+	}
+	
+	input {
+		&[type="checkbox"],
+		&[type="radio"] {
+			margin-right: 6px;
+			position: relative;
+		}
+		&[type="submit"],
+		&[type="reset"],
+		&[type="button"] {
+			font-weight: 600;
+			text-transform: uppercase;
+			padding: 4px 12px;
+			display: inline-block;
+			min-width: 160px;
+			margin-right: 18px;
+		}
+	}
+
+	.currency {
+		position: relative;
+		span {
+			font-size: 1.8rem;
+			text-align: center;
+			font-weight: bold;
+			width: 32px;
+			padding: 6px 0;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+		}
+	}
+	
+	.value span {
+		font-size: 1.4rem;
+		line-height: 1.75;
+		letter-spacing: .1rem;
+		text-align: center;
+		font-weight: bold;
+		margin-top: 12px;
+		padding: 6px 0;
+		display: block;
+		position: relative;
+	}
+
+	.conceptbox {
+		margin-left: -5px;
+		margin-right: -5px;
+		> label {
+			margin-left: 5px;
+		}
+		.toggle {
+			display: inline-block;
+			width: auto;
+			min-width: 96px;
+			margin-left: 5px;
+			margin-right: 5px;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+			padding: 6px 8px 7px;
+			span,
+			strong {
+				display: block;
+			}
+		}
+		input {
+			position: absolute;
+			top: 0;
+			left: -999px;
+			margin: 0;
+		}
+	}
+	
+	@media (min-width:880px) {
+		.inline {
+			width: 50%;
+			min-width: 198px;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 -1px;
+			&.left {
+				padding-right: 12px;
+			}
+			&.right {
+				padding-left: 12px;
+			}
+			input {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

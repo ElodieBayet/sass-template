@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+/*
+    Compile 'Form' styles in one
+*/
+
+// Structure
+@use './pages/form';
+
+// Theme
+@use './pages/original_form';
