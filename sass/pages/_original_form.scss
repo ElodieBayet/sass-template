@@ -79,9 +79,14 @@ form {
 		background-color: kit.$bgcolor;
 	}
 
-	.currency span {
-		color: kit.$bright;
-		background-color: kit.$origin;
+	.currency { 
+		span {
+			color: kit.$bright;
+			background-color: kit.$origin;
+		}
+		&.error span {
+			background-color: kit.$ltalert;
+		}
 	}
 
 	.value span {
