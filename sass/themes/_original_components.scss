@@ -62,6 +62,27 @@ table {
     }
 }
 
+.topic {
+    h4 {
+        color: kit.$bright;
+    }
+    > *:last-child {
+        @extend %transition;
+        border-bottom: 1px solid kit.$mlight;
+        padding-bottom: 17px;
+    }
+    &:hover { 
+        h4 {
+            @extend %transition;
+            color: kit.$lighten;
+        }
+        > *:last-child {
+            border-bottom: 1px solid kit.$lighten;
+        }
+    }
+}
+
+
 .nothing {
 	&::before {
 		color: kit.$alert;

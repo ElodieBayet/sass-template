@@ -156,6 +156,12 @@ table {
     }
 }
 
+/* Topic */
+.topic {
+	position: relative;
+	margin: 12px 0;
+}
+
 /* No DB result text information */
 .nothing {
 	&::before {
