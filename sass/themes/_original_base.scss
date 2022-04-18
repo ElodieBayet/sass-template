@@ -14,45 +14,6 @@
     Base Management
 */
 
-// Only for template
-.colordepth {
-    li:nth-of-type(1) {
-        color: kit.$lighten;
-    }
-    li:nth-of-type(2) {
-        color: kit.$origin;
-    }
-    li:nth-of-type(3) {
-        color: kit.$darken;
-    }
-    li:nth-of-type(4) {
-        color: kit.$blacken;
-    }
-}
-.greydepth {
-    li:nth-of-type(1){
-        color: kit.$xdark;
-    }
-    li:nth-of-type(2){
-        color: kit.$dark;
-    }
-    li:nth-of-type(3){
-        color: kit.$mdark;
-    }
-    li:nth-of-type(4){
-        color: kit.$medium;
-    }
-    li:nth-of-type(5){
-        color: kit.$mlight;
-    }
-    li:nth-of-type(6){
-        color: kit.$light;
-    }
-    li:nth-of-type(7){
-        color: kit.$xlight;
-    }
-}
-
 /* Local Mixins */
 @mixin shadowed-edge($deg: 90deg) {
     background-image: linear-gradient($deg, kit.$bgcolor, kit.$bgcolor, adjust-color(kit.$bgcolor, $alpha: -0.4), adjust-color(kit.$bgcolor, $alpha: -0.7), adjust-color(kit.$bgcolor, $alpha: -1));
@@ -112,11 +73,40 @@ main {
             border-bottom: 1px solid kit.$darken;
         }
     }
-    .light {
+    // Color classes
+    .blacken {
+        color: kit.$blacken;
+    }
+    .darken {
+        color: kit.$darken;
+    }
+    .origin {
+        color: kit.$origin;
+    }
+    .lighten {
+        color: kit.$lighten;
+    }
+    // Grey classes
+    .xdark {
+        color: kit.$xdark;
+    }
+    .dark {
+        color: kit.$dark;
+    }
+    .mdark {
+        color: kit.$mdark;
+    }
+    .medium {
+        color: kit.$medium;
+    }
+    .mlight {
         color: kit.$mlight;
     }
-    .edvidence {
-        color: kit.$origin;
+    .light {
+        color: kit.$light;
+    }
+    .xlight {
+        color: kit.$xlight;
     }
 }
 
