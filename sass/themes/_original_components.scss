@@ -64,7 +64,9 @@ table {
 
 .topic {
     h4 {
-        color: kit.$bright;
+        @extend %transition;
+        color: kit.$origin;
+        opacity: .9;
     }
     > *:last-child {
         @extend %transition;
@@ -73,8 +75,8 @@ table {
     }
     &:hover { 
         h4 {
-            @extend %transition;
             color: kit.$lighten;
+            opacity: 1;
         }
         > *:last-child {
             border-bottom: 1px solid kit.$lighten;
