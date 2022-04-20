@@ -206,7 +206,8 @@
                 <h2>Elements interactifs <span class="light">&mdash; dans des listes</span></h2>
 
                 <!-- Anchors list (link style) -->
-                <h3>Liens “Ancre”</h3>
+                <h3>Liste de liens classiques et “anchor”</h3>
+                <p>Contôle de la disposition avec les classes <strong>“center”, "“left" ou “right”</strong></p>
                 <ul class="listitem center">
                     <li><a href="#testscroller" title="Aller à la section" class="link anchor"><span>&nbsp;</span>Un lien ancre - Test module scroller</a></li>
                     <li><a href="#" title="Aller à la section" class="link anchor"><span>&nbsp;</span>Autre lien ancre</a></li>
@@ -214,7 +215,8 @@
                 </ul>
 
                 <!-- Links list (button style) -->
-                <h3>Liens “Bouton”</h3>
+                <h3>Liste de liens “bouton” avec ou sans “url”</h3>
+                <p>Contôler de la disposition avec les classes <strong>“center”, "“left" ou “right”</strong></p>
                 <ul class="listitem center">
                     <li>
                         <a href="#" title="Télécharger le document" target="_blank" rel="noreferrer" class="button url"><span class="pdf">&nbsp;</span>lien_vers_document.pdf</a>
@@ -237,7 +239,7 @@
                 </ul>
 
                 <!-- Togglers list (link style) -->
-                <h3>Liens “Toggle” <span class="light">&mdash; Boite de filtres</span></h3>
+                <h3>Liste de liens “toggle” <span class="light">&mdash; Boite de filtres</span></h3>
                 <div class="filters">
                     <h4>Filtrer&nbsp;:</h4>
                     <p class="nothing">Si module <strong>Filter</strong> a rencontré un problème.</p>
@@ -252,14 +254,20 @@
                     </ul>
                 </div>
 
-                <!-- Basic buttons -->
-                <h3>Boutons basiques</h3>
+                <h3>Liens "tab" <span class="light">&mdash; disposition automatique</span></h3>
+                <div>
+                    <a href="#" title="Aller à la page" class="tab">Lien bouton actif</a>
+                    <a href="#" title="Aller à la page" class="tab disabled">Lien bouton désactivé</a>
+                    <a href="#" title="Voir le document" target="_blank" rel="noreferrer" class="tab selected">Lien bouton sélectionné</a>
+                </div>
+
+                <!-- Basic buttons and tab buttons -->
+                <h3>Boutons “button” en <em>block</em> et boutons "tab” en <em>inline</em></h3>
                 <div>
                     <button class="button" type="button">Bouton actif</button>
                     <button class="button disabled" type="button">Bouton désactivé</button>
                     <button class="button selected" type="button">Bouton actif sélectionné</button>
                 </div>
-                <!-- Tab buttons -->
                 <div>
                     <button class="tab" type="button">Bouton actif</button>
                     <button class="tab disabled" type="button">Bouton désactivé</button>

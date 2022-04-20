@@ -73,6 +73,9 @@ main {
             border-bottom: 1px solid kit.$darken;
         }
     }
+    abbr {
+		color: kit.$ltalert;
+	}
     // Color classes
     .blacken {
         color: kit.$blacken;

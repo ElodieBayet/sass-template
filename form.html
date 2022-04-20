@@ -146,17 +146,18 @@
                     <form action="#" method="GET" name="default" class="col-50">
 
                         <h3>État normal du formulaire</h3>
+                        <p>Les champs marqués d'une <abbr title="Astérisque">*</abbr> sont obligatoires</p>
 
                         <!-- Champ caché -->
                         <input type="hidden" value="valeur test" name="hide">
                         
                         <!-- Elements side-by-side -->
                         <div class="inline left">
-                            <label for="iptText">Type <em>Text</em></label>
+                            <label for="iptText">Type <em>Text</em> <abbr title="obligatoire">*</abbr></label>
                             <input type="text" maxlength="255" name="text" id="iptText" placeholder="Du texte">
                         </div>
                         <div class="inline right">
-                            <label for="iptNumber">Type <em>Number</em></label>
+                            <label for="iptNumber">Type <em>Number</em> <abbr title="obligatoire">*</abbr></label>
                             <input type="number" min="1" max="1000" step="1" name="number" id="iptNumber" placeholder="128">
                         </div>
                         <!-- Elements side-by-side -->
@@ -171,7 +172,7 @@
 
                         <!-- Url -->
                         <div>
-                            <label for="iptUrl">Type <em>Text</em></label>
+                            <label for="iptUrl">Type <em>Text</em> <abbr title="obligatoire">*</abbr></label>
                             <input type="url" maxlength="1024" name="url" id="iptUrl" placeholder="https://...">
                         </div>
                     

@@ -12,16 +12,22 @@
 	i.e. : ".ideogram", ".route"
 */
 
-/* Local for <a> element */
-%interactive {
+/* Local Placeholders */
+%illustrative {
+	// With icon
     font-weight: 700;
-    margin: 6px 18px 12px;
+    // margin: 6px 18px 12px;
     display: inline-block;
     > span {
         vertical-align: middle;
         margin-right: 7px;
         display: inline-block;
     }
+}
+%graphic {
+	// Without icon
+	text-transform: uppercase;
+	padding: 3px 18px;
 }
 
 /* Elements w/ Pictograms */
@@ -39,41 +45,48 @@
     }
 }
 
-/* Overlayed Link for UI enhancement */
-a.route {
-	display: block;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
+/* Custom <a> : Overlayed, Buttons, Links, Tabs */
+a {
+	// Overlayed Link for UI enhancement 
+	&.route {
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	// Buttons or Links (with icon)
+	&.button {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		padding: 4px 18px;
+		max-width: 250px;
+		overflow: hidden;
+		@extend %illustrative;
+	}
+	&.link {
+		@extend %illustrative;
+	}
+	// Tabs (whitout icon)
+	&.tab {
+		display: inline-block;
+		margin: 18px 24px 0 0;
+		@extend %graphic;
+	}
 }
 
-/* Buttons & Links */
-a.button {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 4px 18px;
-    max-width: 250px;
-    overflow: hidden;
-    @extend %interactive;
-}
-
-a.link {
-    @extend %interactive;
-}
-
-button.button {
-	text-transform: uppercase;
-	margin-right: auto;
-	margin-left: auto;
-	padding: 3px 18px;
-	display: block;
-}
-
-button.tab {
-	text-transform: uppercase;
-	padding: 3px 18px;
-	display: inline-block;
-	margin: 18px 24px 0 0;
+/* Cutsom <button> : Buttons, Tabs*/
+button {
+	&.button {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+		@extend %graphic;
+	}
+	&.tab {
+		display: inline-block;
+		margin: 18px 24px 0 0;
+		@extend %graphic;
+	}
 }

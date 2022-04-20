@@ -75,7 +75,8 @@ main {
 	}
 	h5, h6,
 	p, li, time, button,
-	label, input:not([type="hidden"]), select, textarea {
+	label, input:not([type="hidden"]), select, textarea,
+	*:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(p):not(li):not(label):not(figcaption):not(pre):not(small):not(samp) > a {
 		font-size: 1.4rem;
 		line-height: 1.75;
 		letter-spacing: .1rem;
@@ -107,5 +108,8 @@ main {
 		font-size: 1.2rem;
 		line-height: 1;
 		display: block;
+	}
+	abbr {
+		font-weight: 600;
 	}
 }

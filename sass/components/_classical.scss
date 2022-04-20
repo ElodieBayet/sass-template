@@ -51,7 +51,7 @@ p.lining {
     }
 }
 
-/* Lists */
+/* Usual Lists */
 .list {
     li::before {
         content: "••";
@@ -64,8 +64,27 @@ p.lining {
 	display: flex;
 	flex-wrap: wrap;
     align-content: flex-start;
+    &:not(.center):not(.left):not(.right):not(.apart){
+        justify-content: space-between;
+    }
+    > li {
+        margin-bottom: 12px;
+    }
     &.center {
         justify-content: center;
+        > li {
+            margin-right: 18px;
+            margin-left: 18px;
+        }
+    }
+    &.left > li {
+        margin-right: 36px;
+    }
+    &.right {
+        justify-content: flex-end;
+        > li {
+            margin-left: 36px;
+        }
     }
     &.apart li {
         padding-right: 8px;
@@ -76,6 +95,7 @@ p.lining {
     }
 }
 
+/* Inline Lists*/
 .listline {
     margin-top: 12px;
     li {
@@ -142,11 +162,6 @@ table {
 }
 
 /* Filters box */
-.filters {
-	h4 {
-        @extend %resagnicto-italic;
-    }
-}
 
 /* Divided box */
 .divided {
