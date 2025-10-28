@@ -1,0 +1,240 @@
+/* 
+	Author :: Elodie BAYET
+*/
+
+@use 'sass:math';
+@use '../utils/utils' as kit;
+
+/*
+	Advanced
+*/
+
+/* Filtering */
+#filter {
+    margin-bottom: 36px;
+    ul {
+        padding: 18px 6px 12px;
+        position: relative;
+    }
+}
+
+/* Tooltip system */
+.tooltip { 
+	position: relative;
+	overflow: visible;
+	.tip {
+		display: none;
+	}	
+	@media (min-width:960px) and (any-hover:hover) {
+		.tip { 
+			font-size: 1.4rem;
+			line-height: 1.5;
+			white-space: nowrap;
+			padding: 6px 12px 5px;
+			position: absolute;
+			z-index: 200;
+			&.top {
+				margin-bottom: 12px;
+			}
+			&.bottom {
+				margin-top: 12px;
+			}
+		}
+		&:hover .tip {
+			display: block;
+			margin-left: -16px;
+			left: 50%;
+			&.top {
+				bottom: 100%;
+			}
+			&.bottom {
+				top: 100%;
+			}
+		}
+	}
+}
+
+/* Effects */
+.project {
+	$hgt: 240px;
+	$qty: 4;
+	$edg: math.div($hgt, $qty);
+	position: relative;
+    height: 264px;
+	.route {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 20;
+	}
+	.cover {
+		height: $hgt + 8;
+		margin-left: 118px;
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: $hgt;
+			overflow: hidden;
+		}
+	}
+	.summary {
+		text-align: right;
+		width: $hgt + 8; /* Due to rotate, "visual height" is actual width */
+		height: auto;
+		position: relative;
+		transform-origin: 0% 0%;
+		transform: rotate(-90deg);
+		.date {
+			font-size: 2.1rem;
+			line-height: 1;
+			margin-top: 0;
+			display: block;
+		}
+		.title {
+			text-transform: uppercase;
+			margin-top: 0;
+			margin-bottom: .5rem;
+		}
+		.technics {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			padding-bottom: 12px;
+			li {
+				margin-left: 12px;
+				margin: 6px 0 6px 12px;
+				width: auto;
+			}
+			img {
+				height: 24px;
+				width: auto;
+				display: block;
+			}
+		}
+		.edge {
+			color: inherit;
+    		background-color: kit.$bgcolor;
+			width: $edg;
+			height: $edg;
+			position: absolute;
+			top: 100%;
+			display: block;
+			@for $i from 0 to $qty {
+				&:nth-of-type(#{(1 + $i)}) {
+					right: $i * $edg;
+					opacity: 1 - ($i * .25);
+					transition-delay: ($i + 1) * .05s;
+				}
+			}
+		}
+	}
+	&:hover .summary .edge {
+		opacity: 0;
+		@for $j from 0 to $qty {
+			&:nth-of-type(#{(1 + $j)}) {
+				transition-delay: ($qty - $j) * .05s;
+			}
+		}
+	}
+}
+
+.data {
+    margin: 0 -1.875%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    display: flex;
+    > div {
+        padding-left: 1.875%;
+        padding-right: 1.875%;
+        min-width: 300px;
+        width: 50%;
+        position: relative;
+        height: auto !important; // avoid unexpected style on element
+        top: auto !important; // avoid unexpected style on element
+        &::before {
+            content: "Début " attr(data-begin) ", Durée ± " attr(data-delay) " ans";
+            font-size: 1.6rem;
+            position: absolute;
+        }
+    }
+    h3 {
+        padding: 6px 0 12px;
+    }
+}
+
+.chrono {
+	text-align: center;
+	margin: 18px 0;
+	padding: 8px 6px 6px;
+	p {
+		font-family: 'Courier New', Courier, monospace;
+		font-size: 4.8rem;
+		font-weight: 600;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.tasks li {
+	span {
+		font-weight: 600;
+		letter-spacing: .1rem;
+		margin-left: 8px;
+	}
+	button {
+		margin-top: 0;
+		margin-bottom: 0;
+		float: right;
+	}
+}
+
+
+/* Shortcut navigation */
+.bypass {
+	display: inline-block;
+	width: 50%;
+	margin-left: -2px;
+	margin-right: -2px;
+	&#next .holder {
+		flex-direction: row-reverse;
+	}
+	.label {
+		font-size: 1.6rem;
+		letter-spacing: .1rem;
+		line-height: 3.2rem;
+		white-space: nowrap;
+		padding: 2px 6px 0;
+	}
+	.holder {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+@media (min-width:1036px) {
+	.bypass {
+		margin: -24px 0 0;
+		padding: 0;
+		width: auto;
+		position: fixed;
+		top: 50%; 
+		z-index: 50;
+		&#previous {
+			left: 18px;
+		}
+		&#next {
+			right: 18px;
+		}
+		.label {
+			display: none;
+		}
+		&:hover {
+			.label {
+				display: inline-flex;
+			}
+		}
+	}
+}

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="fr" class="nojs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Components | Sass Template</title>
+    <!-- Styles -->
+        <link href="./assets/css/structure.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./assets/css/theme.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Identity and parameters -->
+        <meta name="description" content="Exemple des éléments du template Front-End développé en Sass">
+        <meta name="author" content="Elodie Bayet, www.elodiebayet.com">
+        <meta name="copyright" content="Elodie Bayet © 2025">
+        <meta name="theme-color" content="# ">
+        <link href="./assets/trademark/sasstemplate_favicon.png" rel="icon" type="image/png">
+    <!-- Scripts -->
+        <script type="module" src="./assets/js/main.js" id="jsMain"></script>
+    </head>
+    <body>
+        <header id="uihead" class="closed">
+			<div class="inner">
+				<div class="headline">
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt=""></span>
+                        <span class="title">sasstemplate</span>
+                    </a>
+					<p>Exemple de développement d'un template avec Sass</p>
+				</div>
+                <div class="navigation expand">
+					<nav class="mainmenu">
+						<ul>
+							<li>
+                                <a href="./textes.html" title="Aller sur la page">Textes</a>
+                            </li>
+                            <li>
+                                <a href="./elements.html" title="Aller sur la page" class="selected">Éléments</a>
+                            </li>
+                            <li>
+                                <a href="./formulaire.html" title="Aller sur la page">Formulaire</a>
+                            </li>
+                            <li class="sub">
+                                <a href="#" tabindex="-1" title="Ne mène nulle part">Sous-menu</a>
+                                <ul>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page A</a></li>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page B</a></li>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page C</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="langmenu">
+                        <ul>
+                            <li>
+                                <a href="#" tabindex="-1" title="Changer la version linguistique" class="selected">
+                                    <abbr title="Français">Fra</abbr>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" tabindex="-1" title="Change the language">
+                                    <abbr title="English">Eng</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+			</div>
+            <!-- (!) Remove .edge if not used -->
+			<div class="edge">&nbsp;</div>
+			<div class="edge">&nbsp;</div>
+            <button type="button">
+                <span class="blind">Ouvrir le menu</span>
+            </button>
+		</header>
+
+        <main>
+            <header>
+                <h1>Éléments</h1>
+                <p>Support de cours sur le développemnt SCSS/Sass.</p>
+			    <a href="https://github.com/ElodieBayet/sass-template" class="tab url"><span class="github">&nbsp;</span>Voir le projet sur GitHub</a>
+            </header>
+
+            <div class="nomodule"><samp>Info : Si module <strong>Alpha</strong> rencontre un problème.</samp></div>
+            <div class="nomodule"><samp>Info : Si module <strong>Beta</strong> rencontre un problème.</samp></div>
+
+            <noscript><strong>Le JavaScript n'est pas activé&nbsp;::</strong> Certaines fonctionnalités pourraient être inaccessibles.</noscript>
+
+            <section>
+                <h2>Eléments interactifs</h2>
+                <h3>Liste de liens classiques et ancres</h3>
+                <p>Contôle de la disposition avec les classes <strong>“center”, “left" ou “right”</strong></p>
+                <ul class="listitem center">
+                    <li><a href="#testscroller" title="Aller à la section" class="link anchor"><span>&nbsp;</span>Test du module “ScrollManager”</a></li>
+                    <li><a href="#" tabindex="-1" class="link anchor"><span>&nbsp;</span>Autre lien ancre</a></li>
+                    <li><a href="#" tabindex="-1" class="link anchor disabled"><span>&nbsp;</span>Lien ancre désactivé</a></li>
+                    <li><a href="#" tabindex="-1" class="link">Lien neutre sans ancre</a></li>
+                </ul>
+                <hr>
+                <h3>Liste de liens “bouton” avec ou sans “url”</h3>
+                <p>Contôle de la disposition avec les classes <strong>“center”, "“left" ou “right”</strong></p>
+                <ul class="listitem center">
+                    <li>
+                        <a href="#" tabindex="-1" class="button url"><span class="pdf">&nbsp;</span>lien_vers_document.pdf</a>
+                    </li>
+                    <li>
+                        <a href="#" tabindex="-1" class="button url disabled"><span class="bitbucket">&nbsp;</span>Lien bouton Bitbucket</a>
+                    </li>
+                    <li>
+                        <a href="#" tabindex="-1" class="button url"><span class="bitbucket">&nbsp;</span>Lien bouton Bitbucket</a>
+                    </li>
+                    <li>
+                        <a href="#" tabindex="-1" class="button url"><span class="github">&nbsp;</span>Lien bouton GitHub</a>
+                    </li>
+                    <li>
+                        <a href="#" tabindex="-1" class="button url"><span class="linkedin">&nbsp;</span>Lien bouton LinkedIn</a>
+                    </li>
+                </ul>
+                <hr>
+                <h3>Liens “tab” <span class="medium">&mdash; disposition automatique</span></h3>
+                <div>
+                    <a href="#" tabindex="-1" class="tab">Lien bouton actif</a>
+                    <a href="#" tabindex="-1" class="tab disabled">Lien bouton désactivé</a>
+                    <a href="#" tabindex="-1" class="tab selected">Lien bouton sélectionné</a>
+                    <a href="#" tabindex="-1" class="tab url"><span class="github">&nbsp;</span>Tab avec icône</a>
+                </div>
+                <hr>
+                <h3>Boutons “button” en <em>block</em> et boutons "tab” en <em>inline</em></h3>
+                <div>
+                    <button class="button" type="button">Bouton actif</button>
+                    <button class="button disabled" type="button">Bouton désactivé</button>
+                    <button class="button selected" type="button">Bouton actif sélectionné</button>
+                </div>
+                <div>
+                    <button class="tab" type="button">Bouton actif</button>
+                    <button class="tab disabled" type="button">Bouton désactivé</button>
+                    <button class="tab selected" type="button">Bouton actif sélectionné</button>
+                </div>
+            </section>
+
+            <section>
+                <h2>Division avec bordure séparante</h2>
+                <div class="divided">
+                    <h3>
+                        <a href="#" tabindex="-1">Titre de niveau 3</a>
+                        <small class="medium">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li>Élément de liste</li>
+                        <li>Autre élément de liste</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <h3>
+                        <a href="#" tabindex="-1">Autre titre de niveau 3</a>
+                        <small class="medium">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li>Élément de liste</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <h3>
+                        <a href="#" tabindex="-1">Nouveau titre de niveau 3 beaucoup plus long</a>
+                        <small class="medium">&mdash; De 0000 à 9999</small>
+                    </h3>
+                    <ul class="listitem apart">
+                        <li class="nothing">Aucune donnée trouvée</li>
+                    </ul>
+                </div>
+                <div class="divided">
+                    <p class="nothing">Aucun élément trouvé</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Boites de projets</h2>
+                <div class="grid lg">
+                    <div class="col-50 project">
+                        <a href="#" tabindex="-1" title="Voir le projet" class="route"><span class="blind">Titre du projet</span></a>
+                        <div class="cover">
+                            <div><img src="./assets/figures/default_figure_640x640.jpg" alt="" width="640" height="640"></div>
+                        </div>
+                        <div class="summary">
+                            <time datetime="2021-10-15" class="date">15.10.2022</time>
+                            <h3 class="title">Titre du projet</h3>
+                            <ul class="technics">
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_html.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_sass.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_js.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_nodejs.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_mongodb.svg" alt=""></li>
+                            </ul>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div class="col-50 project">
+                        <a href="#" tabindex="-1" title="Voir le projet" class="route">
+                            <span class="blind">Long-titre de projet</span>
+                        </a>
+                        <div class="cover">
+                            <div><img src="./assets/figures/default_figure_640x640.jpg" alt="" width="640" height="640"></div>
+                        </div>
+                        <div class="summary">
+                            <time datetime="2021-10-15" class="date">15.10.2021</time>
+                            <h3 class="title">Long-titre de projet</h3>
+                            <ul class="technics">
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_html.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_css.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_js.svg" alt=""></li>
+                            </ul>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                        </div>
+                    </div>
+                    <div class="col-50 project">
+                        <a href="#" tabindex="-1" title="Voir le projet" class="route">
+                            <span class="blind">Long titre de projet étendu sur 3 lignes</span>
+                        </a>
+                        <div class="cover">
+                            <div><img src="./assets/figures/default_figure_640x640.jpg" alt="" width="640" height="640"></div>
+                        </div>
+                        <div class="summary">
+                            <time datetime="2021-10-15" class="date">15.10.2020</time>
+                            <h3 class="title">Long titre de projet étendu sur 3 lignes</h3>
+                            <ul class="technics">
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_html.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_css.svg" alt=""></li>
+                                <li><img src="https://www.elodiebayet.com/assets/icons/icon_js.svg" alt=""></li>
+                            </ul>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                            <span class="edge">&nbsp;</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Boites spécifiques</h2>
+                <h3>Thématique</h3>
+                <div class="grid md">
+                    <div class="col-50 topic">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Intitulé caché mais screen-readable du lien</span></a>
+                        <h4>Titre de niveau 4</h4>
+                        <p class="medium">De 0000 à 9999</p>
+                        <ul class="listitem apart">
+                            <li>Nom de période</li>
+                        </ul>
+                    </div>
+                    <div class="col-50 topic">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Intitulé caché mais screen-readable du lien</span></a>
+                        <h4>Autre titre de niveau 4</h4>
+                        <p class="medium">De 0000 à 9999</p>
+                        <ul class="listitem apart">
+                            <li>Nom de période</li>
+                            <li>Autrepériode</li>
+                        </ul>
+                    </div>
+                    <div class="col-50 topic">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Intitulé caché mais screen-readable du lien</span></a>
+                        <h4>Nouveau titre de niveau 4 beaucoup plus long</h4>
+                        <p class="medium">De 0000 à 9999</p>
+                        <p class="nothing">Aucune période trouvée</p>
+                    </div>
+                </div>
+                <hr>
+                <h3>Badge</h3>
+                <div class="grid sm">
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_html.svg" alt=""></div>
+                        <div class="title"><p>HTML 5</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_css.svg" alt=""></div>
+                        <div class="title"><p>CSS 3</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_sass.svg" alt=""></div>
+                        <div class="title"><p>SASS</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_js.svg" alt=""></div>
+                        <div class="title"><p>JavaScript</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_nodejs.svg" alt=""></div>
+                        <div class="title"><p>Node.js</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_npm.svg" alt=""></div>
+                        <div class="title"><p>NPM</p></div>
+                    </div>
+                    <div class="col-25 badge">
+                        <div class="icon"><img src="https://www.elodiebayet.com/assets/icons/icon_mongodb.svg" alt=""></div>
+                        <div class="title"><p>MongoDB</p></div>
+                    </div>
+                </div>
+                <hr>
+                <h3>Asynchrone</h3>
+                <div class="grid md">
+                    <div class="col-50 onload">
+                        <h4>Boite de contenu en chargement</h4>
+                        <p>Cras ut felis luctus, finibus justo ut, suscipit massa. Mauris sollicitudin eu purus et tempus. Morbi euismod rutrum finibus. Praesent lacinia lacinia faucibus. Fusce dictum, enim nec malesuada viverra, magna magna <a href="#" tabindex="-1" title="Aller sur le site" target="_blank" rel="noreferer">accumsan tortor</a>, id pretium mauris nunc vitae erat.</p>
+                        <div class="spin">&nbsp;</div>
+                    </div>
+                    <div class="col-50">
+                        <h4>Boite de contenu chargé</h4>
+                        <p>Cras ut felis luctus, finibus justo ut, suscipit massa. Mauris sollicitudin eu purus et tempus. Morbi euismod rutrum finibus. Praesent lacinia lacinia faucibus. Fusce dictum, enim nec malesuada viverra, magna magna <a href="#" tabindex="-1" title="Aller sur le site" target="_blank" rel="noreferer">accumsan tortor</a>, id pretium mauris nunc vitae erat.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Ensembles augmentés</h2>
+                <p>Affichage des valeurs d'attributs <samp>data-*</samp>.</p>
+                <div class="data">
+                    <div data-begin="600" data-delay="800">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Moyen-Âge</span></a>
+                        <h3 aria-hidden="true">Moyen-Âge</h3>
+                    </div>
+                    <div data-begin="1400" data-delay="200">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Renaissance</span></a>
+                        <h3 aria-hidden="true">Renaissance</h3>
+                    </div>
+                    <div data-begin="1600" data-delay="150">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Baroque</span></a>
+                        <h3 aria-hidden="true">Baroque</h3>
+                    </div>
+                    <div data-begin="1750" data-delay="50">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Classique</span></a>
+                        <h3 aria-hidden="true">Classique</h3>
+                    </div>
+                    <div data-begin="1800" data-delay="100">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Romantique</span></a>
+                        <h3 aria-hidden="true">Romantique</h3>
+                    </div>
+                    <div data-begin="1900" data-delay="50">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Moderne</span></a>
+                        <h3 aria-hidden="true">Moderne</h3>
+                    </div>
+                    <div data-begin="1950" data-delay="75">
+                        <a href="#" tabindex="-1" class="route"><span class="blind">Contemporaine</span></a>
+                        <h3 aria-hidden="true">Contemporaine</h3>
+                    </div>
+                </div>
+                <hr>
+                <h3>Filtre</h3>
+                <div id="filter">
+                    <h4>Filtrer par catégorie&nbsp;:</h4>
+                    <ul class="listitem center">
+                        <li><a href="#filter1" class="link toggle"><span>&nbsp;</span>Flitre 1</a></li>
+                        <li><a href="#filter2" class="link toggle"><span>&nbsp;</span>Flitre 2</a></li>
+                        <li><a href="#" tabindex="-1" class="link toggle disabled"><span>&nbsp;</span>Filtre 3 : désactivé</a></li>
+                        <li><a href="#filter4" class="link toggle"><span>&nbsp;</span>Filtre 4</a></li>
+                        <li><a href="#reseter" class="link anchor disabled"><span>&nbsp;</span>Effacer la sélection</a></li>
+                    </ul>
+                </div>
+                <div class="grid md">
+                    <div class="col-50 topic" data-filter="filter1 filter2">
+                        <h4>Pour le filtre n°1 et n°2</h4>
+                        <ul class="listitem apart">
+                            <li>Élément</li>
+                        </ul>
+                    </div>
+                    <div class="col-50 topic" data-filter="filter1">
+                        <h4>Pour le filtre n°1</h4>
+                        <ul class="listitem apart">
+                            <li>Élément</li>
+                        </ul>
+                    </div>
+                    <div class="col-50 topic" data-filter="filter2 filter4">
+                        <h4>Pour le filtre n°2 et n°4</h4>
+                        <ul class="listitem apart">
+                            <li>Élément</li>
+                        </ul>
+                    </div>
+                    <div class="col-50 topic" data-filter="filter4">
+                        <h4>Pour le filtre n°4</h4>
+                        <ul class="listitem apart">
+                            <li>Élément</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <h3>Animation</h3>
+                <div class="animated">
+                    <div class="sample"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt=""></div>
+                </div>
+                <hr>
+                <h3>Chrono</h3>
+                <div id="chrono" class="chrono">
+                    <p><span id="minutes">00</span>:<span id="seconds">00</span></p>
+                </div>
+                <div>
+                    <button class="tab" type="button" id="start" data-action="start">Lancer</button>
+                    <button class="tab disabled" id="resume" type="button">Recommencer</button>
+                </div>
+                <hr>
+                <h3>Tâches</h3>
+                <ul id="task" class="tasks">
+                    <li>
+                        <input type="checkbox" name="alphaedit">
+                        <span>Tâche Alpha</span>
+                        <button class="button">Supprimer</button>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="betaedit" checked>
+                        <span><s>Tâche Beta</s></span>
+                        <button class="button">Supprimer</button>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Ensembles structurés</h2>
+                <h3>Tableaux</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h4>Cellule d'en-tête</h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h5>Label Alpha</h5>
+                            </td>
+                            <td>
+                                <p>Data Alpha</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Label Beta</h5>
+                            </td>
+                            <td>
+                                <p>Data Beta</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>Label Gamma</h5>
+                            </td>
+                            <td>
+                                <p>Data Gamma</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>Résultats</h2>
+                <h3 id="testscroller">Test pour le module “ScrollManager”</h3>
+                <p>Destination pour l'ajustement du défillement automatique. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas porttitor ligula orci, non elementum nisl scelerisque sed. Donec fermentum velit ac sapien posuere lobortis. Quisque posuere maximus purus, ultrices vestibulum enim pharetra quis.</p>
+            </section>
+            
+            <div id="previous" class="bypass">
+                <a href="#" tabindex="-1" class="holder">
+                    <span class="cursor">&nbsp;</span>
+                    <span class="label">Page précédente</span>
+                </a>
+            </div>
+            <div id="next" class="bypass">
+                <a href="#" tabindex="-1" class="holder">
+                    <span class="cursor">&nbsp;</span>
+                    <span class="label">Page suivante</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer id="uifoot">
+            <div class="headline">
+                <div>
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt="Icon Neptune"></span>
+                        <span class="title">sasstemplate</span>
+                    </a>
+                    <p>Exemple de développement d'un template avec Sass</p>
+                </div>
+                <nav class="socialmenu">
+                    <h3 class="blind">Menu social</h3>
+                    <ul>
+                        <li>
+                            <a href="#" tabindex="-1" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
+                                <span class="tip top">Profil Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
+                                <span class="tip top">Profil Bitbucket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
+                                <span class="tip top">Profil GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navigation">
+                <nav class="mainmenu">
+                    <ul>
+                        <li>
+                            <a href="./textes.html" title="Aller sur la page" class="selected">Textes</a>
+                        </li>
+                        <li>
+                            <a href="./elements.html" title="Aller sur la page">Éléments</a>
+                        </li>
+                        <li>
+                            <a href="./formulaire.html" title="Aller sur la page">Formulaire</a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Ne mène nulle part">Sous-menu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="secondmenu">
+                    <ul>
+                        <li>
+                            <a href="./indisponible.html" title="Aller sur la page">Indisponible</a>
+                        </li>
+                        <li><a href="#" tabindex="-1" title="Ne mène nulle part">Autre n°1</a></li>
+                        <li><a href="#" tabindex="-1" title="Ne mène nulle part">Autre n°2</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="author">
+                <p>
+					<span>Sass Template</span> &copy; 2020-2025 &mdash; Tous droits réservés &mdash; v.2.0 &mdash;</span>
+					<a href="https://www.elodiebayet.com" title="Voir le site" target="_blank" rel="noopener">
+						Développé par Elodie Bayet&nbsp;
+						<img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_icon_bl.svg" alt="Icône du Logo de Elodie Bayet représentant une plume stylisée dans un cercle épais">
+					</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

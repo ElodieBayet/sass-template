@@ -1,0 +1,487 @@
+/* 
+	Author :: Elodie BAYET
+*/
+
+@use "sass:color";
+@use '../utils/utils' as kit;
+
+/* Local dynamics */
+@mixin highlight-edges {
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="url"],
+	select,
+	textarea {
+		@content;
+	}
+}
+
+/* Classics */
+.list {
+    li::before {
+        color: kit.$origin;
+    }
+}
+
+.listitem {
+    &.apart li {
+        ~ li::before {
+            color: kit.$light;
+        }
+    }
+}
+
+.listline {
+    &.apart li {
+        ~ li::before {
+            color: kit.$lighten;
+        }
+    }
+}
+
+table {
+    thead tr:last-of-type {
+        border-bottom: 2px solid kit.$origin;
+    }
+    tr ~ tr {
+        border-top : 1px solid kit.$lighten;
+    }
+}
+
+.badge {
+    .title {
+        border-top: 1px solid kit.$light;
+    }
+    p small {
+        color: kit.$mdark;
+        background-color: transparent;
+    }
+}
+
+.divided ~ .divided {
+    border-top: 1px dashed kit.$origin;
+}
+
+.topic {
+    h4 {
+        @extend %transition;
+        color: kit.$darken;
+        opacity: .9;
+    }
+    > *:last-child {
+        @extend %transition;
+        border-bottom: 1px solid kit.$mlight;
+    }
+    &:hover {
+        h4 {
+            color: kit.$obscur;
+            opacity: 1;
+        }
+        > *:last-child {
+            border-bottom: 1px solid kit.$lighten;
+        }
+    }
+}
+
+.nothing {
+	&::before {
+		color: kit.$alert;
+	}
+}
+
+/* Interactive */
+a.button, a.link {
+    $size: 1;
+    &.url span {
+        @include kit.brand-icon; // 18px 20px @each .pdf, .bitbucket...
+    }
+    // Not url = Navigation icons
+    &:not(.url) {
+        > span {
+            width: 9px;
+            line-height: 23px;
+            @include kit.ui-icon($size);
+            filter: grayscale(0%) contrast(85%);
+        }
+        &.selected {
+            color: kit.$darken;
+            > span {
+                @include kit.ui-icon-pos(cross, 9px, $size);
+                filter: grayscale(100%) contrast(100%);
+            }
+        }
+    }
+    &.toggle > span {
+        @include kit.ui-icon-pos(active, 9px, $size);
+    }
+    &.anchor > span {
+        @include kit.ui-icon-pos(end, 9px, $size);
+    }
+}
+
+a.tab.url span {
+    @include kit.brand-icon;
+}
+
+a.button {
+    color: kit.$obscur;
+    background-color: color.scale(kit.$bgcolor, $lightness: 100%);
+    &:not(.disabled):hover { // :disabled doesn't allowed on <button> or <a>
+        background-color: color.scale(kit.$bgcolor, $lightness: 66%);
+    }
+}
+
+a.link {
+    color: kit.$obscur;
+    background-color: transparent;
+    &:not(.disabled):hover { // :disabled doesn't allowed on <button> or <a>
+        color: kit.$darken;
+    }
+}
+
+.button, .tab {
+    color: kit.$fontcolor;
+	background-color: kit.$bgcolor;
+	border-width: 1px;
+	border-style: solid;
+	border-color: kit.$origin;
+	border-radius: 4px;
+    &:not(.disabled):not(:disabled):hover,
+    &.selected {
+        color: kit.$darken;
+        background-color: kit.$bright;
+        border-color: kit.$lighten;
+    }
+}
+
+.success {
+    @include kit.colored-info(kit.$dkvalid, "✓");
+}
+
+.failure {
+    @include kit.colored-info(kit.$alert, "✕");
+}
+
+form {
+	div label:first-child {
+		color: kit.$obscur;
+		background-color: transparent;
+	}
+
+	@include highlight-edges {
+		color: kit.$obscur;
+		background-color: kit.$bgcolor;
+		border-radius: 2px;
+		border: 1px solid kit.$origin;
+	}
+
+	.error {
+		@include highlight-edges {
+			font-weight: 600;
+			border: 1px solid kit.$alert;
+		}
+        p {
+            color: kit.$alert;
+            font-style: italic;
+            margin-top: .6rem;
+            display: block;
+        }
+		.slab,
+		.box {
+			color: kit.$alert;
+			font-weight: 600;
+		}
+	}
+
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"] {
+		@extend %transition;
+		&:not(:disabled):hover {
+			cursor: pointer;
+		}
+	}
+
+	option {
+		color: kit.$obscur;
+		background-color: kit.$bgcolor;
+	}
+
+	.currency { 
+		span {
+			color: kit.$bright;
+			background-color: kit.$origin;
+		}
+		&.error span {
+			background-color: kit.$alert;
+		}
+	}
+
+	.value span {
+		color: kit.$origin;
+		background-color: transparent;
+		border-radius: 2px;
+		border: 1px solid kit.$lighten;
+		&::after {
+			content: " ";
+			position: absolute;
+			border-width: 8px;
+			border-style: solid;
+			border-color: transparent transparent kit.$lighten transparent;
+			bottom: 100%;
+			right: 50%;
+			margin-left: -4px;
+		}
+	}
+
+	.choice, .toggle {
+        color: kit.$obscur;
+		background-color: kit.$bgcolor;
+		border-radius: 4px;
+		border: 1px solid kit.$medium;
+        @extend %transition;
+		&::before {
+			font-size: 2.4rem;
+			text-shadow: none;
+			color: kit.$medium;
+			position: absolute;
+			display: block;
+			left: -7px;	
+		}
+        &.on::before,
+		&:hover::before {
+            color: kit.$origin;
+        }
+		strong {
+			color: kit.$medium;
+		}
+		&.on, &:hover {
+            cursor: pointer;
+            border-color: kit.$origin;
+            background-color: kit.$bright;
+			strong {
+				color: kit.$darken;
+			}
+		}
+	}
+	.choice {
+	 	&::before {
+			content: "■";
+		}
+	}
+	.toggle {
+		&::before {
+			content: "●";
+		}
+	}
+}
+
+#filter {
+    &.error {
+        border: 1px solid kit.$alert;
+        padding: 9px 24px 12px;
+    }
+    ul {
+        border: 1px solid kit.$medium;
+        &::after {
+            border-color: kit.$medium transparent transparent transparent;
+            top: 100%; 
+            content: " ";
+            position: absolute;
+            border-width: 9px;
+            border-style: solid;
+        }
+    }
+}
+
+.animated {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 180px;
+	.sample {
+		width: 120px;
+		height: 170px;
+		animation: Animated 2s ease-out infinite;
+	}
+}
+
+.chrono {
+    border-radius: 4px;
+    border: 1px solid kit.$origin;
+    p {
+    	color: kit.$obscur;
+        background-color: transparent;
+    }
+    &.break p {
+        color: kit.$alert;
+        animation: Disapear .75s ease-in 0s infinite alternate none;
+    }
+}
+
+.tasks li {
+	padding: 12px 0;
+	border-bottom: 2px dotted kit.$medium;
+    span s {
+        color: kit.$mdark;
+        text-decoration-style: line-through;
+        text-decoration-style: wavy;
+        text-decoration-color: kit.$alert;
+        text-decoration-thickness: 2px;
+    }
+}
+
+@media (min-width:960px) and (any-hover:hover){
+    .tooltip {
+        &:hover { 
+            .top {
+                animation: SlideUp .33s ease-in-out;
+            }
+            .bottom {
+                animation: SlideDown .33s ease-in-out;
+            }
+        }
+        .tip { 
+            color: kit.$obscur;
+            background-color: kit.$bright;
+            box-shadow: 6px 4px 8px 1px rgba(0, 0, 0,.33);
+            &::after {
+                content: " ";
+                position: absolute;
+                border-width: 5px;
+                border-style: solid;
+                left: 10px;
+            }
+            &.top::after {
+                border-color: kit.$bright transparent transparent transparent;
+                top: 100%;
+            }
+            &.bottom::after {
+                border-color: transparent transparent kit.$bright transparent;
+                bottom: 100%; 
+            }
+        }
+    }
+}
+
+.project {
+    .cover div {
+        background-color: kit.$light;
+	    box-shadow: 4px 4px 4px 0px kit.$mlight;
+        border-radius: 0 12px 12px 0;
+    }
+    a {
+        + .cover div img {
+            @extend %transition;
+            transform-origin: 50% 50%;
+            transform: scale(1,1);
+        }
+        &:hover + .cover div img {
+            transform: scale(1.05,1.05);
+        }
+    }
+    .summary {
+        color: kit.$fontcolor;
+        background-color: kit.$bgcolor;
+        .date, .title {
+            text-shadow: -3px 4px 3px kit.$light;
+        }
+        .date {
+            color: kit.$darken;
+            background-color: transparent;
+            background-image: linear-gradient(90deg, kit.$mlight, kit.$mlight);
+            background-position: 4px 12px;
+            background-size: 104px 1px;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.data {
+    > div::before {
+        color: kit.$mlight;
+        transition: .25s ease-in-out;
+    }
+    > div:hover {
+        &::before {
+            color: kit.$origin;
+        }
+        h3 {
+            color: kit.$obscur;
+            border-bottom: 1px solid kit.$lighten;
+        }
+    }
+    h3 {
+        border-bottom: 1px solid kit.$light;
+        transition: .25s ease-in-out;
+    }
+}
+
+.onload {
+	position: relative;
+    min-height: 24px;
+	> *:not(.spin) {
+		opacity: .5;
+		filter: blur(2px);
+	}
+    .spin {
+        width: 48px;
+        height: 48px;
+        top: 50%;
+        left: 50%;
+        margin-top: -24px;
+        margin-left: -24px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-image: radial-gradient(kit.$darken, kit.$origin, transparent, transparent, transparent, transparent);
+        border-top: 8px double rgba(10, 91, 101, .9);
+        border-right: 8px double rgba(255, 255, 255, .1);
+        border-bottom: 8px double rgba(10, 91, 101, .9);
+        border-left: 8px double rgba(255, 255, 255, .1);
+        border-radius: 50%;
+        animation: Spin 2s linear infinite;
+    }
+}
+
+.bypass {
+	.cursor {
+		height: 44px;
+		width: 44px;
+		filter: grayscale(100%) contrast(0%);
+		@extend %transition;
+        @include kit.ui-icon();
+	}
+	.label {
+		color: kit.$darken;
+		background-color: color.change(kit.$bgcolor, $alpha: .66);
+	}
+	&:hover {
+        .cursor {
+		    filter: grayscale(0) contrast(50%);
+        }
+    }
+	&#previous {
+        .cursor {
+            @include kit.ui-icon-pos(prev, 44px, 2);
+        }
+        .label {
+            margin-left: -6px;
+        }
+    }
+	&#next {
+        .cursor {
+            @include kit.ui-icon-pos(next, 44px, 2);
+        }
+        .label {
+            margin-right: -6px;
+        }
+    }
+}
+@media (min-width:1036px) {
+    .bypass {
+        &:hover .label {
+            animation: FadeOn .33s ease-in-out;
+        }
+    }
+}

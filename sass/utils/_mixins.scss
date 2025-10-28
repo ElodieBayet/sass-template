@@ -2,9 +2,10 @@
     Global Mixins
 */
 
+@use "sass:map";
 @use 'sass:math';
 
-// For 'navigation-expand' mixin
+/* For 'navigation-expand' mixin */
 @mixin list-item {
 	margin-right: 0;
 	margin-left: 0;
@@ -12,7 +13,7 @@
 	display: list-item;	
 }
 
-// For layout w/ expanded navigation
+/* For layout w/ expanded navigation */
 @mixin navigation-expand {
 	.sub li {
 		text-transform: capitalize;
@@ -23,7 +24,6 @@
 			@include list-item;
 		}
 	}
-	// -
 	@media (min-width:1210px) and (any-hover:hover){
 		#uihead & {
 			nav:not(.langmenu):not(.socialmenu) > ul > li {
@@ -35,7 +35,7 @@
 					display: none;
 					position: absolute;
 					top: 100%;
-					left: -56px; // [!] - depends on size of li's label
+					left: -54px;
 					width: 200px;
 				}
 				&:hover ul {
@@ -48,7 +48,7 @@
 			}
 		}
 	}
-} 
+}
 
 /* Set for UI icons mixins */
 $ui-iconcode: (
@@ -68,10 +68,10 @@ $ui-iconsize: (
     height: 220px
 );
 $brand-iconset: (
-    pdf: url('https://www.elodiebayet.com/store/icons/icon_reader.svg'),
-    github: url('https://www.elodiebayet.com/store/icons/icon_github.svg'),
-    bitbucket: url('https://www.elodiebayet.com/store/icons/icon_bitbucket.svg'),
-    linkedin: url('https://www.elodiebayet.com/store/icons/icon_linkedin.svg')
+    pdf: url('https://www.elodiebayet.com/assets/icons/icon_reader.svg'),
+    github: url('https://www.elodiebayet.com/assets/icons/icon_github.svg'),
+    bitbucket: url('https://www.elodiebayet.com/assets/icons/icon_bitbucket.svg'),
+    linkedin: url('https://www.elodiebayet.com/assets/icons/icon_linkedin.svg')
 );
 
 /* For icons of brands (used in theme) */
@@ -82,29 +82,44 @@ $brand-iconset: (
     @each $brand, $url in $brand-iconset {
         &.#{$brand} {
             background-image: $url;
-            @if $brand == 'github' {
-                filter: invert(100%)
-            }
         }
     }
 }
 
 /* For icons of UI (used in theme) */
 @mixin ui-icon($size: 2) {
-    $w: $size * map-get($ui-iconsize, width);
-    $h: $size * map-get($ui-iconsize, height);
+    $w: $size * map.get($ui-iconsize, width);
+    $h: $size * map.get($ui-iconsize, height);
     // -
-    background-image: url('https://www.elodiebayet.com/store/interface/navigation_icons_bl.svg'); // 176px / 1760px
+    background-image: url('../../assets/ui/navigation_icons_bl.svg'); // 176px / 1760px
     background-repeat: no-repeat;
     background-size: $w $h;
 }
 
 /* For positioning UI icons (used in theme) */
 @mixin ui-icon-pos($picto: bars, $wdt: 44px, $size: 2) {
-    $w: $wdt - ( $size * map-get($ui-iconsize, width) ); // ex. 44px - (2 * 9px);
-    $h: $size * map-get($ui-iconsize, height);
-    @if $size == 1 { $w: 0; }
+    $w: $wdt - ($size * map.get($ui-iconsize, width)); // ex. 44px - (2 * 9px);
+    $h: $size * map.get($ui-iconsize, height);
+    @if $size == 1 { 
+        $w: 0;
+    }
     // -
     background-position-x: math.div($w, 2);
-    background-position-y: math.div($h, -10) * map-get($ui-iconcode, $picto);
+    background-position-y: math.div($h, -10) * map.get($ui-iconcode, $picto);
+}
+
+/* For success or failure informations */
+@mixin colored-info($color, $content) {
+    h4 {
+        color: $color;
+        border-bottom: 1px solid $color;
+        &::before {
+			content: $content;
+            font-weight: bold;
+            margin-right: 4px;
+		}
+    }
+    p {
+        font-style: italic;
+    }
 }

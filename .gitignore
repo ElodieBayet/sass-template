@@ -1,11 +1,9 @@
 # Folders
-node_modules/
-public/css/
 .vscode/
 _notes/
+node_modules/
+assets/css/
 dist/
-dist_expand/
-dist_simple/
 
 # Files
 *.log

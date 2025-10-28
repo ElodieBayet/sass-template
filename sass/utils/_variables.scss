@@ -2,26 +2,30 @@
     Global Variables
 */
 
+@use "sass:color";
+
 /* Main Colors */
-$fontcolor: rgb(240,240,242);   // #f0f0f2
-$bgcolor: rgb(36,36,40);        // #242428
-$bright : rgb(255,255,255);     // (!) - Usualy pure white or the lightest color of theme
-$obscur: rgb(11,11,15);         // (!) - Usualy pure black or the darkest color of theme
+$fontcolor: rgb(38, 38, 38);
+$bgcolor: rgb(242, 239, 239);
+$bright : rgb(255, 255, 255);
+$obscur: rgb(0, 0, 0);
 
 /* Custom Greys */
-$xlight: scale-color($bgcolor, $lightness: (7 * 11.5%));    // #d4d4d8 | rgb(212,212,216)
-$light: scale-color($bgcolor, $lightness: (6 * 11.5%));     // #bababf | rgb(186,186,191)
-$mlight: scale-color($bgcolor, $lightness: (5 * 11.5%));    // #9595a5 | rgb(149,149,165)
-$medium: scale-color($bgcolor, $lightness: (4 * 11.5%));    // #85858c | rgb(133,133,140)
-$mdark: scale-color($bgcolor, $lightness: (3 * 11.5%));     // #6b6b72 | rgb(107,107,114)
-$dark: scale-color($bgcolor, $lightness: (2 * 11.5%));      // #535359 | rgb(83,83,89)
-$xdark: scale-color($bgcolor, $lightness: (1 * 11.5%));     // #3a3a40 | rgb(58,58,64)
+$xlight: color.scale($fontcolor, $lightness: (7 * 11.5%));
+$light: color.scale($fontcolor, $lightness: (6 * 11.5%));
+$mlight: color.scale($fontcolor, $lightness: (5 * 11.5%));
+$medium: color.scale($fontcolor, $lightness: (4 * 11.5%));
+$mdark: color.scale($fontcolor, $lightness: (3 * 11.5%));
+$dark: color.scale($fontcolor, $lightness: (2 * 11.5%));
+$xdark: color.scale($fontcolor, $lightness: (1 * 11.5%));
 
 /* Dynamic Colors */
-$origin: rgb(18,190,213);         // #12bed5
-$lighten: lighten($origin, 15%);    // #44dbef | rgb(68, 219, 239)
-$darken: darken($origin, 15%);      // #0c7f8e 
-$blacken: darken($origin, 25%);     // #08555f | rgb(8, 85, 95)
+$origin: rgb(10, 107, 119);
+$lighten: color.scale($origin, $lightness: 15%);
+$darken: color.scale($origin, $blackness: 15%);
 $alert: rgb(178,11,43);
-$dkalert: scale-color($alert, $blackness: 15%);
-$ltalert: scale-color($alert, $lightness: 15%);
+$dkalert: color.scale($alert, $lightness: 15%);
+$ltalert: color.scale($alert, $lightness: 15%);
+$valid: rgb(84, 184, 0);
+$dkvalid: color.scale($valid, $blackness: 15%);
+$ltvalid: color.scale($valid, $lightness: 15%);

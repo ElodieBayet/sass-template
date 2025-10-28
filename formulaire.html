@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr" class="nojs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulaire | Sass Template</title>
+    <!-- Styles -->
+        <link href="./assets/css/structure.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./assets/css/theme.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Identity and parameters -->
+        <meta name="description" content="Exemple de formulaire du template Front-End développé en Sass">
+        <meta name="author" content="Elodie Bayet, www.elodiebayet.com">
+        <meta name="copyright" content="Elodie Bayet © 2025">
+        <meta name="theme-color" content="# ">
+        <link href="./assets/trademark/sasstemplate_favicon.png" rel="icon" type="image/png">
+    <!-- Scripts -->
+        <script type="module" src="./assets/js/main.js" id="jsMain"></script>
+    </head>
+    <body>
+        <header id="uihead" class="closed">
+			<div class="inner">
+				<div class="headline">
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt=""></span>
+                        <span class="title">sasstemplate</span>
+                    </a>
+					<p>Exemple de développement d'un template avec Sass</p>
+				</div>
+                <div class="navigation expand">
+					<nav class="mainmenu">
+						<ul>
+							<li>
+                                <a href="./textes.html" title="Aller sur la page">Textes</a>
+                            </li>
+                            <li>
+                                <a href="./elements.html" title="Aller sur la page">Éléments</a>
+                            </li>
+                            <li>
+                                <a href="./formulaire.html" title="Aller sur la page" class="selected">Formulaire</a>
+                            </li>
+                            <li class="sub">
+                                <a href="#" tabindex="-1" title="Ne mène nulle part">Sous-menu</a>
+                                <ul>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page A</a></li>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page B</a></li>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page C</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="langmenu">
+                        <ul>
+                            <li>
+                                <a href="#" tabindex="-1" title="Changer la version linguistique" class="selected">
+                                    <abbr title="Français">Fra</abbr>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" tabindex="-1" title="Change the language">
+                                    <abbr title="English">Eng</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+			</div>
+            <!-- (!) Remove .edge if not used -->
+			<div class="edge">&nbsp;</div>
+			<div class="edge">&nbsp;</div>
+            <button type="button">
+                <span class="blind">Ouvrir le menu</span>
+            </button>
+		</header>
+
+        <main>
+            <header>
+                <h1>Formulaire</h1>
+                <p>Support de cours sur le développemnt SCSS/Sass.</p>
+			    <a href="https://github.com/ElodieBayet/sass-template" class="tab url"><span class="github">&nbsp;</span>Voir le projet sur GitHub</a>
+            </header>
+
+            <noscript><strong>Le JavaScript n'est pas activé&nbsp;::</strong> Certaines fonctionnalités pourraient être inaccessibles.</noscript>
+
+            <section>
+                <h2>Interactivité</h2>
+                <h3>Informations</h3>
+                <div class="grid md">
+                    <div class="col-50 success">
+                        <h4>Réussi</h4>
+                        <p>Message de réussite de traitement de formulaire.</p>
+                    </div>
+                    <div class="col-50 failure">
+                        <h4>Échec</h4>
+                        <p>Message d'erreur de traitement de formulaire.</p>
+                    </div>
+                </div>
+                <hr>
+                <h3>Champs de formulaire</h3>
+                <form action="#" method="GET" name="default" class="grid md">
+                    <div class="col-50">
+                        <p>Les champs marqués d'une <abbr title="Astérisque">*</abbr> sont obligatoires</p>
+
+                        <input type="hidden" value="valeur test" name="hide">
+
+                        <div class="inline error">
+                            <label for="iptText">Type <em>Text</em> <abbr title="Obligatoire">*</abbr></label>
+                            <input type="text" maxlength="255" name="text" id="iptText" placeholder="Du texte" required>
+                            <p>La valeur du champ est incorrecte</p>
+                        </div>
+                        <div class="inline">
+                            <label for="iptNumber">Type <em>Number</em> <abbr title="Obligatoire">*</abbr></label>
+                            <input type="number" min="1" max="1000" step="1" name="number" id="iptNumber" placeholder="128" required>
+                        </div>
+
+                        <div class="inline">
+                            <label for="iptTextReadOnly">Type <em>Texte</em> read-only</label>
+                            <input type="text" value="Texte non-éditable" name="textReadonly" tabindex="-1" id="iptTextReadOnly" readonly>
+                        </div>
+                        <div class="inline">
+                            <label for="iptNUmberReadOnly">Type <em>Number</em> read-only</label>
+                            <input type="number" value="123456789" name="numberReadonly" tabindex="-1" id="iptNUmberReadOnly" readonly>
+                        </div>
+
+                        <div>
+                            <label for="iptEmail">Type <em>Email</em> <abbr title="Obligatoire">*</abbr></label>
+                            <input type="email" maxlength="1024" name="email" id="iptEmail" placeholder="name@server.ext" required>
+                        </div>
+
+                        <div>
+                            <label for="iptUrl">Type <em>Url</em> <abbr title="Obligatoire">*</abbr></label>
+                            <input type="url" maxlength="1024" name="url" id="iptUrl" placeholder="https://..." required>
+                        </div>
+
+                        <div>
+                            <label for="slcOption">Type <em>Select</em></label>
+                            <select id="slcOption" name="select">
+                                <option value="alpha">Option Alpha</option>
+                                <option value="beta">Option Beta</option>
+                                <option value="gamma">Option Gamma</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Types <em>Radio</em> en ligne <abbr title="Obligatoire">*</abbr></label>
+                            <label class="box" for="rdAlpha"><input type="radio" name="radio" id="rdAlpha" value="alpha">Alpha</label>
+                            <label class="box" for="rdBeta"><input type="radio" name="radio" id="rdBeta" value="beta">Beta</label>
+                            <label class="box" for="rdGamma"><input type="radio" name="radio" id="rdGamma" value="gamma">Gamma</label>
+                        </div>
+                    
+                        <div>
+                            <label>Types <em>Checkbox</em> en ligne <abbr title="Obligatoire">*</abbr></label>
+                            <label class="box" for="chkAlpha"><input type="checkbox" name="classicalpha" id="chkAlpha" value="alpha">Alpha</label>
+                            <label class="box" for="chkBeta"><input type="checkbox" name="classicbeta" id="chkBeta" value="beta">Beta</label>
+                            <label class="box" for="chkGamma"><input type="checkbox" name="classicgamma" id="chkGamma" value="gamma">Gamma</label>
+                        </div>
+                    
+                        <div>
+                            <label>Cases à cochées <em>Checkbox / Radio</em> en block</label>
+                            <label class="slab" for="bckAlpha"><input type="checkbox" name="blockalpha" id="bckAlpha" value="alpha">Alpha, aenean quam velit</label>
+                            <label class="slab" for="bckBeta"><input type="checkbox" name="blockbeta" id="bckBeta" value="beta">Beta, ornare eu ultrices vitae</label>
+                            <label class="slab" for="bckGamma"><input type="checkbox" name="blockgamma" id="bckGamma" value="gamma">Gamma, scelerisque ac velit</label>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <div class="currency">
+                            <label for="iptCurrency">Avec icône</label>
+                            <input type="number" min="1" max="100" step="1" name="currency" id="iptCurrency" placeholder="Pour champ financier">
+                            <span>€</span>
+                        </div>
+
+                        <div class="value">
+                            <label for="iptValue">Avec valeur</label>
+                            <input type="range" value="0" min="0" max="100" step="10" name="value" id="iptValue">
+                            <span>Résultat...</span>
+                        </div>
+
+                        <!-- Conceptual Radios and checkboxes -->
+                        <fieldset>
+                            <legend>Champs de type <em>Radio</em> “choice”</legend>
+                            <div class="grid">
+                                <label class="choice" for="rdDelta">
+                                    <span>Delta</span>
+                                    <strong>99999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="delta" id="rdDelta">
+                                </label>
+                                <label class="choice on" for="rdEpsilon">
+                                    <span>Epsilon</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="epsilon" id="rdEpsilon">
+                                </label>
+                                <label class="choice" for="rdZeta">
+                                    <span>Zeta</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="zeta" id="rdZeta">
+                                </label>
+                                <label class="choice" for="rdEta">
+                                    <span>Eta</span>
+                                    <strong>99999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="eta" id="rdEta">
+                                </label>
+                                <label class="choice" for="rdIota">
+                                    <span>Iota</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="iota" id="rdIota">
+                                </label>
+                                <label class="choice" for="rdKappa">
+                                    <span>Kappa</span>
+                                    <strong>999.99&nbsp;€</strong>
+                                    <input type="radio" name="styleradio" value="kappa" id="rdKappa">
+                                </label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Champs de type <em>Checkbox</em> “toggle”</legend>
+                            <div class="grid">
+                                <label class="toggle on" for="chkDelta">
+                                    <span>Delta</span>
+                                    <strong>9999.99&nbsp;€</strong>
+                                    <input type="checkbox" name="styledelta" value="delta" id="chkDelta">
+                                </label>
+                                <label class="toggle" for="chkEspilon">
+                                    <span>Epsilon</span>
+                                    <strong>9999.99&nbsp;€</strong>
+                                    <input type="checkbox" name="styleepsilon" value="epsilon" id="chkEspilon">
+                                </label>
+                                <label class="toggle" for="chkZeta">
+                                    <span>Zeta</span>
+                                    <strong>9999.99&nbsp;€</strong>
+                                    <input type="checkbox" name="stylezeta" value="zeta" id="chkZeta">
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <div>
+                            <label for="txtField">Type <em>Textarea</em></label>
+                            <textarea name="textarea" id="txtField" rows="3" required></textarea>
+                        </div>
+
+                        <!-- Actions -->
+                        <div>
+                            <input type="submit" class="tab" value="Soumettre">
+                            <input type="submit" class="tab" value="Désactivé" disabled>
+                            <input type="reset" class="tab" value="Réinitialiser">
+                            <input type="button" class="tab" value="Bouton">
+                        </div>
+                    </div>
+                </form>
+            </section>
+            
+        </main>
+
+        <footer id="uifoot">
+            <div class="headline">
+                <div>
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt="Icon Neptune"></span>
+                        <span class="title">sasstemplate</span>
+                    </a>
+                    <p>Exemple de développement d'un template avec Sass</p>
+                </div>
+                <nav class="socialmenu">
+                    <h3 class="blind">Menu social</h3>
+                    <ul>
+                        <li>
+                            <a href="#" tabindex="-1" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_linkedin_bl.svg" alt="Logo Linked In" width="28" height="28"></span>
+                                <span class="tip top">Profil Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_bitbucket_bl.svg" alt="Logo Bitbucket" width="28" height="28"></span>
+                                <span class="tip top">Profil Bitbucket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_github_bl.svg" alt="Logo GitHub" width="28" height="28"></span>
+                                <span class="tip top">Profil GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navigation">
+                <nav class="mainmenu">
+                    <ul>
+                        <li>
+                            <a href="./textes.html" title="Aller sur la page" class="selected">Textes</a>
+                        </li>
+                        <li>
+                            <a href="./elements.html" title="Aller sur la page">Éléments</a>
+                        </li>
+                        <li>
+                            <a href="./formulaire.html" title="Aller sur la page">Formulaire</a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Ne mène nulle part">Sous-menu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="secondmenu">
+                    <ul>
+                        <li>
+                            <a href="./indisponible.html" title="Aller sur la page">Indisponible</a>
+                        </li>
+                        <li><a href="#" tabindex="-1" title="Ne mène nulle part">Autre n°1</a></li>
+                        <li><a href="#" tabindex="-1" title="Ne mène nulle part">Autre n°2</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="author">
+                <p>
+					<span>Sass Template</span> &copy; 2020-2025 &mdash; Tous droits réservés &mdash; v.2.0 &mdash;</span>
+					<a href="https://www.elodiebayet.com" title="Voir le site" target="_blank" rel="noopener">
+						Développé par Elodie Bayet&nbsp;
+						<img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_icon_bl.svg" alt="Icône du Logo de Elodie Bayet représentant une plume stylisée dans un cercle épais">
+					</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,17 +1,13 @@
 /* 
 	Author :: Elodie BAYET
-	  Role :: Fullstack Web Developer
-	  Date :: 2020.04 + 2021.09
-	Origin :: Belgium, EU
 */
 
 /*
-	Normalize Elements
+	Normalize elements
 */
 
 body { 
 	-webkit-text-size-adjust: none;
-	-ms-text-size-adjust: 100%;
 	min-height: 100vh;
     &, & *, & *::before, & *::after {
         margin: 0;
@@ -39,20 +35,9 @@ input:invalid, textarea:invalid{
 	box-shadow: none;
 }
 
-abbr, button, img, hr, iframe,
-fieldset, input, input:invalid, textarea, textarea:invalid, select,
-a, a:link, a:visited, a:hover, a:focus, a:active,
-a img, a:link img, a:visited img, a:hover img, a:focus img, a:active img {
-	outline: 0;
-}
-
 button:not(.disabled):hover,
 input[type="submit"]:not(:disabled):hover {
 	cursor: pointer;
-}
-
-main abbr:hover {
-	cursor: help;
 }
 
 button, select {
@@ -65,5 +50,5 @@ img {
 }
 
 hr {
-	margin: 24px 0 36px;
+	margin: 24px 0;
 }

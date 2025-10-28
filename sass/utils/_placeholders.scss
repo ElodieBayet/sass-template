@@ -2,24 +2,61 @@
     Global Placeholders
 */
 
-/* For typography */
-%resagnicto {
-	font-family: "Resagnicto", sans-serif;
+/* typography */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300i,400&subset=latin-ext');
+
+@font-face {
+	font-family: 'Anton';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../../assets/fonts/the-anton-project-authors.eot'); /* Old browsers */
+	src: local('Anton Regular'), local('Anton-Regular'),
+		url('../../assets/fonts/the-anton-project-authors.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../../assets/fonts/the-anton-project-authors.woff') format('woff'), /* Modern Browsers */
+		url('../../assets/fonts/the-anton-project-authors.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../../assets/fonts/the-anton-project-authors.svg#Anton') format('svg'); /* Legacy iOS */
+	font-display: fallback;
+}
+
+%anton {
+	font-family: "Anton", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+}
+%roboto {
+	font-family: "Roboto", sans-serif;
 	font-weight: 400;
 	font-style: normal;
 }
-%resagnicto-bold {
-	font-family: "Resagnicto Bold", sans-serif;
-	font-weight: 600;
-	font-style: normal;
-}
-%resagnicto-italic {
-	font-family: "Resagnicto Italic", sans-serif;
-	font-weight: 400;
+%roboto-italic {
+	font-family: "Roboto", sans-serif;
+	font-weight: 300;
 	font-style: italic;
 }
 
 /* For hover effect (used in theme) */
 %transition, a, a:link, a:visited, button, .navigation li {
     transition: .25s ease-in-out;
+}
+
+/* Kit Author */
+%author {
+	text-align: center;
+    p {
+        font-size: 1.2rem;
+        line-height: 2;
+        * { 
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        img {
+            width: 18px;
+            display: inline-block;
+            margin-left: 3px;
+			margin-top: -7px;
+        }
+    }
 }

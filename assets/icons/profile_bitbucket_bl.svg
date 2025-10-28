@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 176 176" style="enable-background:new 0 0 176 176;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#12bed5;}
+	.st1{fill:#0c7f8e;}
+	.st2{fill:#000000;}
+</style>
+<g id="Bitbucket">
+	<path id="Back" class="st0" d="M0,0v176h176V0H0z"/>
+	<g id="Shadow">
+		<polygon class="st1" points="98.8,103.1 103.9,72.9 71.7,72.9 77.5,103.1 		"/>
+		<path class="st1" d="M176,81l-37.3-37.3c0.3,0.5,0.4,1,0.4,1.6c0,0.2,0,0.4,0,0.5l-13.9,85.4c-0.3,1.6-1.7,2.8-3.3,2.8H55.2
+			c-0.9,0-1.8-0.3-2.5-0.8L95.5,176H176V81z"/>
+	</g>
+	<path id="Icon_10_" class="st2" d="M40.2,42C40.1,42,40.1,42,40.2,42c-1.8,0-3.3,1.5-3.3,3.3c0,0.2,0,0.4,0,0.5l13.9,84.5
+		c0.4,2.1,2.2,3.7,4.4,3.7h66.8c1.6,0,3-1.2,3.3-2.8l13.9-85.4c0-0.2,0-0.3,0-0.5c0-1.8-1.5-3.3-3.3-3.3c0,0,0,0,0,0L40.2,42z
+		 M98.8,103.1H77.5l-5.8-30.1h32.2L98.8,103.1z"/>
+</g>
+</svg>

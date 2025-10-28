@@ -1,0 +1,159 @@
+@charset "utf-8";
+/* 
+	Author :: Elodie BAYET
+*/
+
+@use "sass:color";
+@use "./utils/variables" as var;
+@use "./utils/placeholders";
+
+/* Normalize */
+html {
+	font-family: Verdana, sans-serif;
+	font-size: .625em;
+}
+
+body { 
+	min-height: 100vh;
+	color: var.$fontcolor;
+    background-color: var.$bgcolor;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    &, & *, & *::before, & *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    } 
+}
+
+li { 
+	list-style: none;
+}
+
+a, a:link, a:visited, a:hover, a:focus, a:active{ 
+	text-decoration: none;
+}
+
+img, a img, a:link img, a:visited img, a:hover img, a:focus img, a:active img { 
+	border: none;
+}
+
+img { 
+	width: 100%;
+	height: auto;
+}
+
+/* Texts */
+h2, .applogo .title, nav li {
+    @extend %anton;
+}
+.applogo + p {
+    @extend %roboto-italic;
+}
+
+/* Content */
+main {
+	text-align: center;
+    width: 100vw;
+    max-width: 520px;
+    padding: 0 24px;
+    margin-top: -48px;
+	h2 {
+        font-size: 1.6rem;
+        line-height: 1.75;
+        letter-spacing: .15rem;
+        text-transform: uppercase;
+		color: var.$medium;
+		background-color: transparent;
+	}
+}
+
+/* Elements */
+.applogo {
+    position: relative;
+	display: inline-block;
+	> span {
+        transition: .25s ease-in-out;
+		white-space: nowrap;
+		display: inline-block;
+	}
+	.icon {
+		margin-left: -6vw;
+        width: 12vw;
+		left: 50%;
+		position: absolute;
+	}
+    .title {
+        font-size: 10vw;
+        line-height: 20vw;
+        color: var.$xlight;
+    }
+    &:hover {
+        .icon {
+            opacity: .1;
+        }
+        .title {
+            color: var.$origin;
+        }
+    }
+    + p {
+		font-size: 3.4vw;
+		letter-spacing: .1rem;
+        color: var.$xdark;
+		line-height: 1.5;
+        margin-top: -8px;
+    }
+    @media (min-width: 520px) {
+        .icon {
+            margin-left: -30px;
+		    width: 60px;
+        }
+        .title {
+            font-size: 4.2rem;
+            line-height: 9.4rem;
+        }
+        + p {
+            font-size: 1.6rem;
+        }
+    }
+}
+
+nav {
+    margin: 18px 0;
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+    li {
+        font-size: 1.8rem;
+        line-height: 1.75;
+        margin: 6px 12px;
+        a {
+            color: var.$origin;
+            background-color: transparent;
+            transition: .25s ease-in-out;
+            padding: 4px 12px 3px;
+            display: inline-block;
+            &:hover {
+                color: var.$obscur;
+            }
+        }
+    }
+}
+
+#author {
+	@extend %author;
+    p {
+        color: var.$mdark;
+    }
+    span {
+        color: var.$obscur;
+    }
+    a {
+        color: var.$origin;
+        &:hover, &:focus {
+            color: var.$darken;
+        }
+    }
+}

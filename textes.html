@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr" class="nojs">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Textes et paragraphes | Sass Template</title>
+    <!-- Styles -->
+        <link href="./assets/css/structure.css" rel="stylesheet" type="text/css" media="screen">
+        <link href="./assets/css/theme.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- Identity and parameters -->
+        <meta name="description" content="Exemple des textes du template Front-End développé en Sass">
+        <meta name="author" content="Elodie Bayet, www.elodiebayet.com">
+        <meta name="copyright" content="Elodie Bayet © 2025">
+        <meta name="theme-color" content="# ">
+        <link href="./assets/trademark/sasstemplate_favicon.png" rel="icon" type="image/png">
+    <!-- Scripts -->
+        <script type="module" src="./assets/js/main.js" id="jsMain"></script>
+    </head>
+    <body>
+        <header id="uihead" class="closed">
+			<div class="inner">
+				<div class="headline">
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt=""></span>
+                        <span class="title">sasstemplate</span>
+                    </a>
+					<p>Exemple de développement d'un template avec Sass</p>
+				</div>
+                <div class="navigation expand">
+					<nav class="mainmenu">
+						<ul>
+							<li>
+                                <a href="./textes.html" title="Aller sur la page" class="selected">Textes</a>
+                            </li>
+                            <li>
+                                <a href="./elements.html" title="Aller sur la page">Éléments</a>
+                            </li>
+                            <li>
+                                <a href="./formulaire.html" title="Aller sur la page">Formulaire</a>
+                            </li>
+                            <li class="sub">
+                                <a href="#" tabindex="-1" title="Ne mène nulle part">Sous-menu</a>
+                                <ul>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page A</a></li>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page B</a></li>
+                                    <li><a href="#" tabindex="-1" title="Ne mène nulle part">Sous-page C</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="langmenu">
+                        <ul>
+                            <li>
+                                <a href="#" tabindex="-1" title="Changer la version linguistique" class="selected">
+                                    <abbr title="Français">Fra</abbr>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" tabindex="-1" title="Change the language">
+                                    <abbr title="English">Eng</abbr>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+			</div>
+            <!-- (!) Remove .edge if not used -->
+			<div class="edge">&nbsp;</div>
+			<div class="edge">&nbsp;</div>
+            <button type="button"><span class="blind">Ouvrir le menu</span></button>
+		</header>
+
+        <main>
+            <header>
+                <h1>Titre principal</h1>
+			    <p>Support de cours sur le développemnt SCSS/Sass.</p>
+			    <a href="https://github.com/ElodieBayet/sass-template" class="tab url"><span class="github">&nbsp;</span>Voir le projet sur GitHub</a>
+            </header>
+
+            <noscript><strong>Le JavaScript n'est pas activé&nbsp;::</strong> Certaines fonctionnalités pourraient être inaccessibles.</noscript>
+
+            <section>
+                <h2>Titre de 2<sup>e</sup> niveau</h2>
+                <h3>Titre de 3<sup>e</sup> niveau</h3>
+                <h4>Titre de 4<sup>e</sup> niveau</h4>
+                <h5>Titre de 5<sup>e</sup> niveau</h5>
+                <h6>Titre de 6<sup>e</sup> niveau</h6>
+                <p>Paragraphe de texte classique, <a href="#" tabindex="-1" title="Test lien">avec lien inclu</a>. Suspendisse dignissim eros ac justo elementum, a fermentum nulla hendrerit. Aenean non elementum ipsum. Maecenas in lorem neque. Ut suscipit massa sed urna fringilla porttitor. Nulla et iaculis ipsum. Morbi a nunc sagittis urna scelerisque tempus fringilla in leo. Aliquam molestie sagittis finibus. Maecenas ac metus condimentum, malesuada orci ac, mattis velit.</p>
+                <p>Autre paragraphe. Pellentesque dapibus magna nec elit sodales elementum quis sed lacus. Fusce sit amet diam magna. Sed dictum justo arcu, faucibus bibendum dolor tincidunt vel.</p>
+            </section>
+
+            <section>
+                <h2>Couleurs</h2>
+                <h3>Textes</h3>
+                <ul class="listitem apart">
+                    <li class="xdark">Gris #1 <strong>xdark</strong></li>
+                    <li class="dark">Gris #2 <strong>dark</strong></li>
+                    <li class="mdark">Gris #3 <strong>mdark</strong></li>
+                    <li class="medium">Gris #4 <strong>medium</strong></li>
+                    <li class="mlight">Gris #5 <strong>mlight</strong></li>
+                    <li class="light">Gris #6 <strong>light</strong></li>
+                    <li class="xlight">Gris #7 <strong>xlight</strong></li>
+                </ul>
+                <ul class="listitem apart">
+                    <li class="darken">Couleur <strong>darken</strong></li>
+                    <li class="origin">Couleur <strong>origin</strong></li>
+                    <li class="lighten">Couleur <strong>lighten</strong></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Listes normale, en ligne ou distribuée</h2>
+                <h3>Liste normale</h3>
+                <ul class="list">
+                    <li>Élément de liste classique</li>
+                    <li>Élément de liste classique</li>
+                    <li>Élément de liste classique <a href="#" tabindex="-1" title="Test lien">avec un lien inclu</a></li>
+                </ul>
+                <hr>
+                <h3>Listes en lignes</h4>
+                <ul class="listline">
+                    <li>Élément <strong>n°1</strong> en ligne</li>
+                    <li>Élément <strong>n°2</strong> en ligne</li>
+                    <li>Élément <strong>n°3</strong> en ligne</li>
+                </ul>
+                <ul class="listline apart">
+                    <li>Élément <strong>n°1</strong> en ligne séparé</li>
+                    <li>Élément <strong>n°2</strong> en ligne séparé</li>
+                    <li>Élément <strong>n°3</strong> en ligne séparé</li>
+                </ul>
+                <ul class="listline apart center">
+                    <li>Élément <strong>n°1</strong></li>
+                    <li>Élément <strong>n°2</strong></li>
+                    <li>Élément <strong>n°3</strong></li>
+                </ul>
+                <hr>
+                <h3>Listes distribuées</h3>
+                <ul class="listitem">
+                    <li>Élément <strong>n°1</strong></li>
+                    <li>Élément <strong>n°2</strong></li>
+                    <li>Élément <strong>n°3</strong></li>
+                </ul>
+                <ul class="listitem apart">
+                    <li>Élément <strong>n°1</strong></li>
+                    <li>Élément <strong>n°2</strong></li>
+                    <li>Élément <strong>n°3</strong></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Juxtaposition de contenu</h2>
+                <h3>Habillage d'image</h3>
+                <div>
+                    <p class="lining"><img src="./assets/figures/default_figure_1024x640.jpg" alt="">Morbi convallis iaculis tincidunt. Aliquam gravida quam quis quam volutpat sagittis. Cras ut pretium tellus. Suspendisse commodo quam at ultricies mollis. Sed placerat eu purus at imperdiet. Quisque sapien sapien, dignissim quis cursus vitae, laoreet pharetra lorem. Suspendisse sem urna, dignissim nec lorem sit amet, vehicula pulvinar nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ac lacus vulputate, tincidunt tellus vel, iaculis libero. Nulla lobortis, massa sed laoreet interdum, ligula leo fringilla ligula, imperdiet venenatis ante sapien sit amet ante. Suspendisse venenatis, quam molestie sagittis suscipit, felis mauris interdum nunc, et cursus tortor lacus sit amet magna. Morbi id semper mi. In semper nibh sed elementum pharetra. Nam at ante vitae lectus dictum interdum ac eu sapien. Cras convallis finibus feugiat.</p>
+                </div>
+                <hr>
+                <h3>Contenu de texte en colonne</h3>
+                <div class="columns">
+                    <h4>Sous-titre 1</h4>
+                    <p>Morbi mollis ligula quam, a sodales lectus luctus vitae. Quisque vitae velit quis ligula iaculis laoreet. Praesent vitae nisl luctus, scelerisque ipsum nec, congue tellus. Nullam non vehicula massa. Mauris molestie mollis dolor nec consectetur. Pellentesque eu feugiat ipsum, ut convallis mauris. Nulla faucibus libero erat, nec ornare ipsum pretium et. Donec euismod efficitur nunc mattis blandit. Ut luctus bibendum eros, quis maximus lacus rutrum id. Donec sit amet pretium lorem. Ut quis ipsum et leo placerat sagittis.</p>
+                    <h4>Sous-titre 2</h4>
+                    <p>Aliquam vel dui tellus. Suspendisse pellentesque, lacus id aliquet tincidunt, magna magna volutpat mauris, in finibus eros magna et tellus. Donec ipsum nulla, vestibulum sit amet placerat et, mattis eu dolor. Curabitur mollis volutpat ipsum eu sagittis. Vestibulum ullamcorper tellus vel augue egestas blandit. Praesent auctor tellus tellus, egestas porttitor magna faucibus ac. Nullam nec turpis vulputate orci cursus mattis nec et mauris. Sed id lorem at ante cursus placerat. Sed quis neque nec justo lacinia viverra.</p>
+                    <h4>Sous-titre 3</h4>
+                    <p>Morbi convallis iaculis tincidunt. Aliquam gravida quam quis quam volutpat sagittis. Cras ut pretium tellus. Suspendisse commodo quam at ultricies mollis. Sed placerat eu purus at imperdiet. Quisque sapien sapien, dignissim quis cursus vitae, laoreet pharetra lorem. Suspendisse sem urna, dignissim nec lorem sit amet, vehicula pulvinar nisl. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam ac lacus vulputate, tincidunt tellus vel, iaculis libero. Nulla lobortis, massa sed laoreet interdum, ligula leo fringilla ligula, imperdiet venenatis ante sapien sit amet ante. Suspendisse venenatis, quam molestie sagittis suscipit, felis mauris interdum nunc, et cursus tortor lacus sit amet magna. Morbi id semper mi. In semper nibh sed elementum pharetra. Nam at ante vitae lectus dictum interdum ac eu sapien. Cras convallis finibus feugiat.</p>
+                </div>
+                <hr>
+                <h3>Contenu flexible</h3>
+                <div class="grid md">
+                    <figure class="col-50">
+                        <img src="./assets/figures/default_figure_1024x640.jpg" alt="" width="1024" height="640">
+                        <figcaption>Légende de l'image par défaut</figcaption>
+                    </figure>
+                    <div class="col-50">
+                        <h4>Sous-titre</h4>
+                        <p>Morbi mollis ligula quam, a sodales lectus luctus vitae. Quisque vitae velit quis ligula iaculis laoreet. Praesent vitae nisl luctus, scelerisque ipsum nec, congue tellus. Nullam non vehicula massa. Mauris molestie mollis dolor nec consectetur.</p>
+                        <p>Pellentesque eu feugiat ipsum, ut convallis mauris. Nulla faucibus libero erat, nec ornare ipsum pretium et. Donec euismod efficitur nunc mattis blandit. Ut luctus bibendum eros, quis maximus lacus rutrum id. Donec sit amet pretium lorem. Ut quis ipsum et leo placerat sagittis.</p>
+                        <p>Pellentesque dapibus magna nec elit sodales elementum quis sed lacus. Fusce sit amet diam magna. Sed dictum justo arcu, faucibus bibendum dolor tincidunt vel.</p>
+                    </div>
+                    <figure class="col-33">
+                        <img src="./assets/figures/default_figure_1024x640.jpg" alt="" width="1024" height="640">
+                        <figcaption>Légende de l'image par défaut</figcaption>
+                    </figure>
+                    <figure class="col-33">
+                        <img src="./assets/figures/default_figure_1024x640.jpg" alt="" width="1024" height="640">
+                        <figcaption>Légende de l'image par défaut</figcaption>
+                    </figure>
+                    <figure class="col-33">
+                        <img src="./assets/figures/default_figure_1024x640.jpg" alt="" width="1024" height="640">
+                        <figcaption>Légende de l'image par défaut</figcaption>
+                    </figure>
+                </div>
+            </section>
+        </main>
+
+        <footer id="uifoot">
+            <div class="headline">
+                <div>
+                    <a href="./" class="applogo" title="Retourner à l'accueil du site">
+                        <span class="icon"><img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_side_icon_bl.svg" alt=""></span>
+                        <span class="title">sasstemplate</span>
+                    </a>
+                    <p>Exemple de développement d'un template avec Sass</p>
+                </div>
+                <nav class="socialmenu">
+                    <ul>
+                        <li>
+                            <a href="#" tabindex="-1" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_linkedin_bl.svg" alt="" width="28" height="28"></span>
+                                <span class="tip top">Profil Linked In</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_bitbucket_bl.svg" alt="" width="28" height="28"></span>
+                                <span class="tip top">Profil Bitbucket</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Voir le profil" target="_blank" rel="noreferrer" class="ideogram tooltip">
+                                <span class="symbol"><img src="./assets/icons/profile_github_bl.svg" alt="" width="28" height="28"></span>
+                                <span class="tip top">Profil GitHub</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navigation">
+                <nav class="mainmenu">
+                    <ul>
+                        <li>
+                            <a href="./textes.html" title="Aller sur la page" class="selected">Textes</a>
+                        </li>
+                        <li>
+                            <a href="./elements.html" title="Aller sur la page">Éléments</a>
+                        </li>
+                        <li>
+                            <a href="./formulaire.html" title="Aller sur la page">Formulaire</a>
+                        </li>
+                        <li>
+                            <a href="#" tabindex="-1" title="Ne mène nulle part">Sous-menu</a>
+                        </li>
+                    </ul>
+                </nav>
+                <nav class="secondmenu">
+                    <ul>
+                        <li>
+                            <a href="./indisponible.html" title="Aller sur la page">Indisponible</a>
+                        </li>
+                        <li><a href="#" tabindex="-1" title="Ne mène nulle part">Autre n°1</a></li>
+                        <li><a href="#" tabindex="-1" title="Ne mène nulle part">Autre n°2</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="author">
+                <p>
+					<span>Sass Template</span> &copy; 2020-2025 &mdash; Tous droits réservés &mdash; v.2.0 &mdash;</span>
+					<a href="https://www.elodiebayet.com" title="Voir le site" target="_blank" rel="noopener">
+						Développé par Elodie Bayet&nbsp;
+						<img src="https://www.elodiebayet.com/shared/trademark/elodie_bayet_icon_bl.svg" alt="Icône du Logo de Elodie Bayet représentant une plume stylisée dans un cercle épais">
+					</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>

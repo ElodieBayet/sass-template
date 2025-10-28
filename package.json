@@ -1,23 +1,15 @@
 {
   "name": "sass-template",
-  "version": "1.1.1",
+  "version": "2.0",
   "description": "Example of a Front-End template with Sass",
   "main": "index.html",
   "scripts": {
-    "dev": "npm-run-all --parallel watch:*",
-    "watch:root": "sass --watch ./sass/root.scss:./public/css/root.css -w --style expanded",
-    "watch:unavailable": "sass --watch ./sass/unavailable.scss:./public/css/unavailable.css -w --style expanded",
-    "watch:common": "sass --watch ./sass/common.scss:./public/css/common.css -w --style expanded",
-    "watch:theme": "sass --watch ./sass/theme.scss:./public/css/theme.css -w --style expanded",
-    "watch:layouts": "sass --watch ./sass/layouts.scss:./public/css/layouts.css -w --style expanded",
-    "watch:form": "sass --watch ./sass/form.scss:./public/css/form.css -w --style expanded",
-    "dist": "npm-run-all --sequential compile:*",
-    "compile:root": "sass --no-source-map ./sass/root.scss:./dist/root.min.css --style compressed",
-    "compile:unavailable": "sass --no-source-map ./sass/unavailable.scss:./dist/unavailable.min.css --style compressed",
-    "compile:common": "sass --no-source-map ./sass/common.scss:./dist/common.min.css --style compressed",
-    "compile:theme": "sass --no-source-map ./sass/theme.scss:./dist/theme.min.css --style compressed",
-    "compile:layouts": "sass --no-source-map ./sass/layouts.scss:./dist/layouts.min.css --style compressed",
-    "compile:form": "sass --no-source-map ./sass/form.scss:./dist/form.min.css --style compressed"
+    "dist": "npm run dist:index && npm run dist:unavailable && npm run dist:structure && npm run dist:theme && npm run dist:form",
+    "dist:index": "sass --no-source-map ./sass/index.scss:./dist/index.min.css --style compressed",
+    "dist:unavailable": "sass --no-source-map ./sass/unavailable.scss:./dist/unavailable.min.css --style compressed",
+    "dist:structure": "sass --no-source-map ./sass/structure.scss:./dist/structure.min.css --style compressed",
+    "dist:theme": "sass --no-source-map ./sass/theme.scss:./dist/theme.min.css --style compressed",
+    "dist:form": "sass --no-source-map ./sass/form.scss:./dist/form.min.css --style compressed"
   },
   "keywords": [
     "Sass",
@@ -28,7 +20,5 @@
   "author": "Elodie Bayet",
   "license": "ISC",
   "dependencies": {},
-  "devDependencies": {
-    "npm-run-all": "^4.1.5"
-  }
+  "devDependencies": {}
 }

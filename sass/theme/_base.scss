@@ -1,0 +1,336 @@
+/* 
+	Author :: Elodie BAYET
+*/
+
+@use "sass:color";
+@use '../utils/utils' as kit;
+
+/*
+    Default Design
+*/
+
+/* Local dynamics */
+@mixin shadowed-edge($deg: 90deg) {
+    background-image: linear-gradient($deg, kit.$bgcolor, kit.$bgcolor, color.adjust(kit.$bgcolor, $alpha: -0.4), color.adjust(kit.$bgcolor, $alpha: -0.7), color.adjust(kit.$bgcolor, $alpha: -1));
+}
+
+/* Animations */
+@keyframes SlideUp {
+	0% { 
+        bottom: 0%;
+        opacity: 0.0;
+    }
+	33% { 
+        bottom: 33%;
+        opacity: 0.0;
+    }
+	100% { 
+        bottom: 100%;
+        opacity: 1.0;
+    }
+}
+@keyframes SlideDown {
+	0% { 
+        top: 0%;
+        opacity: 0.0;
+    }
+	33% { 
+        top: 33%;
+        opacity: 0.0;
+    }
+	100% { 
+        top: 100%;
+        opacity: 1.0;
+    }
+}
+@keyframes Spin {
+	0% { 
+        transform: rotate(0deg);
+        filter: brightness(125%);
+    }
+	50% { 
+        transform: rotate(180deg);
+        filter: brightness(100%);
+    }
+	100% { 
+        transform: rotate(360deg);
+        filter: brightness(125%);
+    }
+}
+@keyframes FadeOn {
+	0% { 
+        opacity: 0.0;
+    }
+	100% { 
+        opacity: 1.0;
+    }
+}
+@keyframes Disapear {
+	0% { 
+		text-shadow: 0px 6px 4px kit.$medium;
+		opacity: 1;
+	}
+	100% { 
+		text-shadow: 0px 0px 0px kit.$medium;
+		opacity: .5;
+	}
+}
+@keyframes Animated {
+	0% { 
+		margin-top: 24px;
+		filter: brightness(100%);
+	}
+	33% {
+		margin-top: 0px;
+		filter: brightness(150%);
+	}
+	100% {
+		margin-top: 24px;
+		filter: brightness(100%);
+	}
+}
+
+
+/* General */
+body {
+	background-color: kit.$bgcolor;
+	color: kit.$fontcolor;
+}
+
+/* Typography */
+main {
+    h1 {
+        color: kit.$mdark;
+    }
+    h2 {
+        color: kit.$origin;
+    }
+    h3 {
+        color: kit.$dark;
+    }
+    h4 {
+        color: kit.$obscur;
+    }
+    pre {
+        border: 1px solid kit.$alert;
+        padding: 18px;
+    }
+    a:not([class]) {
+        color: kit.$obscur;
+        border-bottom: 1px solid kit.$origin;
+        &:hover, &:focus {
+            color: kit.$darken;
+            border-bottom: 1px solid kit.$lighten;
+        }
+    }
+    // Default colours
+    .darken {
+        color: kit.$darken;
+    }
+    .origin {
+        color: kit.$origin;
+    }
+    .lighten {
+        color: kit.$lighten;
+    }
+    // Greys
+    .xdark {
+        color: kit.$xdark;
+    }
+    .dark {
+        color: kit.$dark;
+    }
+    .mdark {
+        color: kit.$mdark;
+    }
+    .medium {
+        color: kit.$medium;
+    }
+    .mlight {
+        color: kit.$mlight;
+    }
+    .light {
+        color: kit.$light;
+    }
+    .xlight {
+        color: kit.$xlight;
+    }
+}
+
+/* Logo */
+.applogo {
+    > span {
+        @extend %transition;
+    }
+    .icon {
+        opacity: 1;
+    }
+    .title {
+        color: rgb(230, 230, 230);
+    }
+    &:hover {
+        .icon {
+            opacity: .1;
+        }
+        .title {
+            color: kit.$origin;
+        }
+    }
+    + p {
+        color: kit.$xdark;
+    }
+}
+
+/* Navigations */
+nav {
+    li a {
+        color: kit.$xdark;
+	    background-color: transparent;
+        &:hover, &:focus, &.selected {
+            color: kit.$origin;
+        }
+    }
+    &.socialmenu li a {
+        filter: contrast(300%) grayscale(100%);
+        opacity: .9;
+        &:hover, &:focus {
+            filter: contrast(100%) grayscale(0%);
+            opacity: 1;
+        }
+    }
+}
+
+/* Page header */
+#uihead {
+    .inner {
+        color: inherit;
+        background-color: kit.$bright;
+        box-shadow: 0 4px 12px 2px rgba(0, 0, 0, .35);
+        position: relative;
+        z-index: 101;
+        & + .edge {
+            // 90deg
+            @include shadowed-edge;
+            left: 0;
+            z-index: 102;
+        }
+    }
+    .edge {
+        color: inherit;
+        background-color: transparent;
+        position: absolute;
+        width: 15%;
+        max-width: 320px;
+        height: 100%;
+        top: 0;
+        display: block;
+        & + .edge {
+            @include shadowed-edge(-90deg);
+            right: 0;
+            z-index: 103;
+        }
+    }
+    button {
+        color: inherit;
+        background-color: transparent;
+        @include kit.ui-icon;
+        @include kit.ui-icon-pos(cross);
+        filter: contrast(85%);
+    }
+    &.closed button {
+        @include kit.ui-icon-pos(bars);
+    }
+    .navigation {
+		width: 75%; // Keep navigation items away from screen borders
+		margin-right: auto;
+		margin-left: auto;
+        @extend %transition;
+        &.expand .sub li a {
+            color: kit.$mdark;
+            background-color: transparent;
+            &:hover, &:focus, &.selected {
+                color: kit.$darken;
+            }
+        }
+        nav + nav {
+            @media (max-width:1209px), (any-hover:none){
+                background-image: linear-gradient(90deg, kit.$dark, kit.$dark);
+                background-position: 50% 0%;
+                background-size: 48px 1px;
+                background-repeat: no-repeat;
+                padding-top: 8px;
+            }
+        }
+        @media (min-width:1210px) and (any-hover:hover) {
+            .sub::before {
+                content: " ";
+                position: absolute;
+                border-width: 4px;
+                border-style: solid;
+                border-color: kit.$medium transparent transparent transparent;
+                top: 98%;
+                left: 50%;
+                margin-left: -2px;
+            }
+            .sub:hover::before {
+                border-color: kit.$origin transparent transparent transparent;
+            }
+            .sub ul {
+                background-color: kit.$bright;
+                background-clip: content-box;
+                opacity: .9;
+            }
+        }
+    }
+}
+
+/* Page footer */
+#uifoot {
+    border-top: 1px solid kit.$origin;
+    @media (max-width: 995px) {
+        .navigation .mainmenu {
+            border-bottom: 1px dotted kit.$mdark;
+        }
+    }
+}
+
+/* Content */
+main {
+    // No JS block
+    noscript {
+        opacity: .75;
+        border: 1px solid kit.$alert;
+    }
+    // Anything disabled
+    *.disabled, *:disabled {
+        opacity: .5;
+        filter: grayscale(100%);
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+    // Module error
+    .nomodule {
+        color: kit.$dark;
+        samp {
+            border: 1px solid kit.$alert;
+            padding: 9px;
+        }
+    }
+}
+
+#author {
+	@extend %author;
+    p {
+        color: kit.$mdark;
+    }
+    span {
+        color: kit.$obscur;
+    }
+    a {
+        color: kit.$origin;
+        &:hover, &:focus {
+            color: kit.$darken;
+        }
+    }
+}
