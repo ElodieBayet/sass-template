@@ -3,7 +3,7 @@
  * @author Elodie Bayet
  */
 
-import GUIService from '../lib/guiService.js';
+import GUIService from 'https://demo.elodiebayet.com/warehouse/js/services/guiService.js'; 
 import ChronoController from "./chrono/chronoController.js";
 import ChronoModel from "./chrono/chronoModel.js";
 import ChronoView from "./chrono/chronoView.js";

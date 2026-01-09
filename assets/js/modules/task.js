@@ -3,7 +3,7 @@
  * @author Elodie Bayet
  */
 
-import GUIService from '../lib/guiService.js';
+import GUIService from 'https://demo.elodiebayet.com/warehouse/js/services/guiService.js'; 
 import TaskView from './task/taskView.js';
 
 (() => {
